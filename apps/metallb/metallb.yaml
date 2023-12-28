@@ -5,16 +5,18 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  source:
-    chart: metallb
-    repoURL: 'https://metallb.github.io/metallb'
-    targetRevision: 0.13.12
-    helm:
-     values: |
-        commonLabels:
-          pod-security.kubernetes.io/enforce: privileged
-          pod-security.kubernetes.io/audit: privileged
-          pod-security.kubernetes.io/warn: privileged
+  sources:
+    - chart: metallb
+      repoURL: 'https://metallb.github.io/metallb'
+      targetRevision: 0.13.12
+      helm:
+      values: |
+          commonLabels:
+            pod-security.kubernetes.io/enforce: privileged
+            pod-security.kubernetes.io/audit: privileged
+            pod-security.kubernetes.io/warn: privileged
+    - repoURL: 'https://github.com/bensonphillipsiv/home-infra'
+      path: apps/metallb/resources
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: metallb-system
