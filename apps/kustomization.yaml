@@ -5,3 +5,4 @@ resources:
 - argocd/ingress.yaml
 - nginx/nginx.yaml
 - metallb/metallb.yaml
+- cert-manager/cert-manager.yaml
