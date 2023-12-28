@@ -10,7 +10,7 @@ spec:
       repoURL: 'https://metallb.github.io/metallb'
       targetRevision: 0.13.12
       helm:
-      values: |
+        values: |
           commonLabels:
             pod-security.kubernetes.io/enforce: privileged
             pod-security.kubernetes.io/audit: privileged
