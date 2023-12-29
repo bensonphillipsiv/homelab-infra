@@ -5,10 +5,7 @@ metadata:
   labels:
     app: longhorn-ingress
     app.kubernetes.io/instance: longhorn
-    app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: longhorn
-    app.kubernetes.io/version: v1.5.3
-    helm.sh/chart: longhorn-1.5.3
   name: longhorn-ingress
   namespace: longhorn
 spec:
