@@ -6,7 +6,6 @@ metadata:
     app: home-assistant
   name: home-assistant
 spec:
-  hostnetwork: true
   revisionHistoryLimit: 3
   replicas: 1
   strategy:
@@ -19,6 +18,7 @@ spec:
       labels:
         app: home-assistant
     spec:
+      hostnetwork: true
 #      securityContext:
 #        fsGroup: 33
 #        fsGroupChangePolicy: "OnRootMismatch"
