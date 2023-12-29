@@ -7,3 +7,4 @@ resources:
 - metallb/metallb.yaml
 - cert-manager/cert-manager.yaml
 - longhorn/longhorn.yaml
+- homeassistant/

@@ -1,0 +1,24 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: home-assistant
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  ingressClassName: "nginx"
+  tls:
+    - hosts:
+        - homeassistant.local
+      secretName: homeassistant.local-production-secret
+  rules:
+    - host: homeassistant.local
+      http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: home-assistant
+              port:
+                name: "http"
