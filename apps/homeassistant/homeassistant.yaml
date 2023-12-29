@@ -10,8 +10,8 @@ spec:
       path: apps/homeassistant/resources
       kustomize:
         commonLabels:
-          - app.kubernetes.io/name: home-assistant
-          - app: home-assistant
+          app.kubernetes.io/name: home-assistant
+          app: home-assistant
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: homeassistant
