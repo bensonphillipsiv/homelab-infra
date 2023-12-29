@@ -9,9 +9,10 @@ spec:
     - repoURL: 'https://github.com/bensonphillipsiv/home-infra'
       path: apps/homeassistant/resources
       kustomize:
-        commonLabels:
-          app.kubernetes.io/name: home-assistant
+        commonLabels: {
+          app.kubernetes.io/name: home-assistant,
           app: home-assistant
+        }
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: homeassistant
