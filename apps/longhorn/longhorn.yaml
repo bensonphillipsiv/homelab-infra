@@ -10,7 +10,10 @@ spec:
       repoURL: 'https://charts.longhorn.io'
       targetRevision: 1.5.3
       helm:
-        values:
+        values: |
+          ingress:
+            enabled: true
+            host: longhorn.local
     - repoURL: 'https://github.com/bensonphillipsiv/home-infra'
       path: apps/longhorn/resources
   destination:
