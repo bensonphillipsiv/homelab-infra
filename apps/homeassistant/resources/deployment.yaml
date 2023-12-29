@@ -12,6 +12,8 @@ spec:
       labels:
         app: home-assistant
     spec:
+      hostNetwork: true
+      restartPolicy: Always
       containers:
       - name: home-assistant
         image: "ghcr.io/home-assistant/home-assistant:stable"
@@ -27,12 +29,9 @@ spec:
               - NET_ADMIN
               - NET_RAW
               - SYS_ADMIN
-      hostNetwork: true
-      restartPolicy: Always
         volumeMounts:
           - name: ha-config-root
-            mountPath: /config
-      restartPolicy: Always
+            mountPath: /config        
       volumes:
         - name: ha-config-root
           persistentVolumeClaim:
