@@ -19,15 +19,15 @@ spec:
         app: home-assistant
     spec:
       hostnetwork: true
-      securityContext:
-        capabilities:
-          add:
-            - NET_ADMIN
-            - NET_RAW
-            - NET_BROADCAST
-#      securityContext:
-#        fsGroup: 33
-#        fsGroupChangePolicy: "OnRootMismatch"
+      # securityContext:
+      #   capabilities:
+      #     add:
+      #       - NET_ADMIN
+      #       - NET_RAW
+      #       - NET_BROADCAST
+     securityContext:
+       fsGroup: 33
+       fsGroupChangePolicy: "OnRootMismatch"
       containers:
       - name: home-assistant-app
         image: "ghcr.io/home-assistant/home-assistant:2022.12.1"
