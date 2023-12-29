@@ -17,16 +17,9 @@ spec:
         image: "ghcr.io/home-assistant/home-assistant:stable"
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 8123
-        volumeMounts:
-        - mountPath: /config
-          name: config
-        - mountPath: /config/configuration.yaml
-          subPath: configuration.yaml
-          name: configmap-file
-        - mountPath: /config/automations.yaml
-          subPath: automations.yaml
-          name: configmap-file        
+          - name: http
+            containerPort: 8123
+            protocol: TCP
         securityContext:
           privileged: true
           capabilities:
@@ -36,10 +29,11 @@ spec:
               - SYS_ADMIN
       hostNetwork: true
       restartPolicy: Always
+        volumeMounts:
+          - name: ha-config-root
+            mountPath: /config
+      restartPolicy: Always
       volumes:
-      - name: config
-        persistentVolumeClaim:
-          claimName: home-assistant-pvc
-      - name: configmap-file
-        configMap:
-          name: home-assistant-configmap
+        - name: ha-config-root
+          persistentVolumeClaim:
+            claimName: home-assistant-config-root
