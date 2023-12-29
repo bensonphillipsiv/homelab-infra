@@ -1,15 +1,9 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  labels:
-    app: home-assistant
   name: home-assistant
 spec:
-  revisionHistoryLimit: 3
   replicas: 1
-  strategy:
-    type: Recreate
   selector:
     matchLabels:
       app: home-assistant
@@ -18,56 +12,34 @@ spec:
       labels:
         app: home-assistant
     spec:
-      hostnetwork: true
-      # securityContext:
-      #   capabilities:
-      #     add:
-      #       - NET_ADMIN
-      #       - NET_RAW
-      #       - NET_BROADCAST
-      securityContext:
-        fsGroup: 33
-        fsGroupChangePolicy: "OnRootMismatch"
       containers:
-      - name: home-assistant-app
+      - name: home-assistant
         image: "ghcr.io/home-assistant/home-assistant:2022.12.1"
         imagePullPolicy: IfNotPresent
-        securityContext:
-          privileged: null
-        envFrom:
-          - configMapRef:
-              name: home-assistant-config
         ports:
-          - name: http
-            containerPort: 8123
-            protocol: TCP
-        resources: {}
-        livenessProbe:
-          tcpSocket:
-            port: 8123
-          initialDelaySeconds: 0
-          failureThreshold: 3
-          timeoutSeconds: 1
-          periodSeconds: 10
-        readinessProbe:
-          tcpSocket:
-            port: 8123
-          initialDelaySeconds: 0
-          failureThreshold: 3
-          timeoutSeconds: 1
-          periodSeconds: 10
-        startupProbe:
-          tcpSocket:
-            port: 8123
-          initialDelaySeconds: 0
-          failureThreshold: 30
-          timeoutSeconds: 1
-          periodSeconds: 5
+        - containerPort: 8123
         volumeMounts:
-          - name: ha-config-root
-            mountPath: /config
+        - mountPath: /config
+          name: config
+        - mountPath: /config/configuration.yaml
+          subPath: configuration.yaml
+          name: configmap-file
+        - mountPath: /config/automations.yaml
+          subPath: automations.yaml
+          name: configmap-file        
+        securityContext:
+          privileged: true
+          capabilities:
+            add:
+              - NET_ADMIN
+              - NET_RAW
+              - SYS_ADMIN
+      hostNetwork: true
       restartPolicy: Always
       volumes:
-        - name: ha-config-root
-          persistentVolumeClaim:
-            claimName: home-assistant-config-root
+      - name: config
+        persistentVolumeClaim:
+          claimName: home-assistant-config-root
+      - name: configmap-file
+        configMap:
+          name: home-assistant-configmap
