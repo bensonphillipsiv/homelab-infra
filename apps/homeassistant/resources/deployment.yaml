@@ -25,9 +25,9 @@ spec:
       #       - NET_ADMIN
       #       - NET_RAW
       #       - NET_BROADCAST
-     securityContext:
-       fsGroup: 33
-       fsGroupChangePolicy: "OnRootMismatch"
+      securityContext:
+        fsGroup: 33
+        fsGroupChangePolicy: "OnRootMismatch"
       containers:
       - name: home-assistant-app
         image: "ghcr.io/home-assistant/home-assistant:2022.12.1"
