@@ -9,14 +9,14 @@ spec:
     - chart: longhorn
       repoURL: 'https://charts.longhorn.io'
       targetRevision: 1.5.3
-      helm:
-        parameters:
-          - name: 'ingress.enabled'
-            value: 'true'
-          - name: 'ingress.host'
-            value: 'longhorn.local'
-          - name: 'ingress.ingressClassName'
-            value: 'nginx'
+      # helm:
+      #   parameters:
+      #     - name: 'ingress.enabled'
+      #       value: 'true'
+      #     - name: 'ingress.host'
+      #       value: 'longhorn.local'
+      #     - name: 'ingress.ingressClassName'
+      #       value: 'nginx'
     - repoURL: 'https://github.com/bensonphillipsiv/home-infra'
       path: apps/longhorn/resources
   destination:
