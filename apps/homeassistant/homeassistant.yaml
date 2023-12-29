@@ -9,7 +9,7 @@ spec:
     - repoURL: 'https://github.com/bensonphillipsiv/home-infra'
       path: apps/homeassistant/resources
       directory:
-        include: '{kustomization.yaml}'
+        include: '{ kustomization.yaml }'
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: homeassistant
