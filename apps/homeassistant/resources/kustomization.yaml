@@ -5,6 +5,7 @@ resources:
   - ingress.yaml
   - persistent-volume-claim.yaml
   - service.yaml
+  - configmap.yaml
 configMapGenerator:
   - name: home-assistant-config
     literals:
