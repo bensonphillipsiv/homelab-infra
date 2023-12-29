@@ -11,8 +11,8 @@ spec:
       targetRevision: 1.5.3
       helm:
         values:
-    # - repoURL: 'https://github.com/bensonphillipsiv/home-infra'
-    #   path: apps/longhorn/resources
+    - repoURL: 'https://github.com/bensonphillipsiv/home-infra'
+      path: apps/longhorn/resources
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: longhorn
