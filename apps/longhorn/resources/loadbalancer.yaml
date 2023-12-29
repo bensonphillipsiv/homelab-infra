@@ -4,7 +4,9 @@ metadata:
   name: longhorn
 spec:
   selector:
-    app: my-app
+    app.kubernetes.io/component: controller
+    app.kubernetes.io/instance: ingress-nginx
+    app.kubernetes.io/name: ingress-nginx
   ports:
     - protocol: TCP
       port: 80
