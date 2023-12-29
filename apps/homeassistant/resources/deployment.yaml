@@ -21,10 +21,10 @@ spec:
       hostnetwork: true
       securityContext:
         capabilities:
-        add:
-          - NET_ADMIN
-          - NET_RAW
-          - NET_BROADCAST
+          add:
+            - NET_ADMIN
+            - NET_RAW
+            - NET_BROADCAST
 #      securityContext:
 #        fsGroup: 33
 #        fsGroupChangePolicy: "OnRootMismatch"
