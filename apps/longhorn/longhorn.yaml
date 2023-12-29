@@ -15,6 +15,8 @@ spec:
             value: 'true'
           - name: 'ingress.host'
             value: 'longhorn.local'
+          - name: 'ingress.ingressClassName'
+            value: 'nginx'
     - repoURL: 'https://github.com/bensonphillipsiv/home-infra'
       path: apps/longhorn/resources
   destination:
