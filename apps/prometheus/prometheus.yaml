@@ -1,0 +1,41 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prometheus
+  namespace: prometheus
+spec:
+  project: default
+  source:
+    chart: prometheus-community/prometheus
+    repoURL: 'https://prometheus-community.github.io/helm-charts'
+    targetRevision: 5.15.3
+    # helm:
+    #   values: |
+    #     server:
+    #       ingress:
+    #         enabled: true
+    #         hosts: 
+    #           - argocd.local
+    #         annotations: {
+    #           "nginx.ingress.kubernetes.io/force-ssl-redirect":"true",
+    #           "nginx.ingress.kubernetes.io/ssl-passthrough":"true"
+    #         }
+    #         ingressClassName: "nginx-system"
+    #         paths: 
+    #           - /
+    #         pathType: Prefix
+    #         extraPaths:
+    #           - path: /*
+    #             pathType: Prefix
+    #             backend:
+    #               service:
+    #                 name: argocd-server
+    #                 port:
+    #                   name: https
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: prometheus
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
