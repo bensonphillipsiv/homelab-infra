@@ -33,8 +33,6 @@ spec:
           - configMapRef:
               name: home-assistant-config
         volumeMounts:
-          - name: ha-config-root
-            mountPath: /config
           - mountPath: /config/configuration.yaml
             subPath: configuration.yaml
             name: ha-config-root   
