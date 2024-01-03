@@ -1,0 +1,43 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: grafana
+  namespace: argocd
+spec:
+  project: default
+  source:
+    chart: pyroscope
+    repoURL: 'https://grafana.github.io/helm-charts'
+    targetRevision: 1.3.2
+    # helm:
+    #   values: |
+    #     server:
+    #       ingress:
+    #         enabled: true
+    #         hosts: 
+    #           - argocd.local
+    #         annotations: {
+    #           "nginx.ingress.kubernetes.io/force-ssl-redirect":"true",
+    #           "nginx.ingress.kubernetes.io/ssl-passthrough":"true"
+    #         }
+    #         ingressClassName: "nginx-system"
+    #         paths: 
+    #           - /
+    #         pathType: Prefix
+    #         extraPaths:
+    #           - path: /*
+    #             pathType: Prefix
+    #             backend:
+    #               service:
+    #                 name: argocd-server
+    #                 port:
+    #                   name: https
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: grafana
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
