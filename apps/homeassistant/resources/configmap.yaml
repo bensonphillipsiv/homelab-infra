@@ -13,4 +13,4 @@ data:
     http:
       use_x_forwarded_for: true
       trusted_proxies:
-        - 10.42.0.11
+        - 192.168.1.150
