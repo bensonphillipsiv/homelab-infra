@@ -29,18 +29,18 @@ spec:
               - NET_ADMIN
               - NET_RAW
               - SYS_ADMIN
-        envFrom:
-          - configMapRef:
-              name: home-assistant-config
         volumeMounts:
           - name: ha-config-root
             mountPath: /config
           - mountPath: /config/configuration.yaml
             subPath: configuration.yaml
-            name: ha-config-root   
+            name: ha-config-file  
       volumes:
         - name: ha-config-root
           persistentVolumeClaim:
-            claimName: home-assistant-config-root
+            claimName: home-assistant
+        - name: ha-config-file
+          configMap:
+            name: home-assistant
 
             # figure out the config map issue so you can add trusted proxy
