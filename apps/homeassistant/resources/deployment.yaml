@@ -12,7 +12,7 @@ spec:
       labels:
         app: home-assistant
     spec:
-      hostNetwork: true
+      hostNetwork: false
       restartPolicy: Always
       containers:
       - name: home-assistant
