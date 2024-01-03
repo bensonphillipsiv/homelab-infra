@@ -42,3 +42,5 @@ spec:
         - name: ha-config-root
           persistentVolumeClaim:
             claimName: home-assistant-config-root
+
+            # figure out the config map issue so you can add trusted proxy
