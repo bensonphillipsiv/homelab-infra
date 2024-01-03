@@ -8,4 +8,4 @@ resources:
 - cert-manager/cert-manager.yaml
 - longhorn/longhorn.yaml
 - homeassistant/homeassistant.yaml
-# - prometheus/prometheus.yaml
+- prometheus/prometheus.yaml
