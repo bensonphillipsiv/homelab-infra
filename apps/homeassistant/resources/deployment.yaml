@@ -42,5 +42,3 @@ spec:
         - name: ha-config-file
           configMap:
             name: home-assistant
-
-            # figure out the config map issue so you can add trusted proxy
