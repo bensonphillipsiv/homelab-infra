@@ -9,3 +9,4 @@ resources:
 - longhorn/longhorn.yaml
 - homeassistant/homeassistant.yaml
 - prometheus/prometheus.yaml
+- grafana/grafana.yaml
