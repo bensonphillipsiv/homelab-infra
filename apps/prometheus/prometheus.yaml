@@ -6,9 +6,10 @@ metadata:
 spec:
   project: default
   source:
-    chart: kube-state-metrics
+    # chart: kube-state-metrics
+    chart: kube-prometheus-stack
     repoURL: 'https://prometheus-community.github.io/helm-charts'
-    targetRevision: 5.15.3
+    targetRevision: 55.5.1
     # helm:
     #   values: |
     #     server:
