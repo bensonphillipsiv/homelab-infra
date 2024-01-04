@@ -14,6 +14,26 @@ spec:
         persistence:
           enabled: true
           size: 1Gi
+        values: |
+        ingress:
+          enabled: true
+          annotations: {
+            kubernetes.io/ingress.class: "nginx",
+            ingress.kubernetes.io/rewrite-target: /
+          }
+          hosts: 
+            - grafana.local
+          ingressClassName: 'nginx'
+          path: /
+          pathType: Prefix
+          extraPaths:
+            - path: /
+              pathType: Prefix
+              backend:
+                service:
+                  name: grafana
+                  port:
+                    number: 80
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: grafana
