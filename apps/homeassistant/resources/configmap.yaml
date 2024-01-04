@@ -18,5 +18,5 @@ data:
       nodered:
         title: Node-RED
         icon: mdi:lan
-        url: https://node-red.local
+        url: https://localhost:8180
         require_admin: true
