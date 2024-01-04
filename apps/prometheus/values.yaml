@@ -23,7 +23,7 @@ server:
               number: 80
 
 extraScrapeConfigs: |
-  - job_name: kubernetes-nodes-cadvisor
+  - job_name: kubernetes-cluster
     scrape_interval: 10s
     scrape_timeout: 10s
     scheme: https  # remove if you want to scrape metrics on insecure port
