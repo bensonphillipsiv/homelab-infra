@@ -12,7 +12,7 @@ data:
       trusted_proxies:
         - 192.168.1.0/24
         - 172.20.0.0/24
-        - 10.42.2.72
+        - 10.42.0.0/16
     panel_iframe:
       nodered:
         title: Node-RED
