@@ -13,6 +13,8 @@ spec:
       parameters:
       - name: defaultBackend.enabled
         value: 'false'
+      - name: controller.replicaCount
+        value: '2'
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: kube-system
