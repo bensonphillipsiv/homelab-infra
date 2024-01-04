@@ -22,7 +22,7 @@ spec:
             }
             hosts: 
               - prometheus.local
-            ingressClassName: 'nginx-system'
+            ingressClassName: 'nginx'
             path: /
             pathType: Prefix
             extraPaths:
