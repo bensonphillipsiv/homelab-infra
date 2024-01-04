@@ -5,3 +5,6 @@ resources:
   - ingress.yaml
   - pvc.yaml
   - service.yaml
+  - rb.yaml
+  - role.yaml
+  - serviceaccount.yaml
