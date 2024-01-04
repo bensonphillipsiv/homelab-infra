@@ -29,8 +29,6 @@ spec:
           - name: http
             containerPort: 1880
             protocol: TCP
-        securityContext:
-          privileged: true
         resources:
           limits:
             cpu: 500m
