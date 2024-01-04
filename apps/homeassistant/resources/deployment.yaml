@@ -18,6 +18,7 @@ spec:
       - ip: 192.168.1.150
         hostnames:
         - 'node-red.local'
+      securityContext:
       containers:
       - name: home-assistant
         image: "ghcr.io/home-assistant/home-assistant:stable"
