@@ -11,6 +11,9 @@ spec:
     targetRevision: 0.29.0
     server: 'https://kubernetes.default.svc'
     namespace: node-red
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: grafana
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
