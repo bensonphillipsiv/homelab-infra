@@ -1,6 +1,6 @@
 alertmanager:
   enabled: false
-  
+
 server:
   ingress:
     enabled: true
@@ -22,8 +22,7 @@ server:
             port:
               number: 80
 
-extraScrapeConfigs:
-  scrape_configs:
+extraScrapeConfigs: |
   - job_name: kubernetes-nodes-cadvisor
     scrape_interval: 10s
     scrape_timeout: 10s
