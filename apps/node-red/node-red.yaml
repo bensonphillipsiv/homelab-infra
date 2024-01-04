@@ -5,23 +5,14 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  source:
-    chart: node-red
-    repoURL: 'https://schwarzit.github.io/node-red-chart/'
-    targetRevision: 0.29.0
-    helm:
-      values: |
-        persistence:
-          enabled: true
-          size: 1Gi
-        ingress:
-          enabled: true
-          className: nginx
-          hosts: 
-            - host: node-red.local
-              paths:
-                - path: /
-                  pathType: Prefix
+  sources:
+    - repoURL: 'https://github.com/bensonphillipsiv/home-infra'
+      path: apps/node-red/resources
+      kustomize:
+        commonLabels: {
+          app.kubernetes.io/name: home-assistant,
+          app: home-assistant
+        }
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: node-red

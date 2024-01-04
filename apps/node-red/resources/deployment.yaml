@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-red
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-red
+  template:
+    metadata:
+      labels:
+        app: node-red
+    spec:
+      restartPolicy: Always
+      hostAliases:
+      - ip: 192.168.1.150
+        hostnames:
+        - 'homeassistant.local'
+      containers:
+      - name: node-red
+        image: "nodered/node-red:2.2.3"
+        imagePullPolicy: IfNotPresent
+        ports:
+          - name: http
+            containerPort: 1880
+            protocol: TCP
+        volumeMounts:
+          - name: node-red-pvc
+            mountPath: /data
+      volumes:
+        - name: node-red-pvc
+          persistentVolumeClaim:
+            claimName: node-red
