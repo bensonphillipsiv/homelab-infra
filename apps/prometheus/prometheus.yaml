@@ -15,7 +15,7 @@ spec:
           ingress:
             enabled: true
             annotations: {
-              kubernetes.io/ingress.class: "nginx"
+              kubernetes.io/ingress.class: "nginx",
               ingress.kubernetes.io/rewrite-target: /
             }
             hosts: 
