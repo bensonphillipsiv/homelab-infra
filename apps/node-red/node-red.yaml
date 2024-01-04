@@ -10,7 +10,6 @@ spec:
     repoURL: 'https://schwarzit.github.io/node-red-chart/'
     targetRevision: 0.29.0
     server: 'https://kubernetes.default.svc'
-    namespace: node-red
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: node-red
