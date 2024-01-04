@@ -9,6 +9,24 @@ spec:
     chart: prometheus
     repoURL: 'https://prometheus-community.github.io/helm-charts'
     targetRevision: 25.8.2
+    helm:
+      values: |
+        server:
+          ingress:
+            enabled: true
+            hosts: 
+              - prometheus.local
+            ingressClassName: 'nginx-system'
+            paths: /
+            pathType: Prefix
+            extraPaths:
+              - path: /*
+                pathType: Prefix
+                backend:
+                  service:
+                    name: prometheus-server
+                    port:
+                      name: http
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: prometheus

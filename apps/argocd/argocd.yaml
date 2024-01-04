@@ -9,29 +9,6 @@ spec:
     chart: argo-cd
     repoURL: 'https://argoproj.github.io/argo-helm'
     targetRevision: 5.51.6
-    # helm:
-    #   values: |
-    #     server:
-    #       ingress:
-    #         enabled: true
-    #         hosts: 
-    #           - argocd.local
-    #         annotations: {
-    #           "nginx.ingress.kubernetes.io/force-ssl-redirect":"true",
-    #           "nginx.ingress.kubernetes.io/ssl-passthrough":"true"
-    #         }
-    #         ingressClassName: "nginx-system"
-    #         paths: 
-    #           - /
-    #         pathType: Prefix
-    #         extraPaths:
-    #           - path: /*
-    #             pathType: Prefix
-    #             backend:
-    #               service:
-    #                 name: argocd-server
-    #                 port:
-    #                   name: https
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: argocd
