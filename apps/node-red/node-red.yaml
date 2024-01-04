@@ -10,8 +10,8 @@ spec:
       path: apps/node-red/resources
       kustomize:
         commonLabels: {
-          app.kubernetes.io/name: home-assistant,
-          app: home-assistant
+          app.kubernetes.io/name: node-red,
+          app: node-red
         }
   destination:
     server: 'https://kubernetes.default.svc'
