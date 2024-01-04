@@ -10,4 +10,4 @@ resources:
 - homeassistant/homeassistant.yaml
 - prometheus/prometheus.yaml
 - grafana/grafana.yaml
-- node-red/node-red.yaml
+# - node-red/node-red.yaml
