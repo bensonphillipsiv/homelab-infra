@@ -11,6 +11,8 @@ spec:
     targetRevision: 25.8.2
     helm:
       values: |
+        alertmanager:
+          enabled: false
         server:
           ingress:
             enabled: true
