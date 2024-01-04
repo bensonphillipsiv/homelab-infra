@@ -25,6 +25,13 @@ spec:
           - name: http
             containerPort: 1880
             protocol: TCP
+        env:
+            - name: TZ
+              value: America/Chicago
+            - name: PGID
+              value: "1000"
+            - name: PUID
+              value: "1000"
         volumeMounts:
           - name: node-red-pvc
             mountPath: /data
