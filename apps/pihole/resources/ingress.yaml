@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: pihole
+  namespace: pihole
+  annotations:
+    kubernetes.io/ingress.ingressClassName: "nginx"
+    ingress.kubernetes.io/rewrite-target: /admin
+spec:
+  ingressClassName: "nginx"
+  rules:
+  - host: pihole.local  # Replace with your domain
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: pihole-web
+            port:
+              name: http
