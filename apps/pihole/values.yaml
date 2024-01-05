@@ -13,7 +13,7 @@ image:
 # -- Configuration for the DNS service on port 53
 serviceDns:
   # -- deploys a mixed (TCP + UDP) Service instead of separate ones
-  mixedService: false
+  mixedService: true
 
   # -- `spec.type` for the DNS Service
   type: LoadBalancer
