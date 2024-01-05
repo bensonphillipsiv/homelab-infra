@@ -21,7 +21,7 @@ spec:
             ingress.kubernetes.io/rewrite-target: /
           }
           hosts: 
-            - grafana.network
+            - grafana.internal
           ingressClassName: 'nginx'
           path: /
           pathType: Prefix
