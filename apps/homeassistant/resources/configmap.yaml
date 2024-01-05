@@ -19,3 +19,8 @@ data:
         icon: mdi:lan
         url: http://node-red.internal
         require_admin: true
+      esphome:
+        title: ESP-Home
+        icon: mdi:chip
+        url: http://esphome.internal
+        require_admin: true
