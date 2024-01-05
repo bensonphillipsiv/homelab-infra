@@ -22,7 +22,7 @@ spec:
         - name: http
           containerPort: 6052
           protocol: TCP
-      volumeMounts:
+        volumeMounts:
           - name: config
             mountPath: /config 
       volumes:
