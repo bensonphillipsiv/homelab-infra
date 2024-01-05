@@ -118,10 +118,11 @@ ingress:
   ingressClassName: nginx
 
   # -- Annotations for the ingress
-  # annotations: {nginx.ingress.kubernetes.io/rewrite-target: /admin}
+  annotations: { nginx.ingress.kubernetes.io/rewrite-target: /admin }
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   path: /
+  pathType: Prefix
   hosts:
     # virtualHost (default value is pi.hole) will be appended to the hosts
     - pihole.local
