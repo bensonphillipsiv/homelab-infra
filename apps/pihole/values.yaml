@@ -10,10 +10,6 @@ image:
   # -- the pull policy
   pullPolicy: IfNotPresent
 
-# -- set this to true to enable creation of DualStack services or creation of separate IPv6 services if `serviceDns.type` is set to `"LoadBalancer"`
-dualStack:
-  enabled: true
-
 # -- Configuration for the DNS service on port 53
 serviceDns:
   # -- deploys a mixed (TCP + UDP) Service instead of separate ones
