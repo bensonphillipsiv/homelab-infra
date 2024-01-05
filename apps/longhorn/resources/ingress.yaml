@@ -11,7 +11,7 @@ metadata:
 spec:
   ingressClassName: "nginx"
   rules:
-    - host: longhorn.network
+    - host: longhorn.internal
       http:
         paths:
           - backend:

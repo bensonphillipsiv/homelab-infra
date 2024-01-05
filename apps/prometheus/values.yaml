@@ -9,7 +9,7 @@ server:
       ingress.kubernetes.io/rewrite-target: /
     }
     hosts: 
-      - prometheus.network
+      - prometheus.internal
     ingressClassName: 'nginx'
     path: /
     pathType: Prefix

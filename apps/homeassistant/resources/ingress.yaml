@@ -9,7 +9,7 @@ metadata:
 spec:
   ingressClassName: "nginx"
   rules:
-    - host: homeassistant.network
+    - host: homeassistant.internal
       http:
         paths:
         - path: /

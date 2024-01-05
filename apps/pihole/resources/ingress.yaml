@@ -9,7 +9,7 @@ metadata:
 spec:
   ingressClassName: "nginx"
   rules:
-  - host: pihole.network  # Replace with your domain
+  - host: pihole.internal  # Replace with your domain
     http:
       paths:
       - path: /
