@@ -22,8 +22,13 @@ spec:
           protocol: TCP
         volumeMounts:
           - name: config
-            mountPath: /config 
+            mountPath: /config
+          - name: cache
+            mountPath: /cache
       volumes:
         - name: config
           persistentVolumeClaim:
             claimName: esphome
+        - name: cache
+          persistentVolumeClaim:
+            claimName: esphome-cache
