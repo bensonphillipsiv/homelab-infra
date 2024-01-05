@@ -16,7 +16,7 @@ serviceDns:
   mixedService: false
 
   # -- `spec.type` for the DNS Service
-  type: NodePort
+  type: LoadBalancer
 
   # -- The port of the DNS service
   port: 53
@@ -28,7 +28,7 @@ serviceDns:
   externalTrafficPolicy: Local
 
   # -- A fixed `spec.loadBalancerIP` for the DNS Service
-  loadBalancerIP: ""
+  loadBalancerIP: "192.168.1.100"
   # -- A fixed `spec.loadBalancerIP` for the IPv6 DNS Service
   loadBalancerIPv6: ""
 
