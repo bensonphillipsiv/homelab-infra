@@ -12,3 +12,4 @@ resources:
 - grafana/grafana.yaml
 - node-red/node-red.yaml
 - pihole/pihole.yaml
+- esphome/esphome.yaml
