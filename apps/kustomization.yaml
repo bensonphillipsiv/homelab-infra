@@ -11,3 +11,4 @@ resources:
 - prometheus/prometheus.yaml
 - grafana/grafana.yaml
 - node-red/node-red.yaml
+- pihole/pihole.yaml
