@@ -14,10 +14,6 @@ spec:
     spec:
       hostNetwork: false
       restartPolicy: Always
-      hostAliases:
-      - ip: 192.168.1.150
-        hostnames:
-        - 'node-red.internal'
       securityContext:
       containers:
       - name: home-assistant
