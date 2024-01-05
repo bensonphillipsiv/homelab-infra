@@ -8,12 +8,8 @@ metadata:
     ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: "nginx"
-  # tls:
-  #   - hosts:
-  #       - homeassistant.local
-  #     secretName: homeassistant.local-production-secret
   rules:
-    - host: homeassistant.local
+    - host: homeassistant.home
       http:
         paths:
         - path: /
