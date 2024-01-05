@@ -1,8 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: esphome-deployment
-  labels:
+  name: esphome
     app: esphome
 spec:
   replicas: 1
