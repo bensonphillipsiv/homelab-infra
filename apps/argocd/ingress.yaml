@@ -12,7 +12,7 @@ metadata:
 spec:
   ingressClassName: "nginx"
   rules:
-  - host: argocd.local  # Replace with your domain
+  - host: argocd.network  # Replace with your domain
     http:
       paths:
       - path: /
