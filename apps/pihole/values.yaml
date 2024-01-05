@@ -9,7 +9,7 @@ image:
   tag: ""
   # -- the pull policy
   pullPolicy: IfNotPresent
-  
+
 # -- set this to true to enable creation of DualStack services or creation of separate IPv6 services if `serviceDns.type` is set to `"LoadBalancer"`
 dualStack:
   enabled: true
@@ -45,7 +45,7 @@ serviceDns:
 # -- Configuration for the DHCP service on port 67
 serviceDhcp:
   # -- Generate a Service resource for DHCP traffic
-  enabled: true
+  enabled: false
 
   # -- `spec.type` for the DHCP Service
   type: NodePort
