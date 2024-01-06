@@ -9,7 +9,7 @@ metadata:
 spec:
   ingressClassName: "nginx"
   rules:
-    - host: homeassistant.internal
+    - host: homeassistant.bensonphillips.dev
       http:
         paths:
         - path: /
