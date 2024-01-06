@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: homarr
+  namespace: argocd
+spec:
+  project: default
+  sources:
+    - repoURL: 'https://github.com/bensonphillipsiv/home-infra'
+      path: apps/homarr/resources
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: homarr
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
