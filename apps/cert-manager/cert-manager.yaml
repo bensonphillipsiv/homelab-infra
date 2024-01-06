@@ -14,7 +14,7 @@ spec:
         - name: installCRDs
           value: 'true'
     - repoURL: 'https://github.com/bensonphillipsiv/home-infra'
-      path: apps/homeassistant/resources
+      path: apps/cert-manager/resources
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: cert-manager
