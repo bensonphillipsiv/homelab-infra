@@ -14,7 +14,6 @@ spec:
     spec:
       hostNetwork: false
       restartPolicy: Always
-      securityContext:
       containers:
       - name: home-assistant
         image: "ghcr.io/home-assistant/home-assistant:stable"
