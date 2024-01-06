@@ -16,13 +16,16 @@ spec:
       - name: esphome
         image: ghcr.io/esphome/esphome:2023.12.5
         imagePullPolicy: IfNotPresent
-        securityContext:
-          privileged: true
-          capabilities:
-            add:
-              - NET_ADMIN
-              - NET_RAW
-              - SYS_ADMIN
+        env:
+          - name: ESPHOME_DASHBOARD_USE_PING
+            value: "true"
+        # securityContext:
+        #   privileged: true
+        #   capabilities:
+        #     add:
+        #       - NET_ADMIN
+        #       - NET_RAW
+        #       - SYS_ADMIN
         ports:
         - name: http
           containerPort: 6052
