@@ -5,14 +5,16 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  source:
-    chart: cert-manager
-    repoURL: 'https://charts.jetstack.io'
-    targetRevision: 1.13.3
-    helm:
-      parameters:
-      - name: installCRDs
-        value: 'true'
+  sources:
+    - chart: cert-manager
+      repoURL: 'https://charts.jetstack.io'
+      targetRevision: 1.13.3
+      helm:
+        parameters:
+        - name: installCRDs
+          value: 'true'
+    - repoURL: 'https://github.com/bensonphillipsiv/home-infra'
+      path: apps/homeassistant/resources
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: cert-manager
