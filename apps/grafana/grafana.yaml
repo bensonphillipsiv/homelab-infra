@@ -18,10 +18,16 @@ spec:
           enabled: true
           annotations: {
             kubernetes.io/ingress.class: "nginx",
-            ingress.kubernetes.io/rewrite-target: /
+            ingress.kubernetes.io/rewrite-target: /.
+            cert-manager.io/cluster-issuer: letsencrypt,
+            kubernetes.io/tls-acme: "true"
           }
+          tls:
+            - hosts:
+              - grafana.bensonphillips.dev
+              secretName: letsencrypt
           hosts: 
-            - grafana.internal
+            - grafana.bensonphillips.dev
           ingressClassName: 'nginx'
           path: /
           pathType: Prefix

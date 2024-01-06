@@ -6,7 +6,13 @@ metadata:
   annotations:
     kubernetes.io/ingress.ingressClassName: "nginx"
     ingress.kubernetes.io/rewrite-target: /admin
+    cert-manager.io/cluster-issuer: letsencrypt
+    kubernetes.io/tls-acme: "true"
 spec:
+  tls:
+    - hosts:
+      - pihole.bensonphillips.dev
+      secretName: letsencrypt
   ingressClassName: "nginx"
   rules:
   - host: pihole.internal  # Replace with your domain

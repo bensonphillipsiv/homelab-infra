@@ -1,14 +1,18 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  annotations: null
-  labels:
+  name: longhorn-ingress
+  annotations:
     app: longhorn-ingress
     app.kubernetes.io/instance: longhorn
     app.kubernetes.io/name: longhorn
-  name: longhorn-ingress
-  namespace: longhorn
+    cert-manager.io/cluster-issuer: letsencrypt
+    kubernetes.io/tls-acme: "true"
 spec:
+  tls:
+    - hosts:
+      - longhorn.bensonphillips.dev
+      secretName: letsencrypt
   ingressClassName: "nginx"
   rules:
     - host: longhorn.internal
