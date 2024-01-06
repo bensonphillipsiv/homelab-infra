@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: "nginx"
   rules:
-    - host: node-red.bensonphillips.dev
+    - host: node-red.123rt.dev
       http:
         paths:
         - path: /
