@@ -16,7 +16,9 @@ spec:
       - name: homarr
         image: ghcr.io/ajnart/homarr:0.14.3
         ports:
-        - containerPort: 7575
+        - name: http
+          containerPort: 7575
+          protocol: TCP
         volumeMounts:
           - name: storage
             mountPath: /app/data/configs
