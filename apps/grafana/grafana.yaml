@@ -6,11 +6,30 @@ metadata:
 spec:
   project: default
   sources:
+    - repoURL: 'https://github.com/bensonphillipsiv/home-infra'
+      path: apps/grafana/resources
     - chart: grafana
       repoURL: 'https://grafana.github.io/helm-charts'
       targetRevision: 7.0.19
-    - repoURL: 'https://github.com/bensonphillipsiv/home-infra'
-      path: apps/grafana/resources
+      helm:
+        values: |
+          ingress:
+            enabled: true
+            annotations: {
+              kubernetes.io/ingress.class: "nginx",
+              ingress.kubernetes.io/rewrite-target: /.
+              cert-manager.io/cluster-issuer: letsencrypt,
+              kubernetes.io/tls-acme: "true"
+            }
+            ingressClassName: 'nginx'
+            path: /
+            pathType: Prefix
+            hosts: 
+              - grafana.bensonphillips.dev
+            tls:
+              - secretName: letsencrypt
+                hosts:
+                  - grafana.bensonphillips.dev
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: grafana
