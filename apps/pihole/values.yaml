@@ -125,7 +125,7 @@ ingress:
   pathType: Prefix
   hosts:
     # virtualHost (default value is pi.hole) will be appended to the hosts
-    - pihole.local
+    - pihole.bensonphillips.dev
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
