@@ -5,40 +5,12 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  source:
-    chart: grafana
-    repoURL: 'https://grafana.github.io/helm-charts'
-    targetRevision: 7.0.19
-    helm:
-      values: |
-        persistence:
-          enabled: true
-          size: 1Gi
-        ingress:
-          enabled: true
-          annotations: {
-            kubernetes.io/ingress.class: "nginx",
-            ingress.kubernetes.io/rewrite-target: /.
-            cert-manager.io/cluster-issuer: letsencrypt,
-            kubernetes.io/tls-acme: "true"
-          }
-          tls:
-            - hosts:
-              - grafana.bensonphillips.dev
-              secretName: letsencrypt
-          hosts: 
-            - grafana.bensonphillips.dev
-          ingressClassName: 'nginx'
-          path: /
-          pathType: Prefix
-          extraPaths:
-            - path: /
-              pathType: Prefix
-              backend:
-                service:
-                  name: grafana
-                  port:
-                    number: 80
+  sources:
+    - chart: grafana
+      repoURL: 'https://grafana.github.io/helm-charts'
+      targetRevision: 7.0.19
+    - repoURL: 'https://github.com/bensonphillipsiv/home-infra'
+      path: apps/esphome/resources
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: grafana
