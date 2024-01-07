@@ -10,7 +10,7 @@ spec:
       repoURL: 'https://grafana.github.io/helm-charts'
       targetRevision: 7.0.19
     - repoURL: 'https://github.com/bensonphillipsiv/home-infra'
-      path: apps/esphome/resources
+      path: apps/grafana/resources
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: grafana
