@@ -15,7 +15,7 @@ spec:
       secretName: letsencrypt
   ingressClassName: "nginx"
   rules:
-  - host: pihole.internal  # Replace with your domain
+  - host: pihole.bensonphillips.dev
     http:
       paths:
       - path: /

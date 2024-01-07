@@ -18,7 +18,7 @@ spec:
       secretName: letsencrypt
   ingressClassName: "nginx"
   rules:
-  - host: argocd.internal  # Replace with your domain
+  - host: argocd.bensonphillips.dev
     http:
       paths:
       - path: /

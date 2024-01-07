@@ -15,7 +15,7 @@ spec:
       secretName: letsencrypt
   ingressClassName: "nginx"
   rules:
-    - host: longhorn.internal
+    - host: longhorn.bensonphillips.dev
       http:
         paths:
           - backend:

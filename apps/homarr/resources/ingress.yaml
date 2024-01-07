@@ -15,7 +15,7 @@ spec:
       secretName: letsencrypt
   ingressClassName: "nginx"
   rules:
-    - host: homarr.internal
+    - host: homarr.bensonphillips.dev
       http:
         paths:
         - path: /
