@@ -14,6 +14,8 @@ spec:
         - $values/apps/prometheus/values.yaml
     - repoURL: 'https://github.com/bensonphillipsiv/home-infra'
       ref: values
+    - repoURL: 'https://github.com/bensonphillipsiv/home-infra'
+      path: apps/prometheus/resources
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: prometheus
