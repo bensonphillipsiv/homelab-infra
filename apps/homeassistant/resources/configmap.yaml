@@ -17,10 +17,10 @@ data:
       nodered:
         title: Node-RED
         icon: mdi:lan
-        url: http://node-red.bensonphillips.dev
+        url: https://node-red.bensonphillips.dev
         require_admin: true
       esphome:
         title: ESP-Home
         icon: mdi:chip
-        url: http://esphome.bensonphillips.dev
+        url: https://esphome.bensonphillips.dev
         require_admin: true
