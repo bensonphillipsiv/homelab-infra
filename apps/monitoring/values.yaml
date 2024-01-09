@@ -171,7 +171,11 @@ prometheus:
     storageSpec:
         volumeClaimTemplate:
           spec:
-            volumeName: prometheus
+            volumeName: monitoring
+            accessModes: ["ReadWriteOnce"]
+            resources:
+              requests:
+                storage: 10Gi
 
 thanosRuler:
   enabled: false
