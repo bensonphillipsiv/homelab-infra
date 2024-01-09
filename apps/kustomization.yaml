@@ -14,3 +14,4 @@ resources:
 # - pihole/pihole.yaml
 - esphome/esphome.yaml
 - homarr/homarr.yaml
+- monitoring/monitoring.yaml
