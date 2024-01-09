@@ -170,9 +170,11 @@ prometheus:
     walCompression: true
     storageSpec:
         volumeClaimTemplate:
+          metadata:
+            name: monitoring-data
           spec:
-            volumeName: monitoring
             accessModes: ["ReadWriteOnce"]
+            storageClassName: longhorn
             resources:
               requests:
                 storage: 10Gi
