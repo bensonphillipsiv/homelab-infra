@@ -8,8 +8,8 @@ resources:
 - cert-manager/cert-manager.yaml
 - longhorn/longhorn.yaml
 - homeassistant/homeassistant.yaml
-- prometheus/prometheus.yaml
-- grafana/grafana.yaml
+# - prometheus/prometheus.yaml
+# - grafana/grafana.yaml
 - node-red/node-red.yaml
 # - pihole/pihole.yaml
 - esphome/esphome.yaml
