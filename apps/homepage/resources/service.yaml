@@ -1,16 +1,15 @@
----
 apiVersion: v1
 kind: Service
 metadata:
-  name: esphome
+  name: homepage
   labels:
-    app: esphome
+    app: hompage
 spec:
   type: ClusterIP
   ports:
-  - port: 6052
+  - port: 3000
     targetPort: http
     protocol: TCP
     name: http
   selector:
-    app: esphome  
+    app: homepage
