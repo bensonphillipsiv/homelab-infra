@@ -7,7 +7,7 @@ spec:
   project: default
   sources:
     - repoURL: 'https://github.com/bensonphillipsiv/home-infra'
-      path: apps/hompage/resources
+      path: apps/homepage/resources
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: homepage
