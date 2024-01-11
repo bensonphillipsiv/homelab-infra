@@ -22,40 +22,49 @@ data:
             href: http://192.168.1.100
             ping: http://192.168.1.100
             icon: proxmox
+            
         - Raspberry Pi:
             href: http://192.168.1.101
             ping: http://192.168.1.101
             icon: raspberrypi
+
         - Raspberry Pi:
             href: http://192.168.1.102
             ping: http://192.168.1.102
             icon: raspberrypi
+
         - Router
             href: http://192.168.1.1
             ping: http://192.168.1.1
             icon: watchyourlan
+
     - Services:
         - Home Assistant:
             href: homeassistant.bensonphillips.dev
             ping: homeassistant.bensonphillips.dev
             icon: home-assistant-alt
+
         - ESP Home
             href: esphome.bensonphillips.dev
             ping: esphome.bensonphillips.dev
             icon: esphome
+
         - Node Red
             href: node-red.bensonphillips.dev
             ping: node-red.bensonphillips.dev
             icon: node-red
+
     - Mangement
         - Argo CD
             href: argocd.bensonphillips.dev
             ping: argocd.bensonphillips.dev
             icon: argocd
+
         - Longhorn
             href: longhorn.bensonphillips.dev
             ping: longhorn.bensonphillips.dev
             icon: longhorn
+
     - Monitoring
         - Grafana
             href: grafana.bensonphillips.dev
