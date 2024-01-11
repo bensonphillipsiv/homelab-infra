@@ -181,10 +181,17 @@ prometheus:
                 storage: 10Gi
   ingress:
     enabled: true
+    ingressClassName: nginx
     annotations:
       kubernetes.io/ingress.class: "nginx"
       cert-manager.io/cluster-issuer: letsencrypt
       kubernetes.io/tls-acme: "true"
+    hosts:
+      - prometheus.bensonphillips.dev
+    tls:
+      - secretName: letsencrypt
+        hosts:
+          - prometheus.bensonphillips.dev   
 
 thanosRuler:
   enabled: false
