@@ -42,7 +42,7 @@ data:
             icon: home-assistant-alt
         - ESP Home:
             href: https://esphome.bensonphillips.dev
-            ping: http://esphome.esphome.svc.cluster.local:6052
+            ping: http://esphome.esphome.svc.cluster.local
             icon: esphome
         - Node Red:
             href: http://node-red.bensonphillips.dev
