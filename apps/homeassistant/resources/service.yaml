@@ -6,7 +6,7 @@ metadata:
     app: home-assistant
   name: home-assistant
 spec:
-  type: ClusterIP
+  clusterIP: None
   ports:
   - port: 8123
     targetPort: http
