@@ -18,46 +18,46 @@ data:
               href: https://github.com/bensonphillipsiv?tab=repositories
   services.yaml: |
     - Hardware:
-      - Beelink:
+        - Beelink:
           href: http://192.168.1.100
           ping: http://192.168.1.100
           icon: proxmox
-      - Raspberry Pi:
+        - Raspberry Pi:
           href: http://192.168.1.101
           ping: http://192.168.1.101
           icon: raspberrypi
-      - Raspberry Pi:
+        - Raspberry Pi:
           href: http://192.168.1.102
           ping: http://192.168.1.102
           icon: raspberrypi
-      - Router
+        - Router
           href: http://192.168.1.1
           ping: http://192.168.1.1
           icon: watchyourlan
     - Services:
-      - Home Assistant:
+        - Home Assistant:
           href: homeassistant.bensonphillips.dev
           ping: homeassistant.bensonphillips.dev
           icon: home-assistant-alt
-      - ESP Home
+        - ESP Home
           href: esphome.bensonphillips.dev
           ping: esphome.bensonphillips.dev
           icon: esphome
-      - Node Red
+        - Node Red
           href: node-red.bensonphillips.dev
           ping: node-red.bensonphillips.dev
           icon: node-red
     - Mangement
         - Argo CD
-            href: argocd.bensonphillips.dev
-            ping: argocd.bensonphillips.dev
-            icon: argocd
+          href: argocd.bensonphillips.dev
+          ping: argocd.bensonphillips.dev
+          icon: argocd
         - Longhorn
-            href: longhorn.bensonphillips.dev
-            ping: longhorn.bensonphillips.dev
-            icon: longhorn
+          href: longhorn.bensonphillips.dev
+          ping: longhorn.bensonphillips.dev
+          icon: longhorn
     - Monitoring
-      - Grafana
+        - Grafana
           href: grafana.bensonphillips.dev
           ping: grafana.bensonphillips.dev
           icon: grafana
