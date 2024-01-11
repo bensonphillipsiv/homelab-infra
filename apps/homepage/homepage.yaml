@@ -6,6 +6,9 @@ metadata:
 spec:
   project: default
   sources:
+    - chart: homepage
+      repoURL: 'https://jameswynn.github.io/helm-charts'
+      targetRevision: v0.8.4
     - repoURL: 'https://github.com/bensonphillipsiv/home-infra'
       path: apps/homepage/resources
   destination:

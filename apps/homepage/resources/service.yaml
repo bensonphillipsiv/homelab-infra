@@ -1,15 +1,15 @@
-apiVersion: v1
-kind: Service
-metadata:
-  name: homepage
-  labels:
-    app: hompage
-spec:
-  type: ClusterIP
-  ports:
-  - port: 3000
-    targetPort: http
-    protocol: TCP
-    name: http
-  selector:
-    app: homepage
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: homepage
+#   labels:
+#     app: hompage
+# spec:
+#   type: ClusterIP
+#   ports:
+#   - port: 3000
+#     targetPort: http
+#     protocol: TCP
+#     name: http
+#   selector:
+#     app: homepage

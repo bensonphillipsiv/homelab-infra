@@ -1,0 +1,13 @@
+ingress:
+  main:
+    enabled: true
+    annotations:
+      kubernetes.io/ingress.class: "nginx"
+      ingress.kubernetes.io/rewrite-target: /
+      cert-manager.io/cluster-issuer: letsencrypt
+      kubernetes.io/tls-acme: "true"
+    hosts:
+      - host: homepage.example.com
+        paths:
+          - path: /
+            pathType: Prefix
