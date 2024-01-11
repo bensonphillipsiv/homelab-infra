@@ -37,12 +37,12 @@ data:
             icon: watchyourlan
     - Services:
         - Home Assistant:
-            href: http://homeassistant.bensonphillips.dev
-            ping: http://homeassistant.bensonphillips.dev
+            href: https://homeassistant.bensonphillips.dev
+            ping: https://homeassistant.bensonphillips.dev
             icon: home-assistant-alt
         - ESP Home:
-            href: http://esphome.bensonphillips.dev
-            ping: http://esphome.bensonphillips.dev
+            href: https://esphome.bensonphillips.dev
+            ping: https://esphome.bensonphillips.dev
             icon: esphome
         - Node Red:
             href: http://node-red.bensonphillips.dev
