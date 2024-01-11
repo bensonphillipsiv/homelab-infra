@@ -22,13 +22,13 @@ data:
             href: http://192.168.1.100
             ping: http://192.168.1.100
             icon: proxmox
-            
-        - Raspberry Pi:
+
+        - Raspberry Pi 1:
             href: http://192.168.1.101
             ping: http://192.168.1.101
             icon: raspberrypi
 
-        - Raspberry Pi:
+        - Raspberry Pi 2:
             href: http://192.168.1.102
             ping: http://192.168.1.102
             icon: raspberrypi
