@@ -51,7 +51,7 @@ data:
     - Mangement:
         - Argo CD:
             href: http://argocd.bensonphillips.dev
-            ping: https://argocd.bensonphillips.dev:8080
+            ping: http://argocd.bensonphillips.dev:8080
             icon: argocd
         - Longhorn:
             href: http://longhorn.bensonphillips.dev
