@@ -5,7 +5,7 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  source:
+  sources:
     - repoURL: 'https://github.com/bensonphillipsiv/home-infra'
       path: apps/argocd/resources
   destination:
