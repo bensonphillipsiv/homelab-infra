@@ -38,7 +38,7 @@ data:
     - Services:
         - Home Assistant:
             href: https://homeassistant.bensonphillips.dev
-            ping: 10.43.175.133
+            ping: http://10.43.175.133
             icon: home-assistant-alt
         - ESP Home:
             href: https://esphome.bensonphillips.dev
