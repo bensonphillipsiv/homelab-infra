@@ -31,9 +31,9 @@ kind: Ingress
 metadata:
   name: prometheus
   annotations:
-    app: prometheus
-    app.kubernetes.io/instance: prometheus
-    app.kubernetes.io/name: prometheus
+    app: prometheus-operator
+    app.kubernetes.io/instance: prometheus-operator
+    app.kubernetes.io/name: prometheus-operator
     cert-manager.io/cluster-issuer: letsencrypt
     kubernetes.io/tls-acme: "true"
 spec:
@@ -48,7 +48,7 @@ spec:
         paths:
           - backend:
               service:
-                name: prometheus
+                name: prometheus-operator
                 port:
                   number: 80
             path: /
