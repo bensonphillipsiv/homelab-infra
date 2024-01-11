@@ -20,4 +20,4 @@ spec:
     targetPort: 8080
     appProtocol: http
   selector:
-    app.kubernetes.io/instance: "argocd-release"
+    app.kubernetes.io/name: argocd-server
