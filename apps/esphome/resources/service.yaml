@@ -6,11 +6,11 @@ metadata:
   labels:
     app: esphome
 spec:
-  type: ClusterIP
   ports:
   - port: 6052
     targetPort: http
     protocol: TCP
     name: http
   selector:
-    app: esphome  
+    app: esphome
+  clusterIP: None
