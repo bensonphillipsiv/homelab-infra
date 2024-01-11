@@ -38,7 +38,8 @@ data:
     - Services:
         - Home Assistant:
             href: https://homeassistant.bensonphillips.dev
-            ping: http://192.168.1.150
+            server: my-server
+            container: my-container
             icon: home-assistant-alt
         - ESP Home:
             href: https://esphome.bensonphillips.dev
