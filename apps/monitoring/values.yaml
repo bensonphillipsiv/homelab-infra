@@ -1,5 +1,3 @@
-fullnameOverride: prometheus
-
 defaultRules:
   create: true
   rules:
@@ -157,6 +155,7 @@ prometheusOperator:
         memory: 100Mi
 
 prometheus:
+  fullnameOverride: prometheus
   enabled: true
   prometheusSpec:
     replicas: 1
