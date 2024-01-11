@@ -45,6 +45,7 @@ data:
           memory: true
           showLabel: true
     - resources:
+        label: Resources
         backend: resources
         expanded: true
         cpu: true
