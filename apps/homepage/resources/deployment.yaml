@@ -17,6 +17,7 @@ spec:
       labels:
         app: homepage
     spec:
+      serviceAccountName: homepage
       dnsPolicy: ClusterFirst
       enableServiceLinks: true
       containers:
