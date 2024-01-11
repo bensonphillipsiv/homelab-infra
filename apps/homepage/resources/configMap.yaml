@@ -12,7 +12,7 @@ data:
   custom.css: ""
   custom.js: ""
   bookmarks.yaml: |
-    - Developer:
+    - Links:
         - Github:
             - abbr: GH
               href: https://github.com/bensonphillipsiv?tab=repositories
