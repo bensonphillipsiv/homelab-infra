@@ -34,7 +34,7 @@ data:
   widgets.yaml: |
     - kubernetes:
         cluster:
-          show: false
+          show: true
           cpu: true
           memory: true
           showLabel: true
