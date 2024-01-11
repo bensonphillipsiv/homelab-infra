@@ -46,7 +46,7 @@ data:
             icon: esphome
         - Node Red:
             href: http://node-red.bensonphillips.dev
-            ping: http://192.168.1.150
+            ping: http://192.168.1.150:1880
             icon: node-red
     - Mangement:
         - Argo CD:
@@ -60,7 +60,7 @@ data:
     - Monitoring:
         - Grafana:
             href: http://grafana.bensonphillips.dev
-            ping: http://grafana.bensonphillips.dev
+            ping: http://10.42.4.50:3000
             icon: grafana
 
   widgets.yaml: |
