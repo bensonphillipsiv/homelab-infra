@@ -5,7 +5,8 @@ metadata:
   labels:
     app: argocd
 spec:
-  clusterIP: None
+  type: clusterIP
+  # clusterIP: None
   ports:
   - port: 8080
     targetPort: http
