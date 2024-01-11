@@ -179,6 +179,12 @@ prometheus:
             resources:
               requests:
                 storage: 10Gi
+  ingress:
+    enabled: true
+    annotations:
+      kubernetes.io/ingress.class: "nginx"
+      cert-manager.io/cluster-issuer: letsencrypt
+      kubernetes.io/tls-acme: "true"
 
 thanosRuler:
   enabled: false
