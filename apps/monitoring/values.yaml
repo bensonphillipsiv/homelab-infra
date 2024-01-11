@@ -179,6 +179,8 @@ prometheus:
             resources:
               requests:
                 storage: 10Gi
+  ingress:
+    enabled: true
 
 thanosRuler:
   enabled: false
