@@ -1,16 +1,23 @@
-# apiVersion: v1
-# kind: Service
-# metadata:
-#   name: argocd-server
-#   labels:
-#     app: argocd
-# spec:
-#   type: clusterIP
-#   # clusterIP: None
-#   ports:
-#   - port: 8080
-#     targetPort: http
-#     protocol: TCP
-#     name: http
-#   selector:
-#     app: argocd-server
+apiVersion: v1
+kind: Service
+metadata:
+  name: argocd-server
+  namespace: "argocd-namespace"
+  labels:
+    app.kubernetes.io/instance: "argocd-release"
+    app.kubernetes.io/managed-by: "Helm"
+    app.kubernetes.io/name: "argocd"
+spec:
+  type: LoadBalancer
+  ports:
+  - name: http
+    protocol: TCP
+    port: 8080
+    targetPort: 8080
+  - name: https
+    protocol: TCP
+    port: 443
+    targetPort: 8080
+    appProtocol: http
+  selector:
+    app.kubernetes.io/instance: "argocd-release"
