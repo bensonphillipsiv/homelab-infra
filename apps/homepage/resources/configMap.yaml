@@ -37,30 +37,30 @@ data:
             icon: watchyourlan
     - Services:
         - Home Assistant:
-            href: homeassistant.bensonphillips.dev
-            ping: homeassistant.bensonphillips.dev
+            href: http://homeassistant.bensonphillips.dev
+            ping: http://homeassistant.bensonphillips.dev
             icon: home-assistant-alt
         - ESP Home:
-            href: esphome.bensonphillips.dev
-            ping: esphome.bensonphillips.dev
+            href: http://esphome.bensonphillips.dev
+            ping: http://esphome.bensonphillips.dev
             icon: esphome
         - Node Red:
-            href: node-red.bensonphillips.dev
-            ping: node-red.bensonphillips.dev
+            href: http://node-red.bensonphillips.dev
+            ping: http://node-red.bensonphillips.dev
             icon: node-red
     - Mangement:
         - Argo CD:
-            href: argocd.bensonphillips.dev
-            ping: argocd.bensonphillips.dev
+            href: http://argocd.bensonphillips.dev
+            ping: http://argocd.bensonphillips.dev
             icon: argocd
         - Longhorn:
-            href: longhorn.bensonphillips.dev
-            ping: longhorn.bensonphillips.dev
+            href: http://longhorn.bensonphillips.dev
+            ping: http://longhorn.bensonphillips.dev
             icon: longhorn
     - Monitoring:
         - Grafana:
-            href: grafana.bensonphillips.dev
-            ping: grafana.bensonphillips.dev
+            href: http://grafana.bensonphillips.dev
+            ping: http://grafana.bensonphillips.dev
             icon: grafana
 
   widgets.yaml: |
