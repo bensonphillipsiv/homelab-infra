@@ -38,11 +38,11 @@ data:
     - Services:
         - Home Assistant:
             href: https://homeassistant.bensonphillips.dev
-            ping: http://10.43.175.133
+            ping: http://local.host:8123
             icon: home-assistant-alt
         - ESP Home:
             href: https://esphome.bensonphillips.dev
-            ping: http://192.168.1.150
+            ping: https://esphome.esphome.svc.cluster.local
             icon: esphome
         - Node Red:
             href: http://node-red.bensonphillips.dev
