@@ -38,15 +38,15 @@ data:
     - Services:
         - Home Assistant:
             href: https://homeassistant.bensonphillips.dev
-            ping: https://homeassistant.bensonphillips.dev
+            ping: http://192.168.1.150
             icon: home-assistant-alt
         - ESP Home:
             href: https://esphome.bensonphillips.dev
-            ping: https://esphome.bensonphillips.dev
+            ping: http://192.168.1.150
             icon: esphome
         - Node Red:
             href: http://node-red.bensonphillips.dev
-            ping: http://node-red.bensonphillips.dev
+            ping: http://192.168.1.150
             icon: node-red
     - Mangement:
         - Argo CD:
