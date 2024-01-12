@@ -19,6 +19,9 @@ data:
         - Github:
             - abbr: GH
               href: https://github.com/bensonphillipsiv?tab=repositories
+        - ChatGPT:
+            - abbr: GPT
+              href: https://chat.openai.com
   services.yaml: |
 
     - Hardware:
