@@ -55,7 +55,7 @@ data:
             icon: argocd
         - Longhorn:
             href: http://longhorn.bensonphillips.dev
-            ping: http://longhorn-ui.longhorn.svc.cluster.local
+            ping: http://longhorn-frontend.longhorn.svc.cluster.local
             icon: longhorn
     - Monitoring:
         - Grafana:
