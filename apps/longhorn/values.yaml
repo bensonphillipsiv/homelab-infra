@@ -1,0 +1,16 @@
+service:
+  ui:
+    type: ClusterIP
+    nodePort: null
+    ClusterIP: None
+  manager:
+    type: ClusterIP
+    nodePort: ""
+    loadBalancerIP: ""
+    loadBalancerSourceRanges: ""
+
+persistence:
+  defaultClassReplicaCount: 2
+
+longhornUI:
+  replicas: 1

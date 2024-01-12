@@ -46,7 +46,7 @@ data:
             icon: esphome
         - Node Red:
             href: http://node-red.bensonphillips.dev
-            ping: http://192.168.1.150:1880
+            ping: http://node-red.node-red.svc.cluster.local
             icon: node-red
     - Mangement:
         - Argo CD:
@@ -55,12 +55,12 @@ data:
             icon: argocd
         - Longhorn:
             href: http://longhorn.bensonphillips.dev
-            ping: https://longhorn.bensonphillips.dev
+            ping: http://longhorn.longhorn.svc.cluster.local
             icon: longhorn
     - Monitoring:
         - Grafana:
             href: http://grafana.bensonphillips.dev
-            ping: http://10.42.4.50:3000
+            ping: http://grafana.grafana.svc.cluster.local
             icon: grafana
 
   widgets.yaml: |
