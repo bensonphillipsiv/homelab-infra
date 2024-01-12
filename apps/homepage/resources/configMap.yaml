@@ -60,7 +60,7 @@ data:
     - Monitoring:
         - Grafana:
             href: http://grafana.bensonphillips.dev
-            ping: http://grafana.grafana.svc.cluster.local
+            ping: http://grafana.monitoring.svc.cluster.local
             icon: grafana
 
   widgets.yaml: |
