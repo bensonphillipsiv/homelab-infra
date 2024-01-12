@@ -64,7 +64,7 @@ data:
             icon: grafana
             widget:
               type: grafana
-              url: http://grafana.monitoring.svc.cluster.local
+              url: http://grafana.bensonphillips.dev
               username: admin
               password: Bensonb4
 
