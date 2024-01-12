@@ -20,9 +20,14 @@ data:
 
     - Hardware:
         - Beelink:
-            href: http://192.168.1.100
+            href: http://192.168.1.100:8006
             ping: http://192.168.1.100
             icon: proxmox
+            widget:
+              type: proxmox
+              url: http://192.168.1.100
+              username: api@pam!homepage
+              password: 542e0903-ed06-4ec0-a1d4-a0156f4b07bb
         - Raspberry Pi 1:
             href: http://192.168.1.101
             ping: http://192.168.1.101
