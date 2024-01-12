@@ -38,7 +38,7 @@ data:
     - Services:
         - Home Assistant:
             href: https://homeassistant.bensonphillips.dev
-            ping: http://homeassistant.home-assistant.svc.cluster.local
+            ping: http://home-assistant.homeassistant.svc.cluster.local
             icon: home-assistant-alt
         - ESP Home:
             href: https://esphome.bensonphillips.dev
