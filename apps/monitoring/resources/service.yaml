@@ -14,3 +14,22 @@
 #   selector:
 #     app: grafana
 #   clusterIP: None
+
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/instance: monitoring
+    app.kubernetes.io/name: grafana
+    app: grafana
+  name: grafana
+spec:
+  ports:
+    - name: http-web
+      port: 80
+      protocol: TCP
+      targetPort: 3000
+  selector:
+    app.kubernetes.io/instance: monitoring
+    app.kubernetes.io/name: grafana
+  clusterIP: None
