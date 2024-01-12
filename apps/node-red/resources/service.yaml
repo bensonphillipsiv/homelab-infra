@@ -6,7 +6,7 @@ metadata:
     app: node-red
   name: node-red
 spec:
-  type: ClusterIP
+  clusterIP: None
   ports:
   - port: 1880
     targetPort: http
