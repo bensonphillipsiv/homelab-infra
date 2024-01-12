@@ -42,7 +42,6 @@ data:
             icon: home-assistant-alt
         - ESP Home:
             href: https://esphome.bensonphillips.dev
-            server:
             container: http://esphome.esphome.svc.cluster.local
             icon: esphome
         - Node Red:
