@@ -42,7 +42,7 @@ data:
             icon: home-assistant-alt
         - ESP Home:
             href: https://esphome.bensonphillips.dev
-            container: http://esphome.esphome.svc.cluster.local
+            ping: http://esphome.esphome.svc.cluster.local
             icon: esphome
         - Node Red:
             href: http://node-red.bensonphillips.dev
@@ -62,6 +62,11 @@ data:
             href: http://grafana.bensonphillips.dev
             ping: http://grafana.monitoring.svc.cluster.local
             icon: grafana
+            widget:
+              type: grafana
+              url: http://grafana.monitoring.svc.cluster.local
+              username: admin
+              password: Bensonb4
 
   widgets.yaml: |
     - kubernetes:
