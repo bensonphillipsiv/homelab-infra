@@ -9,7 +9,7 @@ resources:
 - longhorn/longhorn.yaml
 - homeassistant/homeassistant.yaml
 - node-red/node-red.yaml
-# - pihole/pihole.yaml
 - esphome/esphome.yaml
 - monitoring/monitoring.yaml
 - homepage/homepage.yaml
+- secrets/secrets.yaml
