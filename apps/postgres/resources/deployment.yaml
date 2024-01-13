@@ -22,7 +22,7 @@ spec:
             - secretRef:
                 name: postgres-config
           volumeMounts:
-            - mountPath: /var/lib/postgresql/data
+            - mountPath: postgresql/data
               name: postgredb
       volumes:
         - name: postgredb
