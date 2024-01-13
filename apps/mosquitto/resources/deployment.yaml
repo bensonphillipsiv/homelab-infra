@@ -27,7 +27,7 @@ spec:
       volumes:
       - name: config
         configMap:
-          name: mosquitto-config
+          name: mosquitto
       # - name: certs
       #   secret:
       #     secretName: mosquitto-certs
