@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mosquitto
+  namespace: argocd
+spec:
+  project: default
+  sources:
+    - repoURL: 'https://github.com/bensonphillipsiv/home-infra'
+      path: apps/mosquitto/resources
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: mosquitto
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
