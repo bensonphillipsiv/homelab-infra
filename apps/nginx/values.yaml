@@ -4,5 +4,4 @@ defaultBackend:
 controller:
   replicaCount:
     value: 2
-  extraArgs:
-    - --tcp-services-configmap=$(POD_NAMESPACE)/tcp-services
+  extraArgs: '--tcp-services-configmap=$(POD_NAMESPACE)/tcp-services'
