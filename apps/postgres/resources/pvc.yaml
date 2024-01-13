@@ -1,10 +1,18 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: node-red
+  name: postgres
+  labels:
+    app: postgres
 spec:
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
       storage: 1Gi
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: "/mnt/data"

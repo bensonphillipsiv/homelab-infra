@@ -13,3 +13,4 @@ resources:
 - monitoring/monitoring.yaml
 - homepage/homepage.yaml
 - secrets/secrets.yaml
+- postgres/postgres.yaml
