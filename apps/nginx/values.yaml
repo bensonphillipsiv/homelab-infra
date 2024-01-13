@@ -1,6 +1,6 @@
 defaultBackend: 
   enabled:
-        value: false
+    value: false
 controller:
   replicaCount:
     value: 2
