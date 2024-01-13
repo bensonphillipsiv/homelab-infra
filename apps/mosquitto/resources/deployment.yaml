@@ -30,4 +30,4 @@ spec:
           name: mosquitto
       - name: certs
         secret:
-          secretName: mosquitto-certs
+          secretName: mosquitto
