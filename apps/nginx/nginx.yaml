@@ -5,15 +5,15 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  source:
-    chart: ingress-nginx
-    repoURL: 'https://kubernetes.github.io/ingress-nginx'
-    targetRevision: 4.9.0
-    helm:
-      valueFiles:
-        - $values/apps/nginx/values.yaml
+  sources:
+    - chart: ingress-nginx
+      repoURL: 'https://kubernetes.github.io/ingress-nginx'
+      targetRevision: 4.9.0
+      helm:
+        valueFiles:
+          - $values/apps/nginx/values.yaml
     - repoURL: 'https://github.com/bensonphillipsiv/home-infra'
-      ref: values
+        ref: values
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: kube-system
