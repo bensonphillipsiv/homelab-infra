@@ -13,7 +13,7 @@ spec:
         valueFiles:
           - $values/apps/nginx/values.yaml
     - repoURL: 'https://github.com/bensonphillipsiv/home-infra'
-        ref: values
+      ref: values
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: kube-system
