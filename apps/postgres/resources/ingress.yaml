@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: node-red
+  name: postgres
   annotations:
     kubernetes.io/ingress.class: "nginx"
     ingress.kubernetes.io/rewrite-target: /
@@ -10,17 +10,17 @@ metadata:
 spec:
   tls:
     - hosts:
-      - node-red.bensonphillips.dev
+      - postgres.bensonphillips.dev
       secretName: letsencrypt
   ingressClassName: "nginx"
   rules:
-    - host: node-red.bensonphillips.dev
+    - host: postgres.bensonphillips.dev
       http:
         paths:
         - path: /
           pathType: Prefix
           backend:
             service:
-              name: node-red
+              name: postgres
               port:
                 name: "http"
