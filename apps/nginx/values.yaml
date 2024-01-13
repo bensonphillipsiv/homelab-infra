@@ -5,4 +5,4 @@ controller:
   replicaCount:
     value: 2
   extraArgs:
-    - - --tcp-services-configmap=$(POD_NAMESPACE)/tcp-services
+    - --tcp-services-configmap=$(POD_NAMESPACE)/tcp-services
