@@ -1,0 +1,14 @@
+defaultBackend: 
+  enabled:
+        value: false
+controller:
+  replicaCount:
+    value: 2
+  service:
+    targetPorts:
+      http: http
+      https: https
+    - name: mqtts
+      port: 8883
+      protocol: TCP
+      targetPort: 8883
