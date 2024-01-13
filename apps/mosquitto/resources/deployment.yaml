@@ -22,8 +22,8 @@ spec:
         - mountPath: /mosquitto/config/mosquitto.conf
           subPath: mosquitto.conf
           name: config
-        - mountPath: /mosquitto/certs/
-          name: certs
+        # - mountPath: /mosquitto/certs/
+        #   name: certs
       volumes:
       - name: config
         configMap:
