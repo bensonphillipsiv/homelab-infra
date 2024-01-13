@@ -77,7 +77,7 @@ data:
               type: grafana
               url: https://grafana.bensonphillips.dev
               username: admin
-              password: Bensonb4
+              password: password
 
   widgets.yaml: |
     - kubernetes:
