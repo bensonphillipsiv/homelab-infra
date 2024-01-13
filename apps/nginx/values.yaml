@@ -4,11 +4,5 @@ defaultBackend:
 controller:
   replicaCount:
     value: 2
-  service:
-    targetPorts:
-      http: http
-      https: https
-    - name: mqtts
-      port: 8883
-      protocol: TCP
-      targetPort: 8883
+  extraArgs:
+    - - --tcp-services-configmap=$(POD_NAMESPACE)/tcp-services
