@@ -5,6 +5,7 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: "nginx"
     ingress.kubernetes.io/rewrite-target: /
+    app.kubernetes.io/name: mosquitto
     cert-manager.io/cluster-issuer: letsencrypt
     kubernetes.io/tls-acme: "true"
 spec:
