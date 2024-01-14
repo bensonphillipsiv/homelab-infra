@@ -18,7 +18,7 @@ spec:
     #   path: apps/longhorn/resources
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: longhorn
+    namespace: mqtt
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
