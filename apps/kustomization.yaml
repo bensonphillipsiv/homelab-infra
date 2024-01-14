@@ -15,3 +15,4 @@ resources:
 - secrets/secrets.yaml
 - postgres/postgres.yaml
 # - mosquitto/mosquitto.yaml
+- mqtt/mqtt.yaml
