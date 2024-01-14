@@ -11,7 +11,7 @@ spec:
       targetRevision: 5.4.1
       helm:
         valueFiles:
-        - $values/apps/longhorn/values.yaml
+        - $values/apps/mqtt/values.yaml
     - repoURL: 'https://github.com/bensonphillipsiv/home-infra'
       ref: values
     # - repoURL: 'https://github.com/bensonphillipsiv/home-infra'
