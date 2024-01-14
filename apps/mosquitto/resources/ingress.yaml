@@ -12,6 +12,7 @@ spec:
   - hosts:
     - mqtt.bensonphillips.dev
     secretName: mosquitto
+  ingressClassName: "nginx"
   rules:
   - host: mqtt.bensonphillips.dev
     http:
