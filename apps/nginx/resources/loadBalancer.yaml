@@ -14,7 +14,7 @@ spec:
     - IPv4
   ipFamilyPolicy: SingleStack
   ports:
-    - name: mqtts
+    - appProtocol: http
       port: 8883
       protocol: TCP
       targetPort: 8883
