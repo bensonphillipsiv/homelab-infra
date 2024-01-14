@@ -1,8 +1,0 @@
-defaultBackend: 
-  enabled:
-    value: false
-controller:
-  replicaCount: 2
-  extraArgs:
-    update-status: "false"
-    tcp-services-configmap: "$(POD_NAMESPACE)/tcp-services"
