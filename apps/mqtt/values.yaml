@@ -1,6 +1,1 @@
 replicaCount: 2
-ingress:
-  dashboard:
-    enabled: true
-  mqtt:
-    enabled: true
