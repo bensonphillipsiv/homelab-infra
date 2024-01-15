@@ -54,15 +54,15 @@ data:
         - Node Red:
             href: http://node-red.bensonphillips.dev
             ping: http://node-red.node-red.svc.cluster.local
-            icon: emqx
+            icon: node-red
         - ESP Home:
             href: https://esphome.bensonphillips.dev
             ping: http://esphome.esphome.svc.cluster.local
             icon: esphome
         - MQTT:
             href: http://mqtt.bensonphillips.dev
-            ping: http://mqtt-emqx.mqtt.svc.cluster.local
-            icon: node-red
+            ping: http://mqtt.mqtt.svc.cluster.local
+            icon: emqx
     - Mangement:
         - Argo CD:
             href: http://argocd.bensonphillips.dev
