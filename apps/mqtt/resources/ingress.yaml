@@ -38,7 +38,7 @@ spec:
   tls:
     - hosts:
       - mqtt-server.bensonphillips.dev
-      secretName: letsencrypt
+      secretName: letsencrypt-server
   ingressClassName: "nginx"
   rules:
     - host: mqtt-server.bensonphillips.dev
