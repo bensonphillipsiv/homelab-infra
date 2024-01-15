@@ -61,7 +61,7 @@ data:
             icon: esphome
         - MQTT:
             href: http://mqtt.bensonphillips.dev
-            ping: http://mqtt.mqtt.svc.cluster.local
+            ping: http://mqtt.bensonphillips.dev
             icon: emqx
     - Mangement:
         - Argo CD:
