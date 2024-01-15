@@ -53,7 +53,7 @@ data:
             icon: home-assistant-alt
         - Node Red:
             href: http://node-red.bensonphillips.dev
-            ping: 192.168.1.199
+            ping: http://node-red.node-red.svc.cluster.local
             icon: emqx
         - ESP Home:
             href: https://esphome.bensonphillips.dev
@@ -61,7 +61,7 @@ data:
             icon: esphome
         - MQTT:
             href: http://mqtt.bensonphillips.dev
-            ping: http://mqtt.bensonphillips.dev
+            ping: http://mqtt-emqx.mqtt.svc.cluster.local
             icon: node-red
     - Mangement:
         - Argo CD:
