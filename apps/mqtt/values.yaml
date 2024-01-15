@@ -1,1 +1,4 @@
 replicaCount: 2
+service:
+  type: LoadBalancer
+  loadBalancerIP: 10.10.10.10
