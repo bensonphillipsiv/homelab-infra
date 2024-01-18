@@ -6,8 +6,16 @@ metadata:
 spec:
   project: default
   sources:
+    - chart: postgresql
+      repoURL: 'oci://registry-1.docker.io/bitnamicharts/postgresql'
+      targetRevision: 13.3.0
+      helm:
+        valueFiles:
+        - $values/apps/postgres/values.yaml
     - repoURL: 'https://github.com/bensonphillipsiv/home-infra'
-      path: apps/postgres/resources
+      ref: values
+    # - repoURL: 'https://github.com/bensonphillipsiv/home-infra'
+    #   path: apps/postgres/resources
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: postgres
