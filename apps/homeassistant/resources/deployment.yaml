@@ -36,10 +36,10 @@ spec:
           - mountPath: /config/configuration.yaml
             subPath: configuration.yaml
             name: ha-config-file
-          - name: dev
-            mountPath: /dev
-          - name: bluetooth
-            mountPath: /var/lib/bluetooth
+          # - name: dev
+          #   mountPath: /dev
+          # - name: bluetooth
+          #   mountPath: /var/lib/bluetooth
       volumes:
         - name: ha-config-root
           persistentVolumeClaim:
