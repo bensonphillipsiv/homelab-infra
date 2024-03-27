@@ -24,6 +24,7 @@ spec:
             protocol: TCP
         securityContext:
           privileged: true
+          hostNetwork: true
           capabilities:
             add:
               - NET_ADMIN
@@ -34,7 +35,11 @@ spec:
             mountPath: /config
           - mountPath: /config/configuration.yaml
             subPath: configuration.yaml
-            name: ha-config-file  
+            name: ha-config-file
+          - name: dev
+            mountPath: /dev
+          - name: bluetooth
+            mountPath: /var/lib/bluetooth
       volumes:
         - name: ha-config-root
           persistentVolumeClaim:
