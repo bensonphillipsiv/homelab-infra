@@ -36,7 +36,8 @@ spec:
             subPath: configuration.yaml
             name: ha-config-file
           - name: bluetooth
-            mountPath: /var/run/dbus
+            hostPath:
+              path: /var/run/dbus
       volumes:
         - name: ha-config-root
           persistentVolumeClaim:
