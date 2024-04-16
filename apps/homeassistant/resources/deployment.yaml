@@ -43,5 +43,5 @@ spec:
           configMap:
             name: home-assistant
         - name: bluetooth
-            hostPath:
-              path: /var/run/dbus
+          hostPath:
+            path: /var/run/dbus
