@@ -35,9 +35,6 @@ spec:
           - mountPath: /config/configuration.yaml
             subPath: configuration.yaml
             name: ha-config-file
-          - name: bluetooth
-            hostPath:
-              path: /var/run/dbus
       volumes:
         - name: ha-config-root
           persistentVolumeClaim:
@@ -45,3 +42,6 @@ spec:
         - name: ha-config-file
           configMap:
             name: home-assistant
+        - name: bluetooth
+            hostPath:
+              path: /var/run/dbus
