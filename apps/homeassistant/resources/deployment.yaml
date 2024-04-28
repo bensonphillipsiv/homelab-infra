@@ -4,6 +4,8 @@ metadata:
   name: home-assistant
 spec:
   replicas: 1
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       app: home-assistant
@@ -17,7 +19,7 @@ spec:
       containers:
       - name: home-assistant
         image: "ghcr.io/home-assistant/home-assistant:stable"
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         ports:
           - name: http
             containerPort: 8123
