@@ -37,14 +37,14 @@ ingress:
   #         name: use-annotation
 
 
-  tls: [
-  - secretName: letsencrypt
-    hosts:
-      - grafana.bensonphillips.dev
-  ]
-  #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
+  # tls: [
+  # - secretName: letsencrypt
+  #   hosts:
+  #     - grafana.bensonphillips.dev
+  # ]
+  # #  - secretName: chart-example-tls
+  # #    hosts:
+  # #      - chart-example.local
 
 # apiVersion: networking.k8s.io/v1
 # kind: Ingress
