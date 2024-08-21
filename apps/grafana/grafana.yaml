@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: monitoring
+  name: grafana
   namespace: argocd
 spec:
   project: default
@@ -16,7 +16,7 @@ spec:
       ref: values
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: monitoring
+    namespace: grafana
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
