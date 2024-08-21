@@ -38,9 +38,9 @@ ingress:
 
 
   tls: [
-    - secretName: letsencrypt
-      hosts:
-        - grafana.bensonphillips.dev
+  - secretName: letsencrypt
+    hosts:
+      - grafana.bensonphillips.dev
   ]
   #  - secretName: chart-example-tls
   #    hosts:
