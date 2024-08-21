@@ -37,11 +37,11 @@ ingress:
   #         name: use-annotation
 
 
-  # tls: [
-  # - secretName: letsencrypt
-  #   hosts:
-  #     - grafana.bensonphillips.dev
-  # ]
+  tls:
+    - secretName: letsencrypt
+      hosts:
+        - grafana.bensonphillips.dev
+        
   # #  - secretName: chart-example-tls
   # #    hosts:
   # #      - chart-example.local
