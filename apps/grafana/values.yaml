@@ -17,7 +17,7 @@ ingress:
   path: /
 
   # pathType is only for k8s >= 1.1=
-  pathType: Prefix
+  pathType: ImplementationSpecific
 
   hosts:
     - grafana.bensonphillips.dev
