@@ -130,7 +130,7 @@ auth:
   postgresPassword: ""
   ## @param auth.username Name for a custom user to create
   ##
-  username: "admin"
+  username: ""
   ## @param auth.password Password for the custom user to create. Ignored if `auth.existingSecret` is provided
   ##
   password: ""
