@@ -151,7 +151,7 @@ auth:
   ## @param auth.secretKeys.replicationPasswordKey Name of key in existing secret to use for PostgreSQL credentials. Only used when `auth.existingSecret` is set.
   ##
   secretKeys:
-    adminPasswordKey: # postgres-password
+    adminPasswordKey: POSTGRES_PASSWORD
     userPasswordKey: # password
     replicationPasswordKey: # replication-password
   ## @param auth.usePasswordFiles Mount credentials as a files instead of using an environment variable
