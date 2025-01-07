@@ -1,0 +1,42 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: node-red
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    ingress.kubernetes.io/rewrite-target: /
+    cert-manager.io/cluster-issuer: letsencrypt
+    kubernetes.io/tls-acme: "true"
+spec:
+  tls:
+    - hosts:
+      - node-red.bensonphillips.dev
+      secretName: letsencrypt
+  ingressClassName: "nginx"
+  rules:
+    - host: node-red.bensonphillips.dev
+      http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: node-red
+              port:
+                name: "http"
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: node-red
+  name: node-red
+spec:
+  clusterIP: None
+  ports:
+  - port: 1880
+    targetPort: http
+    protocol: TCP
+    name: http

@@ -8,7 +8,7 @@ resources:
 - cert-manager/cert-manager.yaml
 - longhorn/longhorn.yaml
 - homeassistant/homeassistant.yaml
-- node-red/node-red.yaml
+# - node-red/node-red.yaml
 - esphome/esphome.yaml
 # - monitoring/monitoring.yaml
 # - homepage/homepage.yaml
