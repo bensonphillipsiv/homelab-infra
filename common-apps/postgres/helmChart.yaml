@@ -2,7 +2,7 @@ apiVersion: builtin
 kind: HelmChartInflationGenerator
 metadata:
   name: postgres
-name: postgres
+name: postgresql
 releaseName: postgresql
 version: 15.5.26
 repo: https://charts.bitnami.com/bitnami
