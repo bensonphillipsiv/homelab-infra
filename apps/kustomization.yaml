@@ -13,6 +13,6 @@ resources:
 # - monitoring/monitoring.yaml
 # - homepage/homepage.yaml
 - secrets/secrets.yaml
-- postgres/postgres.yaml
+# - postgres/postgres.yaml
 - mqtt/mqtt.yaml
 # - grafana/grafana.yaml
