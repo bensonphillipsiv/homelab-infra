@@ -8,3 +8,4 @@ generators:
 
 resources:
   - ingress.yaml
+  
