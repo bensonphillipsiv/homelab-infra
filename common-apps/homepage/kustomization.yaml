@@ -6,8 +6,5 @@ namespace: homepage
 resources:
 - clusterRole.yaml
 - deployment.yaml
-- homepage.yaml
 - ingress.yaml
 - secret.yaml
-- service.yaml
-- serviceAccount.yaml
