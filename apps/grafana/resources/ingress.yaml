@@ -1,0 +1,55 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: grafana
+  annotations:
+    app: grafana
+    app.kubernetes.io/instance: grafana
+    app.kubernetes.io/name: grafana
+    cert-manager.io/cluster-issuer: letsencrypt
+    kubernetes.io/tls-acme: "true"
+spec:
+  tls:
+    - hosts:
+      - grafana.bensonphillips.dev
+      secretName: letsencrypt
+  ingressClassName: "nginx"
+  rules:
+    - host: grafana.bensonphillips.dev
+      http:
+        paths:
+          - backend:
+              service:
+                name: grafana
+                port:
+                  number: 80
+            path: /
+            pathType: ImplementationSpecific
+# ---
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: prometheus
+#   annotations:
+#     app: prometheus
+#     app.kubernetes.io/instance: prometheus
+#     app.kubernetes.io/name: prometheus
+#     cert-manager.io/cluster-issuer: letsencrypt
+#     kubernetes.io/tls-acme: "true"
+# spec:
+#   tls:
+#     - hosts:
+#       - prometheus.bensonphillips.dev
+#       secretName: letsencrypt
+#   ingressClassName: "nginx"
+#   rules:
+#     - host: prometheus.bensonphillips.dev
+#       http:
+#         paths:
+#           - backend:
+#               service:
+#                 name: prometheus-prometheus
+#                 port:
+#                   number: 80
+#             path: /
+#             pathType: ImplementationSpecific

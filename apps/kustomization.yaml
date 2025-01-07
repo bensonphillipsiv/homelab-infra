@@ -10,8 +10,9 @@ resources:
 - homeassistant/homeassistant.yaml
 - node-red/node-red.yaml
 - esphome/esphome.yaml
-- monitoring/monitoring.yaml
+# - monitoring/monitoring.yaml
 - homepage/homepage.yaml
 - secrets/secrets.yaml
 - postgres/postgres.yaml
 - mqtt/mqtt.yaml
+- grafana/grafana.yaml
