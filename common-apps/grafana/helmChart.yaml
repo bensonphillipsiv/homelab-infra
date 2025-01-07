@@ -1,0 +1,9 @@
+apiVersion: builtin
+kind: HelmChartInflationGenerator
+metadata:
+  name: grafana
+name: grafana
+releaseName: grafana
+version: 8.4.6
+repo: https://grafana.github.io/helm-charts
+valuesFile: values.yaml
