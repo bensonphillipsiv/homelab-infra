@@ -15,4 +15,4 @@ resources:
 - secrets/secrets.yaml
 - postgres/postgres.yaml
 - mqtt/mqtt.yaml
-- grafana/grafana.yaml
+# - grafana/grafana.yaml
