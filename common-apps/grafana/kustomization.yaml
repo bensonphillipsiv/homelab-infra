@@ -6,5 +6,5 @@ namespace: grafana
 generators: helmChart.yaml
 
 resources:
-- ingress.yaml
-- secret.yaml
+  - ingress.yaml
+  - secret.yaml
