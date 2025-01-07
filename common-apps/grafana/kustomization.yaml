@@ -3,7 +3,8 @@ kind: Kustomization
 
 namespace: grafana
 
-generators: helmChart.yaml
+generators: 
+  - helmChart.yaml
 
 resources:
   - ingress.yaml
