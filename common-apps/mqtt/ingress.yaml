@@ -21,7 +21,7 @@ spec:
           pathType: ImplementationSpecific
           backend:
             service:
-              name: mqtt-emqx
+              name: emqx
               port:
                   number: 18083
 ---
@@ -48,6 +48,6 @@ spec:
           pathType: ImplementationSpecific
           backend:
             service:
-              name: mqtt-emqx
+              name: emqx
               port:
                   number: 1883
