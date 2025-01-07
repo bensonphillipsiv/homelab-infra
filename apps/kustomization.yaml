@@ -5,14 +5,14 @@ resources:
 - argocd/argocd.yaml
 # - nginx/nginx.yaml
 - metallb/metallb.yaml
-- cert-manager/cert-manager.yaml
+# - cert-manager/cert-manager.yaml
 - longhorn/longhorn.yaml
 - homeassistant/homeassistant.yaml
 # - node-red/node-red.yaml
 - esphome/esphome.yaml
 # - monitoring/monitoring.yaml
 # - homepage/homepage.yaml
-- secrets/secrets.yaml
+# - secrets/secrets.yaml
 # - postgres/postgres.yaml
 # - mqtt/mqtt.yaml
 # - grafana/grafana.yaml
