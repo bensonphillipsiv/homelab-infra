@@ -7,7 +7,7 @@ generators:
   - helmChart.yaml
 
 resources:
-  - deployment.yaml
-  - ingress.yaml
+  # - deployment.yaml
+  # - ingress.yaml
   - secret.yaml
-  - pvc.yaml
+  # - pvc.yaml
