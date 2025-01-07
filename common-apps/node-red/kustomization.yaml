@@ -10,5 +10,5 @@ resources:
   - role.yaml
 
 commonLabels:
-  app.kubernetes.io/name: node-red,
+  app.kubernetes.io/name: node-red
   app: node-red
