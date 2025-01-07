@@ -8,3 +8,7 @@ resources:
   - ingress.yaml
   - pvc.yaml
   - role.yaml
+
+commonLabels:
+  app.kubernetes.io/name: node-red,
+  app: node-red
