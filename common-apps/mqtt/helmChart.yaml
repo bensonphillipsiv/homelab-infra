@@ -2,8 +2,8 @@ apiVersion: builtin
 kind: HelmChartInflationGenerator
 metadata:
   name: mqtt
-name: mqtt-emqx
-releaseName: emqx
+name: emqx
+releaseName: mqtt-emqx
 version: 5.4.1
 repo: https://repos.emqx.io/charts
 valuesFile: values.yaml
