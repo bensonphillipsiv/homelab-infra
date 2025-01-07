@@ -11,7 +11,7 @@ spec:
           - path: "common-apps/*"
   template:
     metadata:
-      name: "{{path[0]}}"
+      name: "{{path[1]}}"
     spec:
       project: default
       source:
