@@ -6,7 +6,7 @@ resources:
 # - nginx/nginx.yaml
 - metallb/metallb.yaml
 # - cert-manager/cert-manager.yaml
-- longhorn/longhorn.yaml
+# - longhorn/longhorn.yaml
 # - homeassistant/homeassistant.yaml
 # - node-red/node-red.yaml
 # - esphome/esphome.yaml

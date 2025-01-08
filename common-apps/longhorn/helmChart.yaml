@@ -1,0 +1,9 @@
+apiVersion: builtin
+kind: HelmChartInflationGenerator
+metadata:
+  name: longhorn
+name: longhorn
+releaseName: longhorn
+version: 1.6.2
+repo: https://charts.longhorn.io
+valuesFile: values.yaml
