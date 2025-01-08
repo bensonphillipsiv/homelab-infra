@@ -2,7 +2,7 @@ service:
   ui:
     type: ClusterIP
     nodePort: null
-    ClusterIP: None
+    clusterIP: None
   manager:
     type: ClusterIP
     nodePort: ""
