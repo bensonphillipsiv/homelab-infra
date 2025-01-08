@@ -6,4 +6,6 @@ name: ingress-nginx
 releaseName: ingress-nginx
 version: 4.10.1
 repo: https://kubernetes.github.io/ingress-nginx
-valuesFile: values.yaml
+valuesInline:
+  controller:
+    replicaCount: 2

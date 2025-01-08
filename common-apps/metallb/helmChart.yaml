@@ -6,4 +6,8 @@ name: metallb
 releaseName: metallb
 version: 0.14.5
 repo: https://metallb.github.io/metallb
-valuesFile: values.yaml
+valuesInline:
+  commonLabels:
+    pod-security.kubernetes.io/enforce: privileged
+    pod-security.kubernetes.io/audit: privileged
+    pod-security.kubernetes.io/warn: privileged

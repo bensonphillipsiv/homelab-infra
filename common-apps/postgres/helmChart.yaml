@@ -6,4 +6,17 @@ name: postgresql
 releaseName: postgresql
 version: 15.5.26
 repo: https://charts.bitnami.com/bitnami
-valuesFile: values.yaml
+valuesInline:
+  auth:
+    enablePostgresUser: false
+    existingSecret: postgres-config
+    replicationUsername: null
+
+    secretKeys:
+      adminPasswordKey: POSTGRES_PASSWORD
+      replicationPasswordKey: null
+      userPasswordKey: null
+
+  service:
+    loadBalancerIP: 192.168.1.198
+    type: LoadBalancer
