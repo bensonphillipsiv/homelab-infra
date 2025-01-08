@@ -8,16 +8,15 @@ version: 15.5.26
 repo: https://charts.bitnami.com/bitnami
 valuesInline:
   global:
-    postgresql:
-      auth:
-        enablePostgresUser: false
-        existingSecret: postgres-config
-        replicationUsername: null
+    auth:
+      enablePostgresUser: false
+      existingSecret: postgres-config
+      replicationUsername: null
 
-        secretKeys:
-          adminPasswordKey: POSTGRES_PASSWORD
-          replicationPasswordKey: null
-          userPasswordKey: null
+      secretKeys:
+        adminPasswordKey: POSTGRES_PASSWORD
+        replicationPasswordKey: null
+        userPasswordKey: null
 
   primary:
     service:
