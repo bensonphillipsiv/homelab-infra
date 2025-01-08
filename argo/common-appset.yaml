@@ -8,7 +8,7 @@ spec:
         repoURL: https://github.com/bensonphillipsiv/home-infra
         revision: HEAD
         directories:
-          - path: "common-apps/*"
+          - path: "apps/*"
   template:
     metadata:
       name: "{{path[1]}}"
