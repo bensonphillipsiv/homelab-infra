@@ -4,7 +4,7 @@ kind: Kustomization
 resources:
 # - argocd/argocd.yaml
 # - nginx/nginx.yaml
-- metallb/metallb.yaml
+# - metallb/metallb.yaml
 # - cert-manager/cert-manager.yaml
 # - longhorn/longhorn.yaml
 # - homeassistant/homeassistant.yaml
