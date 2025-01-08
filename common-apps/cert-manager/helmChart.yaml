@@ -6,4 +6,5 @@ name: cert-manager
 releaseName: cert-manager
 version: 1.14.5
 repo: https://charts.jetstack.io
-valuesFile: values.yaml
+valuesInline:
+  installCRDs: true
