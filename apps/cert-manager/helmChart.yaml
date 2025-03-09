@@ -9,7 +9,6 @@ repo: https://charts.jetstack.io
 valuesInline:
   installCRDs: true
   namespace: kube-system
-  extraArgs:
-    - --enable-certificate-owner-ref=true
-    - --dns01-recursive-nameservers-only
-    - --dns01-recursive-nameservers=8.8.8.8:53,1.1.1.1:53
+  enableCertificateOwnerRef: true
+  dns01RecursiveNameserversOnly: true
+  dns01RecursiveNameservers: "8.8.8.8:53,1.1.1.1:53"
