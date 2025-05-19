@@ -6,7 +6,7 @@ spec:
   generators:
     - git:
         repoURL: https://github.com/bensonphillipsiv/home-infra
-        revision: HEAD
+        revision: revamp
         directories:
           - path: "apps/*"
   template:
