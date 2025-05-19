@@ -1,0 +1,25 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: argocd
+
+helmCharts:
+  - name: argo-cd
+    releaseName: argocd
+    repo: https://argoproj.github.io/argo-helm
+    version: 8.0.6
+    includeCRDs: true
+    valuesInline:
+      server:
+        service:
+          type: NodePort
+      configs:
+        cm:
+          kustomize.buildOptions: --enable-helm
+          users.anonymous.enabled: true
+        rbac:
+          policy.default: role:admin
+      notifications:
+        enabled: false
+      dex:
+        enabled: false
