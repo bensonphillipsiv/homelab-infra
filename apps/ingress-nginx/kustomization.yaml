@@ -3,9 +3,6 @@ kind: Kustomization
 
 namespace: ingress-nginx
 
-resources:
-- namespace.yaml
-
 helmCharts:
 - name: ingress-nginx
   repo: https://kubernetes.github.io/ingress-nginx

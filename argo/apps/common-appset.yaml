@@ -16,6 +16,7 @@ spec:
       project: default
       source:
         repoURL: https://github.com/bensonphillipsiv/home-infra
+        revision: revamp
         path: "{{path}}"
       destination:
         server: https://kubernetes.default.svc
