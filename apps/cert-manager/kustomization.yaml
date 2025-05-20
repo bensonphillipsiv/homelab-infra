@@ -13,9 +13,13 @@ helmCharts:
     version: 1.17.2
     releaseName: cert-manager
     valuesInline:
+      global:
+        leaderElection:
+          namespace: cert-manager
       crds:
         enabled: true
       namespace: cert-manager
+      clusterResourceNamespace: cert-manager
       enableCertificateOwnerRef: true
       dns01RecursiveNameserversOnly: true
       dns01RecursiveNameservers: "8.8.8.8:53,1.1.1.1:53"
