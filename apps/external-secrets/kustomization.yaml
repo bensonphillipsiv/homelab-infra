@@ -11,3 +11,8 @@ helmCharts:
     repo: https://charts.external-secrets.io
     version: 0.17.0
     releaseName: external-secrets
+    valuesInLine:
+      certController:
+        create: false
+      webhook:
+        create: false
