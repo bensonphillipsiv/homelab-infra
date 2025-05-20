@@ -4,8 +4,8 @@ kind: Kustomization
 namespace: kube-system
 
 resources:
-  - metallb-IpAddressPool.yaml
-  - metallb-L2Advertisement.yaml
+  - metallb-ipAddressPool.yaml
+  - metallb-l2Advertisement.yaml
 
 helmCharts:
   - name: metallb
