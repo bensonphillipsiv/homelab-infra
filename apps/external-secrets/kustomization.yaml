@@ -5,5 +5,4 @@ helmCharts:
   - name: external-secrets
     repo: https://charts.external-secrets.io
     version: 0.17.0
-    includeCRDs: true
     releaseName: external-secrets
