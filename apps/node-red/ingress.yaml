@@ -34,9 +34,12 @@ metadata:
     app: node-red
   name: node-red
 spec:
-  clusterIP: None
+  type: NodePort
   ports:
-  - port: 1880
-    targetPort: http
-    protocol: TCP
-    name: http
+    - name: http
+      port: 1880
+      targetPort: http
+      protocol: TCP
+  selector:
+    app: node-red
+
