@@ -16,7 +16,3 @@ helmCharts:
         auth:
           basic:
             enabled: false
-          disable_login_form: false          # hide the login screen  :contentReference[oaicite:0]{index=0}
-        auth.anonymous:
-          enabled: true
-          org_role: Admin
