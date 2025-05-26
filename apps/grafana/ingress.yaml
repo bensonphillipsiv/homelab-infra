@@ -10,6 +10,7 @@ spec:
   tls:
     - hosts:
         - grafana.bensonphillips.dev
+      secretName: letsencrypt
   rules:
     - host: grafana.bensonphillips.dev
       http:
