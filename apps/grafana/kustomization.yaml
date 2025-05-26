@@ -12,6 +12,8 @@ helmCharts:
     version: 9.2.0
     releaseName: grafana
     valuesInline:
-      auth:
-        basic:
-          enabled: false
+      grafana.ini:
+        auth:
+          disable_login_form: true
+          enabled: true
+          org_role: Admin
