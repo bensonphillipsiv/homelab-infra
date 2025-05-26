@@ -5,6 +5,7 @@ namespace: argocd
 
 resources:
   - namespace.yaml
+  - ingress.yaml
   - root-app.yaml
 
 helmCharts:
@@ -21,6 +22,9 @@ helmCharts:
         cm:
           kustomize.buildOptions: --enable-helm
           users.anonymous.enabled: true
+          resource.customizations.ignoreDifferences.apiextensions.k8s.io_CustomResourceDefinition: |
+            jsonPointers:
+              - /spec/conversion/webhook/clientConfig/caBundle
         rbac:
           policy.default: role:admin
       notifications:
