@@ -40,7 +40,7 @@ data:
     - Mangement:
         - Argo CD:
             href: http://argocd.bensonphillips.dev
-            ping: http://argocd.bensonphillips.dev
+            ping: http://argocd-server.argocd.svc.cluster.local
             icon: argocd
         - Longhorn:
             href: http://longhorn.bensonphillips.dev
@@ -49,7 +49,7 @@ data:
     - Monitoring:
         - Grafana:
             href: http://grafana.bensonphillips.dev
-            ping: http://grafana.monitoring.svc.cluster.local
+            ping: http://grafana.grafana.svc.cluster.local
             icon: grafana
             widget:
               type: grafana
