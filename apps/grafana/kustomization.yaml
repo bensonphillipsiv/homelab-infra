@@ -14,7 +14,7 @@ helmCharts:
     valuesInline:
       grafana.ini:
         auth:
-          disable_login_form: false          # hide the login screen  :contentReference[oaicite:0]{index=0}
+          disable_login_form: true
         auth.anonymous:
           enabled: true
           org_role: Admin
