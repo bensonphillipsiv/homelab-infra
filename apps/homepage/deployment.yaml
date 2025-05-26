@@ -72,5 +72,5 @@ metadata:
   name: homepage
   labels:
     app: homepage
-secrets:
-  - name: homepage
+  annotations:
+    kubernetes.io/service-account.token: "true"
