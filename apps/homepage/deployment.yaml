@@ -2,20 +2,21 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: homepage
+  namespace: default
   labels:
-    app: homepage
+    app.kubernetes.io/name: homepage
 spec:
-  revisionHistoryLimit: 2
+  revisionHistoryLimit: 3
   replicas: 1
   strategy:
     type: RollingUpdate
   selector:
     matchLabels:
-      app: homepage
+      app.kubernetes.io/name: homepage
   template:
     metadata:
       labels:
-        app: homepage
+        app.kubernetes.io/name: homepage
     spec:
       serviceAccountName: homepage
       automountServiceAccountToken: true
@@ -23,11 +24,11 @@ spec:
       enableServiceLinks: true
       containers:
         - name: homepage
-          image: "ghcr.io/gethomepage/homepage:v1.2.0"
+          image: "ghcr.io/gethomepage/homepage:latest"
           imagePullPolicy: Always
           env:
             - name: HOMEPAGE_ALLOWED_HOSTS
-              value: "homepage.bensonphillips.dev"
+              value: homepage.bensonphillips.dev # required, may need port. See gethomepage.dev/installation/#homepage_allowed_hosts
           ports:
             - name: http
               containerPort: 3000

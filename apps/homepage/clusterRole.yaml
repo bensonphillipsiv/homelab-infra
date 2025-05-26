@@ -3,7 +3,7 @@ kind: ClusterRole
 metadata:
   name: homepage
   labels:
-    app: homepage
+    app.kubernetes.io/name: homepage
 rules:
   - apiGroups:
       - ""
@@ -23,17 +23,25 @@ rules:
       - get
       - list
   - apiGroups:
-      - metrics.k8s.io
+      - traefik.io
     resources:
-      - nodes
-      - pods
+      - ingressroutes
     verbs:
       - get
       - list
   - apiGroups:
-      - traefik.containo.us
+      - gateway.networking.k8s.io
     resources:
-      - ingressroutes
+      - httproutes
+      - gateways
+    verbs:
+      - get
+      - list
+  - apiGroups:
+      - metrics.k8s.io
+    resources:
+      - nodes
+      - pods
     verbs:
       - get
       - list
@@ -43,7 +51,7 @@ kind: ClusterRoleBinding
 metadata:
   name: homepage
   labels:
-    app: homepage
+    app.kubernetes.io/name: homepage
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
