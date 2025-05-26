@@ -42,6 +42,9 @@ data:
             href: http://argocd.bensonphillips.dev
             siteMonitor: https://argocd-server.argocd.svc.cluster.local
             icon: argocd
+            widget:
+              type: argocd
+              url: http://argocd.bensonphillips.dev
         - Longhorn:
             href: http://longhorn.bensonphillips.dev
             siteMonitor: http://longhorn-frontend.longhorn.svc.cluster.local
