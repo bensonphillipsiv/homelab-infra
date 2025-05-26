@@ -4,7 +4,7 @@ kind: Kustomization
 namespace: homepage
 
 resources:
-- configMap.yaml
-- clusterRole.yaml
-- deployment.yaml
-- networking.yaml
+  - configMap.yaml
+  - clusterRole.yaml
+  - deployment.yaml
+  - networking.yaml
