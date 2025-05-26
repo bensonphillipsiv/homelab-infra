@@ -14,5 +14,6 @@ helmCharts:
     valuesInline:
       grafana.ini:
         auth:
-          basic:
-            enabled: false
+          disable_login_form: false
+          enabled: true
+          org_role: Admin
