@@ -4,7 +4,7 @@ metadata:
   name: homepage
   namespace: default
   labels:
-    app.kubernetes.io/name: homepage
+    app: homepage
 spec:
   revisionHistoryLimit: 3
   replicas: 1
@@ -28,8 +28,7 @@ spec:
           imagePullPolicy: Always
           env:
             - name: HOMEPAGE_ALLOWED_HOSTS
-              value: homepage.bensonphillips.dev # required, may need port. See gethomepage.dev/installation/#homepage_allowed_hosts
-          ports:
+              value: homepage.bensonphillips.dev
             - name: http
               containerPort: 3000
               protocol: TCP
