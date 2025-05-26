@@ -40,7 +40,7 @@ data:
     - Mangement:
         - Argo CD:
             href: http://argocd.bensonphillips.dev
-            siteMonitor: http://argocd-repo-server.argocd.svc.cluster.local
+            siteMonitor: http://argocd-server.argocd.svc.cluster.local:8080
             icon: argocd
         - Longhorn:
             href: http://longhorn.bensonphillips.dev
