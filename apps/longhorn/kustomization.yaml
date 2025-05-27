@@ -4,6 +4,7 @@ kind: Kustomization
 namespace: longhorn
 
 resources:
+  - namespace.yaml
 
 helmCharts:
   - name: longhorn
