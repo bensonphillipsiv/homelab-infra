@@ -3,9 +3,6 @@ kind: Kustomization
 
 namespace: mqtt
 
-patches:
-  - path: patch-statefulSet.yaml
-
 resources:
 
 helmCharts:
