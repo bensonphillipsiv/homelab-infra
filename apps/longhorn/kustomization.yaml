@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: longhorn
+
+resources:
+
+helmCharts:
+  - name: longhorn
+    repo: https://charts.bitnami.com/bitnami
+    version: 1.8.1
+    releaseName: longhorn
+    valuesInline:
+      persistence:
+        defaultClassReplicaCount: 3
+      longhornUI:
+        replicas: 1
