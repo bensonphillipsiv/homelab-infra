@@ -11,6 +11,7 @@ helmCharts:
     version: 5.8.6
     releaseName: mqtt-emqx
     valuesInline:
+      namespaceOverride: mqtt
       service:
         type: LoadBalancer
         loadBalancerIP: 192.168.1.111
