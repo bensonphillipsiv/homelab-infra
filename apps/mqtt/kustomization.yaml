@@ -1,0 +1,16 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: mqtt
+
+resources:
+
+helmCharts:
+  - name: mqtt
+    repo: https://repos.emqx.io/charts
+    version: 5.8.6
+    releaseName: mqtt-emqx
+    valuesInline:
+      service:
+        type: LoadBalancer
+        loadBalancerIP: 192.168.1.111
