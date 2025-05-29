@@ -1,0 +1,17 @@
+---
+clusterName: k8s
+endpoint: https://192.168.1.100:6443
+
+talosVersion: v1.10.2
+kubernetesVersion: v1.33.0
+
+allowSchedulingOnMasters: true
+allowSchedulingOnControlPlanes: true
+
+nodes:
+  - hostname: b0
+    controlPlane: true
+    ipAddress: 192.168.1.100
+    installDisk: /dev/nvme0n1
+    nodeLabels:
+      node-role.kubernetes.io/control-plane: ""

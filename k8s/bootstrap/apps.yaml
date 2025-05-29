@@ -2,6 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: common-appset
+  namespace: argocd
 spec:
   generators:
     - git:
@@ -27,3 +28,4 @@ spec:
           selfHeal: true
         syncOptions:
           - CreateNamespace=true
+---

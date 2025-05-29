@@ -74,3 +74,4 @@ metadata:
     app: homepage
   annotations:
     kubernetes.io/service-account.token: "true"
+---

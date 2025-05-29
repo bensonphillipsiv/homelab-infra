@@ -24,4 +24,5 @@ spec:
               service:
                 name: mqtt-emqx
                 port:
-                  number: 18083 
+                  number: 18083
+---

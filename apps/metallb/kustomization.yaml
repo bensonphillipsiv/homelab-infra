@@ -5,8 +5,8 @@ namespace: metallb
 
 resources:
   - namespace.yaml
-  - metallb-ipAddressPool.yaml
-  - metallb-l2Advertisement.yaml
+  - ipAddressPool.yaml
+  - l2Advertisement.yaml
 
 helmCharts:
   - name: metallb

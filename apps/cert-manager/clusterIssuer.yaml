@@ -15,4 +15,5 @@ spec:
             email: benson.phillipsiv@gmail.com
             apiTokenSecretRef:
               name: cloudflare-api-key
-              key: cloudflare-api-key
+              key: CLOUDFLARE_API_KEY
+---
