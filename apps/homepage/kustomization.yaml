@@ -7,4 +7,4 @@ resources:
   - configMap.yaml
   - clusterRole.yaml
   - deployment.yaml
-  - networking.yaml
+  # - ingress.yaml

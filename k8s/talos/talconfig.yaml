@@ -1,4 +1,3 @@
----
 clusterName: k8s
 endpoint: https://192.168.1.100:6443
 
@@ -15,3 +14,23 @@ nodes:
     installDisk: /dev/nvme0n1
     nodeLabels:
       node-role.kubernetes.io/control-plane: ""
+
+patches:
+  - |-
+    - op: add
+      path: /machine/kubelet/extraMounts
+      value:
+        - destination: /var/lib/longhorn
+          type: bind
+          source: /var/lib/longhorn
+          options:
+            - bind
+            - rshared
+            - rw
+
+schematic:
+  customization:
+    systemExtensions:
+      officialExtensions:
+        - siderolabs/iscsi-tools
+        - siderolabs/util-linux-tools
