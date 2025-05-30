@@ -19,7 +19,7 @@ build_talos:
 	@sleep 120
 	@echo "Bootstrapping Talos cluster..."
 	talosctl bootstrap --nodes 192.168.1.100 --endpoints 192.168.1.100 --talosconfig=$(TALOS_DIR)/clusterconfig/talosconfig
-	@sleep 300
+	@sleep 240
 
 bootstrap:
 	@echo "Bootstrapping cluster with ArgoCD and base manifests..."

@@ -14,7 +14,6 @@ nodes:
     installDisk: /dev/nvme0n1
     nodeLabels:
       node-role.kubernetes.io/control-plane: ""
-
 patches:
   - |-
     - op: add
@@ -28,6 +27,7 @@ patches:
             - rshared
             - rw
 
+# schematic does not work and does not update image binary, have to do it manually https://www.reddit.com/r/kubernetes/comments/1hwietr/problem_with_adding_extensions_to_talos/
 schematic:
   customization:
     systemExtensions:
