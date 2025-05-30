@@ -25,19 +25,3 @@ spec:
                 port:
                   number: 3000
 ---
-apiVersion: v1
-kind: Service
-metadata:
-  name: homepage
-  labels:
-    app: homepage
-spec:
-  type: ClusterIP
-  ports:
-    - port: 3000
-      targetPort: http
-      protocol: TCP
-      name: http
-  selector:
-    app: homepage
----
