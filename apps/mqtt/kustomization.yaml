@@ -4,7 +4,7 @@ kind: Kustomization
 namespace: mqtt
 
 resources:
-  # - ingress.yaml
+  - ingress.yaml
 
 helmCharts:
   - name: emqx

@@ -27,7 +27,7 @@ patches:
             - rshared
             - rw
 
-# schematic does not work and does not update image binary, have to do it manually https://www.reddit.com/r/kubernetes/comments/1hwietr/problem_with_adding_extensions_to_talos/
+# schematic does not work and does not update image binary, have to do it manually - https://www.reddit.com/r/kubernetes/comments/1hwietr/problem_with_adding_extensions_to_talos/ - binary: 613e1592b2da41ae5e265e8789429f22e121aab91cb4deb6bc3c0b6262961245
 schematic:
   customization:
     systemExtensions:

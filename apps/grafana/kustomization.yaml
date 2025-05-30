@@ -4,7 +4,7 @@ kind: Kustomization
 namespace: grafana
 
 resources:
-  # - ingress.yaml
+  - ingress.yaml
 
 helmCharts:
   - name: grafana
