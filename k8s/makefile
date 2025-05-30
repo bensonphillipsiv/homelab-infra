@@ -3,15 +3,16 @@ TALOS_DIR=./talos
 CLUSTER_NAME=k8s
 NODE_NAME=b0
 
-.PHONY: all build_talos bootstrap clean
+.PHONY: all genconfig build_talos bootstrap clean
 
-all: build_talos bootstrap clean
+all: genconfig build_talos bootstrap clean
 
-build_talos:
+genconfig:
 	@echo "Generating configuration using talhelper and doppler..."
 	cd $(TALOS_DIR) && \
 	doppler run -p talhelper -c env talhelper genconfig
 
+build_talos:
 	@echo "Building Talos cluster..."
 	cd $(TALOS_DIR)/clusterconfig && \
 	talosctl apply-config -n 192.168.1.100 --insecure --file $(CLUSTER_NAME)-$(NODE_NAME).yaml
