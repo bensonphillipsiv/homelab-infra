@@ -1,8 +1,8 @@
 clusterName: k8s
-endpoint: https://192.168.1.100:6443
-
 talosVersion: v1.10.2
 kubernetesVersion: v1.33.0
+
+endpoint: https://192.168.1.100:6443
 
 allowSchedulingOnMasters: true
 allowSchedulingOnControlPlanes: true
@@ -14,6 +14,7 @@ nodes:
     installDisk: /dev/nvme0n1
     nodeLabels:
       node-role.kubernetes.io/control-plane: ""
+
 patches:
   - |-
     - op: add
@@ -27,10 +28,17 @@ patches:
             - rshared
             - rw
 
-# schematic does not work and does not update image binary, have to do it manually - https://www.reddit.com/r/kubernetes/comments/1hwietr/problem_with_adding_extensions_to_talos/ - binary: 613e1592b2da41ae5e265e8789429f22e121aab91cb4deb6bc3c0b6262961245
-schematic:
-  customization:
-    systemExtensions:
-      officialExtensions:
-        - siderolabs/iscsi-tools
-        - siderolabs/util-linux-tools
+controlPlane:
+  schematic:
+    customization:
+      systemExtensions:
+        officialExtensions:
+          - siderolabs/iscsi-tools
+          - siderolabs/util-linux-tools
+worker:
+  schematic:
+    customization:
+      systemExtensions:
+        officialExtensions:
+           - siderolabs/iscsi-tools
+           - siderolabs/util-linux-tools
