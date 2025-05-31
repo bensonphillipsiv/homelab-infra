@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: esphome
-        image: ghcr.io/esphome/esphome:2025.5.1
+        image: ghcr.io/esphome/esphome:2023.12.5
         imagePullPolicy: IfNotPresent
         env:
           - name: ESPHOME_DASHBOARD_USE_PING
@@ -35,3 +35,20 @@ spec:
         - name: cache
           persistentVolumeClaim:
             claimName: esphome-cache
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: esphome
+  labels:
+    app: esphome
+spec:
+  ports:
+  - port: 6052
+    targetPort: http
+    protocol: TCP
+    name: http
+  selector:
+    app: esphome
+  clusterIP: None
+---
