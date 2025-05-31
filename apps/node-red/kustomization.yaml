@@ -8,3 +8,10 @@ helmCharts:
     repo: https://schwarzit.github.io/node-red-chart
     version: 0.34.0
     releaseName: node-red
+    valuesInline:
+      persistence:
+        enabled: true
+        size: 1Gi
+      service:
+        type: LoadBalancer
+        loadBalancerIP: 192.168.1.115
