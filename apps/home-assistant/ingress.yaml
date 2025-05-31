@@ -9,10 +9,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-      - home-assistant.bensonphillips.dev
+      - ha.bensonphillips.dev
       secretName: letsencrypt
   rules:
-    - host: home-assistant.bensonphillips.dev
+    - host: ha.bensonphillips.dev
       http:
         paths:
         - path: /

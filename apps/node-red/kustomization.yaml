@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: node-red
+
+helmCharts:
+  - name: node-red
+    repo: https://schwarzit.github.io/node-red-chart
+    version: 0.34.0
+    releaseName: node-red
