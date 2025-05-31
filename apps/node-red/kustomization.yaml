@@ -4,8 +4,10 @@ kind: Kustomization
 namespace: node-red
 
 resources:
-  - loadBalancer.yaml
   - ingress.yaml
+
+patches:
+  - path: loadBalancer.yaml
 
 helmCharts:
   - name: node-red
