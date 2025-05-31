@@ -16,10 +16,13 @@ helmCharts:
         enabled: true
         size: 1Gi
 
-patchesJson6902:
-  - target:
-      group: ""
-      version: v1
-      kind: Service
-      name: node-red
-    path: patch-node-red-service.json
+patches:
+  - path: loadBalancer.yaml
+
+# patchesJson6902:
+#   - target:
+#       group: ""
+#       version: v1
+#       kind: Service
+#       name: node-red
+#     path: patch-node-red-service.json
