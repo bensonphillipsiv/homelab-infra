@@ -25,4 +25,10 @@ data:
         icon: mdi:chip
         url: https://esphome.bensonphillips.dev
         require_admin: true
+  scripts.yaml: |-
+    startup:
+      sequence:
+        - service: notify.notify
+          data:
+            message: "Home Assistant has started!"
 ---
