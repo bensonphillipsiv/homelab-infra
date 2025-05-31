@@ -7,11 +7,3 @@ spec:
   type: LoadBalancer
   loadBalancerIP: 192.168.1.115
   externalTrafficPolicy: Cluster
-  ports:
-    - name: http
-      port: 1880
-      targetPort: http
-      protocol: TCP
-  selector:
-    app.kubernetes.io/instance: node-red
-    app.kubernetes.io/name: node-red
