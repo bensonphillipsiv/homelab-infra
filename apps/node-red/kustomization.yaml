@@ -4,7 +4,7 @@ kind: Kustomization
 namespace: node-red
 
 resources:
-  - loadBalancerIP.yaml
+  - loadBalancer.yaml
   - ingress.yaml
 
 helmCharts:
