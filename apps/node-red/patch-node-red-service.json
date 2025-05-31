@@ -1,0 +1,17 @@
+[
+    {
+      "op": "replace",
+      "path": "/spec/type",
+      "value": "LoadBalancer"
+    },
+    {
+      "op": "add",
+      "path": "/spec/loadBalancerIP",
+      "value": "192.168.1.115"
+    },
+    {
+      "op": "add",
+      "path": "/spec/externalTrafficPolicy",
+      "value": "Cluster"
+    }
+  ]
