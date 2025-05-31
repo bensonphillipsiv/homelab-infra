@@ -6,9 +6,6 @@ namespace: node-red
 resources:
   - ingress.yaml
 
-patches:
-  - path: loadBalancer.yaml
-
 helmCharts:
   - name: node-red
     repo: https://schwarzit.github.io/node-red-chart
@@ -18,3 +15,6 @@ helmCharts:
       persistence:
         enabled: true
         size: 1Gi
+
+patches:
+  - path: loadBalancer.yaml
