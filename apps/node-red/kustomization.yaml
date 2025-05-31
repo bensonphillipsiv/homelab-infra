@@ -18,8 +18,6 @@ helmCharts:
 
 patches:
   - target:
-      group: ""
-      version: v1
       kind: Service
       name: node-red
     patch: |
