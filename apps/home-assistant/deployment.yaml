@@ -23,9 +23,12 @@ spec:
         volumeMounts:
           - name: ha-config-root
             mountPath: /config
-          - mountPath: /config/configuration.yaml
+          - name: ha-config-file
+            mountPath: /config/configuration.yaml
             subPath: configuration.yaml
-            name: ha-config-file
+          - name: ha-config-file
+            mountPath: /config/scripts.yaml
+            subPath: scripts.yaml
       volumes:
         - name: ha-config-root
           persistentVolumeClaim:
