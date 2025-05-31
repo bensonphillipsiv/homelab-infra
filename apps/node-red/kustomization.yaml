@@ -4,6 +4,7 @@ kind: Kustomization
 namespace: node-red
 
 resources:
+  - loadBalancerIP.yaml
   - ingress.yaml
 
 helmCharts:
@@ -16,5 +17,4 @@ helmCharts:
         enabled: true
         size: 1Gi
       service:
-        type: LoadBalancer
-        loadBalancerIP: 192.168.1.115
+        enabled: false
