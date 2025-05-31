@@ -6,8 +6,8 @@ namespace: node-red
 resources:
   - ingress.yaml
 
-# patches:
-#   - path: loadBalancer.yaml
+patches:
+  - path: loadBalancer.yaml
 
 helmCharts:
   - name: node-red
@@ -18,5 +18,3 @@ helmCharts:
       persistence:
         enabled: true
         size: 1Gi
-      service:
-        enabled: false
