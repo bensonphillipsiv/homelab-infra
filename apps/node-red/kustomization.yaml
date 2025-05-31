@@ -3,6 +3,9 @@ kind: Kustomization
 
 namespace: node-red
 
+resources:
+  - ingress.yaml
+
 helmCharts:
   - name: node-red
     repo: https://schwarzit.github.io/node-red-chart
