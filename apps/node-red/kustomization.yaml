@@ -17,8 +17,4 @@ helmCharts:
         size: 1Gi
 
 patches:
-  - target:
-      kind: Service
-      name: node-red
-      namespace: node-red
-    path: loadBalancer.yaml
+  - path: loadBalancer.yaml
