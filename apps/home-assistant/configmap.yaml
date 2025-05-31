@@ -14,17 +14,6 @@ data:
         - 192.168.1.0/24
         - 172.20.0.0/24
         - 10.42.0.0/16
-    panel_iframe:
-      nodered:
-        title: Node-RED
-        icon: mdi:lan
-        url: https://node-red.bensonphillips.dev
-        require_admin: true
-      esphome:
-        title: ESP-Home
-        icon: mdi:chip
-        url: https://esphome.bensonphillips.dev
-        require_admin: true
   scripts.yaml: |-
     startup:
       sequence:
