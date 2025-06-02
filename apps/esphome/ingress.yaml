@@ -35,11 +35,12 @@ metadata:
   labels:
     app: esphome
 spec:
+  type: LoadBalancer
+  loadBalancerIP: 192.168.1.155  # adjust if your subnet differs
   ports:
-  - port: 6052
-    targetPort: http
-    protocol: TCP
-    name: http
+    - port: 6052
+      targetPort: http
+      protocol: TCP
+      name: http
   selector:
     app: esphome
-  clusterIP: None
