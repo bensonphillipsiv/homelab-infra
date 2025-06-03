@@ -3,8 +3,6 @@ kind: Kustomization
 
 namespace: postgres
 
-resources:
-
 helmCharts:
   - name: postgresql
     repo: https://charts.bitnami.com/bitnami

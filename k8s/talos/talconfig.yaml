@@ -40,5 +40,5 @@ worker:
     customization:
       systemExtensions:
         officialExtensions:
-           - siderolabs/iscsi-tools
-           - siderolabs/util-linux-tools
+          - siderolabs/iscsi-tools
+          - siderolabs/util-linux-tools

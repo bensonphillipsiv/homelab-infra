@@ -29,4 +29,4 @@ patches:
         value: 192.168.1.115
       - op: add
         path: /spec/externalTrafficPolicy
-        value: Cluster
+        value: Cluste
