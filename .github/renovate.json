@@ -1,0 +1,124 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+      "config:recommended"
+    ],
+    "kubernetes": {
+      "fileMatch": [
+        "\\.yaml$"
+      ]
+    },
+    "helm-values": {
+      "fileMatch": [
+        "\\.yaml$"
+      ]
+    },
+    "customManagers": [
+      {
+        "customType": "regex",
+        "fileMatch": [
+          "\\.yaml$"
+        ],
+        "matchStrings": [
+          "datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s  version: (?<currentValue>.*)\\s",
+          "datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\stalosVersion: (?<currentValue>.*)\\s",
+          "datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\skubernetesVersion: (?<currentValue>.*)\\s",
+          "datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s          - (?<currentValue>.*)\\s"
+        ],
+        "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+      },
+      {
+        "customType": "regex",
+        "fileMatch": [
+          "\\.yaml$"
+        ],
+        "matchStrings": [
+          "  imageName: (?<depName>ghcr\\.io/cloudnative-pg/postgresql):(?<currentValue>\\d+\\.\\d+)"
+        ],
+        "datasourceTemplate": "docker",
+        "versioningTemplate": "docker"
+      }
+    ],
+    "packageRules": [
+      {
+        "matchPackageNames": [
+          "kubernetes/ingress-nginx"
+        ],
+        "versioning": "regex:^controller-v?(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)?$"
+      },
+      {
+        "matchPackageNames": [
+          "koush/scrypted"
+        ],
+        "versioning": "regex:^18-jammy-full.s6-v?(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)?$"
+      },
+      {
+        "matchPackageNames": [
+          "ollama/ollama",
+          "open-webui",
+          "ollama"
+        ],
+        "matchUpdateTypes": [
+          "major",
+          "minor",
+          "patch"
+        ],
+        "groupName": "all ollama upgrades",
+        "groupSlug": "all-ollama-upgrades"
+      },
+      {
+        "matchPackageNames": [
+          "docker.io/victoriametrics/victoria-logs",
+          "kube-prometheus-stack",
+          "grafana",
+          "victoria-metrics-operator",
+          "victoria-logs-single"
+        ],
+        "matchUpdateTypes": [
+          "major",
+          "minor",
+          "patch"
+        ],
+        "groupName": "all monitoring upgrades",
+        "groupSlug": "all-monitoring-upgrades"
+      },
+      {
+        "matchPackageNames": [
+          "siderolabs/talos",
+          "ghcr.io/siderolabs/talosctl",
+          "jtcressy-home/talos-boot-assets"
+        ],
+        "matchUpdateTypes": [
+          "major",
+          "minor",
+          "patch"
+        ],
+        "groupName": "all talos upgrades",
+        "groupSlug": "all-talos-upgrades"
+      },
+      {
+        "matchPackageNames": [
+          "ghcr.io/sdr-enthusiasts/docker-piaware",
+          "ghcr.io/sdr-enthusiasts/docker-flightradar24",
+          "ghcr.io/sdr-enthusiasts/docker-adsb-ultrafeeder"
+        ],
+        "matchUpdateTypes": [
+          "digest"
+        ],
+        "groupName": "all adsb upgrades",
+        "groupSlug": "all-adsb-upgrades"
+      },
+      {
+        "matchPackageNames": [
+          "talos/talconfig.yaml"
+        ],
+        "matchUpdateTypes": [
+          "major",
+          "minor",
+          "patch"
+        ],
+        "groupName": "all kube upgrades",
+        "groupSlug": "all-k8s-upgrades"
+      }
+    ]
+  }
