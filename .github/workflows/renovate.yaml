@@ -12,4 +12,5 @@ jobs:
       - name: Self-hosted Renovate
         uses: renovatebot/github-action@v42.0.3
         with:
+          autodiscover: true
           token: ${{ secrets.GITHUB_TOKEN }}
