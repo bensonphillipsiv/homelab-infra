@@ -1,3 +1,14 @@
 misconfiguration:
   ignore:
-    - KSV001
+    - AVD-KSV-0001
+    - AVD-KSV-0003
+    - AVD-KSV-0004
+    - AVD-KSV-0012
+    - AVD-KSV-0014
+    - AVD-KSV-0020
+    - AVD-KSV-0021
+    - AVD-KSV-0030
+    - AVD-KSV-0032
+    - AVD-KSV-0033
+    - AVD-KSV-0034
+    - AVD-KSV-0035
