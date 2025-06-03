@@ -25,4 +25,6 @@ jobs:
           REPOSITORY_TRIVY_DISABLE_ERRORS: true
           REPOSITORY_CHECKOV_DISABLE_ERRORS: true
           SPELL_MISSPELL_DISABLE_ERRORS: true
+          YAML_YAMLLINT_RULES_PATH: .github/lint-configs/
+          REPOSITORY_TRIVY_RULES_PATH: .github/lint-configs/
 ---
