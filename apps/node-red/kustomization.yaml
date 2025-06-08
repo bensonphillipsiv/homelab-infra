@@ -14,7 +14,7 @@ helmCharts:
     valuesInline:
       env:
         - name: TZ
-          value: America/Los_Angeles
+          value: America/Chicago
       persistence:
         enabled: true
         size: 1Gi
