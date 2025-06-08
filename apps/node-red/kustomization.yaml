@@ -12,6 +12,9 @@ helmCharts:
     version: 0.34.0
     releaseName: node-red
     valuesInline:
+      env:
+        - name: TZ
+          value: America/Los_Angeles
       persistence:
         enabled: true
         size: 1Gi
