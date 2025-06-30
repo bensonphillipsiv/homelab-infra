@@ -1,0 +1,44 @@
+clusterName: k8s
+talosVersion: v1.10.2
+kubernetesVersion: v1.33.0
+
+endpoint: https://192.168.1.100:6443
+
+allowSchedulingOnMasters: true
+allowSchedulingOnControlPlanes: true
+
+nodes:
+  - hostname: b0
+    controlPlane: true
+    ipAddress: 192.168.1.100
+    installDisk: /dev/nvme0n1
+    nodeLabels:
+      node-role.kubernetes.io/control-plane: ""
+
+patches:
+  - |-
+    - op: add
+      path: /machine/kubelet/extraMounts
+      value:
+        - destination: /var/lib/longhorn
+          type: bind
+          source: /var/lib/longhorn
+          options:
+            - bind
+            - rshared
+            - rw
+
+controlPlane:
+  schematic:
+    customization:
+      systemExtensions:
+        officialExtensions:
+          - siderolabs/iscsi-tools
+          - siderolabs/util-linux-tools
+worker:
+  schematic:
+    customization:
+      systemExtensions:
+        officialExtensions:
+          - siderolabs/iscsi-tools
+          - siderolabs/util-linux-tools

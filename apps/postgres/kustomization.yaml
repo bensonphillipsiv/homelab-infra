@@ -3,8 +3,20 @@ kind: Kustomization
 
 namespace: postgres
 
-generators: 
-  - helmChart.yaml
-
-resources:
-  - secret.yaml
+helmCharts:
+  - name: postgresql
+    repo: https://charts.bitnami.com/bitnami
+    version: 16.7.4
+    releaseName: postgresql
+    valuesInline:
+      auth:
+        enablePostgresUser: true
+        postgresPassword: ""
+      primary:
+        service:
+          type: LoadBalancer
+          loadBalancerIP: 192.168.1.113
+        pgHbaConfiguration: |
+          local all all trust
+          host all all 0.0.0.0/0 trust
+          host all all ::/0 trust

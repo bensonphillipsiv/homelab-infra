@@ -1,3 +1,4 @@
+---
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
@@ -14,5 +15,6 @@ spec:
           cloudflare:
             email: benson.phillipsiv@gmail.com
             apiTokenSecretRef:
-              name: cloudflare-api
-              key: apiKey
+              name: cloudflare-api-key
+              key: CLOUDFLARE_API_KEY
+---

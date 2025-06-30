@@ -3,9 +3,18 @@ kind: Kustomization
 
 namespace: mqtt
 
-generators: 
-  - helmChart.yaml
-
 resources:
   - ingress.yaml
-  
+
+helmCharts:
+  - name: emqx
+    repo: https://repos.emqx.io/charts
+    version: 5.8.6
+    releaseName: mqtt-emqx
+    valuesInline:
+      replicaCount: 1
+      service:
+        type: LoadBalancer
+        loadBalancerIP: 192.168.1.111
+      emqxConfig:
+        EMQX_HOST: $(POD_NAME).mqtt-emqx-headless.mqtt.svc.cluster.local

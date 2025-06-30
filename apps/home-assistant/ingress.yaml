@@ -2,9 +2,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: homepage
-  labels:
-    app: homepage
+  name: home-assistant
   annotations:
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
     cert-manager.io/cluster-issuer: letsencrypt
@@ -12,17 +10,17 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-      - homepage.bensonphillips.dev
+      - ha.bensonphillips.dev
       secretName: letsencrypt
   rules:
-    - host: homepage.bensonphillips.dev
+    - host: ha.bensonphillips.dev
       http:
         paths:
-          - path: "/"
-            pathType: Prefix
-            backend:
-              service:
-                name: homepage
-                port:
-                  number: 3000
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: home-assistant
+              port:
+                name: http
 ---

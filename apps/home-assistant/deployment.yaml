@@ -1,0 +1,62 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: home-assistant
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: home-assistant
+  template:
+    metadata:
+      labels:
+        app: home-assistant
+    spec:
+      hostNetwork: true
+      containers:
+      - name: home-assistant
+        image: "ghcr.io/home-assistant/home-assistant:2025.5.3"
+        ports:
+          - name: http
+            containerPort: 8123
+            protocol: TCP
+        volumeMounts:
+          - name: ha-config-root
+            mountPath: /config
+          - name: ha-config-file
+            mountPath: /config/configuration.yaml
+            subPath: configuration.yaml
+          - name: ha-config-file
+            mountPath: /config/scripts.yaml
+            subPath: scripts.yaml
+      volumes:
+        - name: ha-config-root
+          persistentVolumeClaim:
+            claimName: home-assistant
+        - name: ha-config-file
+          configMap:
+            name: home-assistant
+        - name: bluetooth
+          hostPath:
+            path: /var/run/dbus
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: home-assistant
+  labels:
+    app: home-assistant
+spec:
+  type: LoadBalancer
+  externalTrafficPolicy: Cluster
+  loadBalancerIP: 192.168.1.114
+  sessionAffinity: None
+  ports:
+    - name: http
+      port: 8123
+      targetPort: http
+      protocol: TCP
+  selector:
+    app: home-assistant
+---

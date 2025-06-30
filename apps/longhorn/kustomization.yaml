@@ -3,9 +3,17 @@ kind: Kustomization
 
 namespace: longhorn
 
-generators: 
-  - helmChart.yaml
-
 resources:
+  - namespace.yaml
   - ingress.yaml
-  - secret.yaml
+
+helmCharts:
+  - name: longhorn
+    repo: https://charts.longhorn.io
+    version: 1.9.0
+    releaseName: longhorn
+    valuesInline:
+      persistence:
+        defaultClassReplicaCount: 3
+      longhornUI:
+        replicas: 1

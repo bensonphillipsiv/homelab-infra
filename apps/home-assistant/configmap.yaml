@@ -1,0 +1,25 @@
+---
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: home-assistant
+data:
+  configuration.yaml: |-
+    default_config:
+    script: !include scripts.yaml
+    frontend:
+      themes: !include_dir_merge_named themes
+    http:
+      use_x_forwarded_for: true
+      trusted_proxies:
+        - 192.168.1.0/24
+        - 172.20.0.0/24
+        - 10.42.0.0/16
+        - 10.244.0.0/16
+  scripts.yaml: |-
+    startup:
+      sequence:
+        - service: notify.notify
+          data:
+            message: "Home Assistant has started!"
+---

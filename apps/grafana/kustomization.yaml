@@ -3,9 +3,18 @@ kind: Kustomization
 
 namespace: grafana
 
-generators: 
-  - helmChart.yaml
-
 resources:
   - ingress.yaml
-  - secret.yaml
+
+helmCharts:
+  - name: grafana
+    repo: https://grafana.github.io/helm-charts
+    version: 9.2.0
+    releaseName: grafana
+    valuesInline:
+      grafana.ini:
+        auth:
+          disable_login_form: true
+        auth.anonymous:
+          enabled: true
+          org_role: Admin
