@@ -8,7 +8,7 @@ spec:
   generators:
     - git:
         repoURL: https://github.com/bensonphillipsiv/home-infra
-        revision: revamp
+        revision: main
         directories:
           - path: "apps/*"
   template:
@@ -18,7 +18,7 @@ spec:
       project: default
       source:
         repoURL: https://github.com/bensonphillipsiv/home-infra
-        targetRevision: revamp
+        targetRevision: main
         path: "{{path}}"
       destination:
         server: https://kubernetes.default.svc

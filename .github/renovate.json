@@ -1,7 +1,0 @@
-{
-    "baseBranches": ["main", "revamp"],
-    "rebaseWhen": "conflicted",
-    "labels": ["dependencies"],
-    "automergeStrategy": "merge-commit",
-    "prHourlyLimit": 2
-  }
