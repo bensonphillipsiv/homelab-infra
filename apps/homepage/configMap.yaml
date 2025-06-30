@@ -27,19 +27,19 @@ data:
     - Services:
         - Home Assistant:
             href: https://ha.bensonphillips.dev
-            siteMonitor: https://home-assistant.home-assistant.svc.cluster.local
+            ping: http://home-assistant.home-assistant.svc.cluster.local
             icon: home-assistant-alt
         - Node Red:
             href: http://node-red.bensonphillips.dev
-            siteMonitor: https://node-red.node-red.svc.cluster.local
+            ping: http://node-red.node-red.svc.cluster.local
             icon: node-red
         - ESP Home:
             href: https://esphome.bensonphillips.dev
-            siteMonitor: https://esphome.esphome.svc.cluster.local
+            ping: http://esphome.esphome.svc.cluster.local
             icon: esphome
         - MQTT:
             href: http://mqtt.bensonphillips.dev
-            siteMonitor: https://mqtt-emqx-0.mqtt.svc.cluster.local
+            ping: http://mqtt-emqx-0.mqtt.svc.cluster.local
             icon: emqx
     - Mangement:
         - Argo CD:
@@ -61,8 +61,6 @@ data:
             widget:
               type: grafana
               url: http://grafana.grafana.svc.cluster.local
-              username: username
-              password: password
   widgets.yaml: |
     - kubernetes:
         cluster:
