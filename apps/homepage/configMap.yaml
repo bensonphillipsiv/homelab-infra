@@ -37,6 +37,9 @@ data:
             href: https://esphome.bensonphillips.dev
             ping: http://esphome.esphome.svc.cluster.local
             icon: esphome
+            widget:
+              type: esphome
+              url: http://esphome.esphome.svc.cluster.local
         - MQTT:
             href: http://mqtt.bensonphillips.dev
             ping: http://mqtt-emqx-headless.mqtt.svc.cluster.local
@@ -58,9 +61,6 @@ data:
             href: http://grafana.bensonphillips.dev
             siteMonitor: http://grafana.grafana.svc.cluster.local
             icon: grafana
-            widget:
-              type: grafana
-              url: http://grafana.grafana.svc.cluster.local
   widgets.yaml: |
     - kubernetes:
         cluster:
