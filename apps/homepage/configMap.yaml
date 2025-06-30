@@ -42,10 +42,10 @@ data:
         - Argo CD:
             href: http://argocd.bensonphillips.dev
             siteMonitor: https://argocd-server.argocd.svc.cluster.local
-            icon: argocd
+            icon: argo-cd
             widget:
               type: argocd
-              url: http://argocd.bensonphillips.dev
+              url: https://argocd-server.argocd.svc.cluster.local
         - Longhorn:
             href: http://longhorn.bensonphillips.dev
             siteMonitor: http://longhorn-frontend.longhorn.svc.cluster.local
@@ -57,7 +57,7 @@ data:
             icon: grafana
             widget:
               type: grafana
-              url: https://grafana.bensonphillips.dev
+              url: http://grafana.grafana.svc.cluster.local
   widgets.yaml: |
     - kubernetes:
         cluster:
