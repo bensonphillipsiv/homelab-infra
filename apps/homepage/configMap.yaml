@@ -26,8 +26,8 @@ data:
   services.yaml: |
     - Services:
         - Home Assistant:
-            href: https://homeassistant.bensonphillips.dev
-            siteMonitor: http://home-assistant.homeassistant.svc.cluster.local
+            href: https://ha.bensonphillips.dev
+            siteMonitor: http://home-assistant.home-assistant.svc.cluster.local
             icon: home-assistant-alt
         - Node Red:
             href: http://node-red.bensonphillips.dev
@@ -39,7 +39,7 @@ data:
             icon: esphome
         - MQTT:
             href: http://mqtt.bensonphillips.dev
-            siteMonitor: http://mqtt-emqx-headless.mqtt.svc.cluster.local
+            siteMonitor: http://mqtt-emqx-0.mqtt.svc.cluster.local
             icon: emqx
     - Mangement:
         - Argo CD:
@@ -82,9 +82,6 @@ data:
         cpu: true
         memory: true
         network: default
-    - search:
-        provider: duckduckgo
-        target: _blank
     - longhorn:
         expanded: true
         total: true
