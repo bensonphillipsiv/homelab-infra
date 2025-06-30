@@ -27,19 +27,19 @@ data:
     - Services:
         - Home Assistant:
             href: https://ha.bensonphillips.dev
-            siteMonitor: http://home-assistant.home-assistant.svc.cluster.local
+            siteMonitor: https://ha.bensonphillips.dev
             icon: home-assistant-alt
         - Node Red:
             href: http://node-red.bensonphillips.dev
-            siteMonitor: http://node-red.node-red.svc.cluster.local
+            siteMonitor: http://node-red.bensonphillips.dev
             icon: node-red
         - ESP Home:
             href: https://esphome.bensonphillips.dev
-            siteMonitor: http://esphome.esphome.svc.cluster.local
+            siteMonitor: https://esphome.bensonphillips.dev
             icon: esphome
         - MQTT:
             href: http://mqtt.bensonphillips.dev
-            siteMonitor: http://mqtt-emqx-0.mqtt.svc.cluster.local
+            siteMonitor: http://mqtt.bensonphillips.dev
             icon: emqx
     - Mangement:
         - Argo CD:
