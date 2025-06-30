@@ -58,6 +58,8 @@ data:
             widget:
               type: grafana
               url: http://grafana.grafana.svc.cluster.local
+              username: username
+              password: password
   widgets.yaml: |
     - kubernetes:
         cluster:
@@ -80,5 +82,7 @@ data:
     - search:
         provider: duckduckgo
         target: _blank
+    - longhorn:
+        expanded: true
   docker.yaml: ""
 ---
