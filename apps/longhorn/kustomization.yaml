@@ -6,6 +6,7 @@ namespace: longhorn
 resources:
   - namespace.yaml
   - ingress.yaml
+  - externalSecret.yaml
 
 helmCharts:
   - name: longhorn
