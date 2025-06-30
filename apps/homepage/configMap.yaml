@@ -35,11 +35,11 @@ data:
             icon: node-red
         - ESP Home:
             href: https://esphome.bensonphillips.dev
-            siteMonitor: esphome.esphome.svc.cluster.local
+            siteMonitor: http://esphome.esphome.svc.cluster.local
             icon: esphome
         - MQTT:
             href: http://mqtt.bensonphillips.dev
-            siteMonitor: mqtt-emqx-headless.mqtt.svc.cluster.local
+            siteMonitor: http://mqtt-emqx-headless.mqtt.svc.cluster.local
             icon: emqx
     - Mangement:
         - Argo CD:
