@@ -27,11 +27,11 @@ data:
     - Services:
         - Home Assistant:
             href: https://ha.bensonphillips.dev
-            siteMonitor: 192.168.1.100:8123
+            siteMonitor: http://192.168.1.100:8123
             icon: home-assistant-alt
         - Node Red:
             href: http://node-red.bensonphillips.dev
-            ping: 192.168.1.100:1880
+            ping: http://192.168.1.100:1880
             icon: node-red
         - ESP Home:
             href: https://esphome.bensonphillips.dev
