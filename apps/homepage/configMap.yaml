@@ -27,11 +27,11 @@ data:
     - Services:
         - Home Assistant:
             href: https://ha.bensonphillips.dev
-            ping: home-assistant.home-assistant.svc.cluster.local:8123
+            siteMonitor: home-assistant.home-assistant.svc.cluster.local:8123
             icon: home-assistant-alt
         - Node Red:
             href: http://node-red.bensonphillips.dev
-            ping: node-red.node-red.svc.cluster.local:1880
+            siteMonitor: node-red.node-red.svc.cluster.local:1880
             icon: node-red
         - ESP Home:
             href: https://esphome.bensonphillips.dev
