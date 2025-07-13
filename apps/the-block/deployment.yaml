@@ -13,7 +13,6 @@ spec:
       labels:
         app: the-block
     spec:
-      hostNetwork: true
       containers:
       - name: the-block
         image: ghcr.io/bensonphillipsiv/the_block:latest
