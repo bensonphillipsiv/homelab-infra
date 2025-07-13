@@ -17,9 +17,6 @@ spec:
   template:
     metadata:
       name: "{{path[1]}}"
-      annotations:
-        argocd-image-updater.argoproj.io/image-list: the-block=ghcr.io/bensonphillipsiv/the_block:latest
-        argocd-image-updater.argoproj.io/update-strategy: newest-build
     spec:
       project: default
       source:

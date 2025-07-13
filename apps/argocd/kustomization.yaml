@@ -5,14 +5,3 @@ namespace: argocd
 
 resources:
   - ingress.yaml
-
-helmCharts:
-  - name: argocd-image-updater
-    repo: https://argoproj.github.io/argo-helm
-    version: 0.12.3
-    releaseName: argocd-image-updater
-    valuesInline:
-      config:
-        argocd:
-          serverAddress: "http://argocd-server.argocd.svc.cluster.local"
-          insecure: true
