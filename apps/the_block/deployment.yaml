@@ -2,24 +2,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: the_block
+  name: the-block
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: the_block
+      app: the-block
   template:
     metadata:
       labels:
-        app: the_block
+        app: the-block
     spec:
       hostNetwork: true
       containers:
-      - name: the_block
+      - name: the-block
         image: ghcr.io/bensonphillipsiv/the_block:latest
         envFrom:
             - configMapRef:
-              name: the_block
+              name: the-block
             - secreRef:
-              name: the_block
+              name: the-block
 ---

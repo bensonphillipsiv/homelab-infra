@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: the_block
+  name: the-block
 data:
   HOMEASSISTANT_URL: "http://192.168.1.114:8123/api"
   LOG_LEVEL: "INFO"
