@@ -20,6 +20,6 @@ spec:
         envFrom:
             - configMapRef:
               name: the-block
-            - secreRef:
+            - secretRef:
               name: the-block
 ---
