@@ -1,0 +1,11 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: the_block
+data:
+  HOMEASSISTANT_URL: "http://192.168.1.114:8123/api"
+  LOG_LEVEL: "INFO"
+  NAVI_JSON: '{"menu.main":{"x+":"switch.office_viv_light2.toggle","x-":"switch.office_cabinet_leds.toggle","y+":"light.office_plant_dimmer.toggle","y-":"switch.office_plantbox_prime.toggle", "z+":"bright.office_plant_dimmer", "z-":"light.office_closet_light.toggle"}}'
+  SCENES_JSON: '{"scene.bed":["switch.office_viv_light2.turn_off","light.office_plant_dimmer.turn_off","switch.office_plantbox_prime.turn_off","light.office_closet_light.turn_off","switch.living_north_lamp.turn_off","switch.living_south_lamp.turn_off"]}'
+---
