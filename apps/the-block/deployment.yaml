@@ -18,8 +18,8 @@ spec:
       - name: the-block
         image: ghcr.io/bensonphillipsiv/the_block:latest
         envFrom:
-            - configMapRef:
-              name: the-block
-            - secretRef:
-              name: the-block
+          - configMapRef:
+            name: the-block
+          - secretRef:
+            name: the-block
 ---
