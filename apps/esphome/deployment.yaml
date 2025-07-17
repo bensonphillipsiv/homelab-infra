@@ -43,6 +43,8 @@ metadata:
   name: esphome
   labels:
     app: esphome
+  annotations:
+    tailscale.com/expose: "true"
 spec:
   ports:
   - port: 6052
