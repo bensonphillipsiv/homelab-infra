@@ -67,15 +67,15 @@ spec:
         - name: logs
           emptyDir: {}
 ---
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: homepage
-  labels:
-    app: homepage
-  annotations:
-    kubernetes.io/service-account.token: "true"
----
+# apiVersion: v1
+# kind: ServiceAccount
+# metadata:
+#   name: homepage
+#   labels:
+#     app: homepage
+#   annotations:
+#     kubernetes.io/service-account.token: "true"
+# ---
 apiVersion: v1
 kind: Service
 metadata:
