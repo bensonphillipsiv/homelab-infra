@@ -82,6 +82,8 @@ metadata:
   name: homepage
   labels:
     app: homepage
+  annotations:
+    tailscale.com/expose: "true"
 spec:
   type: ClusterIP
   ports:
