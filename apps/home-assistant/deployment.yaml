@@ -60,3 +60,21 @@ spec:
   selector:
     app: home-assistant
 ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: home-assistant-tailscale
+  labels:
+    app: home-assistant
+  annotations:
+    tailscale.com/expose: "true"
+    tailscale.com/tags: "tag:k8s"
+spec:
+  type: ClusterIP
+  selector:
+    app: home-assistant
+  ports:
+    - port: 80
+      targetPort: 8123
+      protocol: TCP
+---
