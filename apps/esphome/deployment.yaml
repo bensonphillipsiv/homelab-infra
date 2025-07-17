@@ -47,6 +47,7 @@ metadata:
     tailscale.com/expose: "true"
     tailscale.com/tags: "tag:k8s"
 spec:
+  type: ClusterIP
   ports:
   - port: 6052
     targetPort: http
@@ -54,5 +55,4 @@ spec:
     name: http
   selector:
     app: esphome
-  clusterIP: None
 ---
