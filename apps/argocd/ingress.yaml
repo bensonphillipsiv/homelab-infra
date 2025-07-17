@@ -31,9 +31,9 @@ metadata:
   name: argocd
   labels:
     app: argocd-server
-  annotations:
-    tailscale.com/expose: "true"
-    tailscale.com/tags: "tag:k8s"
+  # annotations:
+  #   tailscale.com/expose: "true"
+  #   tailscale.com/tags: "tag:k8s"
 spec:
   type: ClusterIP
   selector:
