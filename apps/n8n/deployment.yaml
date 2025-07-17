@@ -13,7 +13,6 @@ spec:
       labels:
         app: n8n
     spec:
-      serviceName: n8n
       automountServiceAccountToken: true
       securityContext:
         runAsNonRoot: true
