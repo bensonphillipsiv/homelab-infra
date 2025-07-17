@@ -4,7 +4,6 @@ kind: Kustomization
 namespace: tailscale
 
 resources:
-  - namespace.yaml
   - externalSecret.yaml
 
 helmCharts:
@@ -16,6 +15,3 @@ helmCharts:
     valuesInline:
       apiServerProxyConfig:
         mode: "true"
-      extraEnv:
-        - name: TS_KUBE_SECRET
-          value: "tailscale-auth"
