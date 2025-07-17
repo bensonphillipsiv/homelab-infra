@@ -1,10 +1,10 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: n8n
 spec:
   replicas: 1
-  revisionHistoryLimit: 3
   selector:
     matchLabels:
       app: n8n 
@@ -28,7 +28,7 @@ spec:
             - containerPort: 5678
           env:
             - name: DB_SQLITE_VACUUM_ON_STARTUP
-              value: true
+              value: "true"
             - name: GENERIC_TIMEZONE
               value: "America/Chicago"
           volumeMounts:
