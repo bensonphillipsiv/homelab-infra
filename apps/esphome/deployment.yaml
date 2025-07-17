@@ -45,6 +45,7 @@ metadata:
     app: esphome
   annotations:
     tailscale.com/expose: "true"
+    tailscale.com/tags: "tag:k8s"
 spec:
   ports:
   - port: 6052
