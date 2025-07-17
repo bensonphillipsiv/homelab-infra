@@ -13,6 +13,7 @@ spec:
       labels:
         app: esphome
     spec:
+      automountServiceAccountToken: true
       containers:
       - name: esphome
         image: ghcr.io/esphome/esphome:2025.7.0
