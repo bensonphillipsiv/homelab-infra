@@ -2,9 +2,9 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: mqtt-dashboard
+  name: n8n
   labels:
-    app: emqx
+    app: n8n
   annotations:
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
     cert-manager.io/cluster-issuer: letsencrypt
@@ -12,17 +12,17 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - mqtt.bensonphillips.dev
+        - n8n.bensonphillips.dev
       secretName: letsencrypt
   rules:
-    - host: mqtt.bensonphillips.dev
+    - host: n8n.bensonphillips.dev
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: mqtt-emqx
+                name: n8n
                 port:
-                  number: 18083
+                  number: 5678
 ---

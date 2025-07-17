@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: n8n
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: n8n 
+  template:
+    metadata:
+      labels:
+        app: n8n
+    spec:
+      serviceName: n8n
+      automountServiceAccountToken: true
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000
+        fsGroupChangePolicy: OnRootMismatch
+      containers:
+        - name: n8n
+          image: docker.n8n.io/n8nio/n8n:1.102.4
+          ports:
+            - containerPort: 5678
+          env:
+            - name: DB_SQLITE_VACUUM_ON_STARTUP
+              value: true
+            - name: GENERIC_TIMEZONE
+              value: "America/Chicago"
+          volumeMounts:
+          - mountPath: /home/node/.n8n
+            name: data
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: n8n
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: n8n
+spec:
+  type: ClusterIP
+  selector:
+    app: n8n
+  ports:
+    - name: http
+      port: 80
+      targetPort: 5678
+---
