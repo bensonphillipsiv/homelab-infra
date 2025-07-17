@@ -12,6 +12,10 @@ helmCharts:
     repo: https://pkgs.tailscale.com/helmcharts
     version: 1.84.3
     releaseName: tailscale-operator
+    namespace: tailscale
     valuesInline:
       apiServerProxyConfig:
         mode: "true"
+      extraEnv:
+        - name: TS_KUBE_SECRET
+          value: "tailscale-auth"
