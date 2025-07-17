@@ -41,7 +41,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: esphome
+  name: esphom
   labels:
     app: esphome
   annotations:
@@ -50,10 +50,10 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-  - port: 80
-    targetPort: 6052
-    protocol: TCP
-    name: http
+    - port: 80
+      targetPort: 6052
+      protocol: TCP
+      name: http
   selector:
     app: esphome
 ---
