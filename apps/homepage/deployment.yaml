@@ -84,6 +84,7 @@ metadata:
     app: homepage
   annotations:
     tailscale.com/expose: "true"
+    tailscale.com/tags: "tag:k8s"
 spec:
   type: ClusterIP
   ports:
