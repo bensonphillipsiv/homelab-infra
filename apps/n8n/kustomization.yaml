@@ -4,7 +4,6 @@ kind: Kustomization
 namespace: n8n
 
 resources:
-  - namespace.yaml
   - deployment.yaml
   - ingress.yaml
   - pvc.yaml
