@@ -16,6 +16,6 @@ helmCharts:
     valuesInline:
       apiServerProxyConfig:
         mode: "true"
-      podAnnotations:
-        argocd.argoproj.io/instance: tailscale
-
+      proxyConfig:
+        podAnnotations:
+          argocd.argoproj.io/instance: tailscale
