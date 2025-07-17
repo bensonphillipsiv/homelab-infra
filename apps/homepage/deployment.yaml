@@ -30,7 +30,7 @@ spec:
               value: '*'
           ports:
             - name: http
-              containerPort: 3000
+              containerPort: 80
               protocol: TCP
           volumeMounts:
             - mountPath: /app/config/custom.js
@@ -78,7 +78,7 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - port: 3000
+    - port: 80
       targetPort: http
       protocol: TCP
       name: http
