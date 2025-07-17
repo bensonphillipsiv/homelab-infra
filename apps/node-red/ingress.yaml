@@ -24,3 +24,24 @@ spec:
                 port:
                   name: "http"
 ---
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: node-red-tailscale
+  labels:
+    app: node-red
+  annotations:
+    tailscale.com/expose: "true"
+    tailscale.com/tags: "tag:k8s"
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/instance: node-red
+    app.kubernetes.io/name: node-red
+  ports:
+    - port: 80
+      targetPort: 1880
+      protocol: TCP
+      name: http
+---
