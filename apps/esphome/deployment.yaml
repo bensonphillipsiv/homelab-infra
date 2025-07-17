@@ -50,7 +50,7 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-  - port: http
+  - port: 80
     targetPort: 6052
     protocol: TCP
     name: http
