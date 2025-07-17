@@ -44,4 +44,8 @@ spec:
       targetPort: 8080
       protocol: TCP
       name: http
+    - port: 443
+      targetPort: 8080
+      protocol: TCP
+      name: https
 ---
