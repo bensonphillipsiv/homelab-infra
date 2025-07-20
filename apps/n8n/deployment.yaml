@@ -32,6 +32,8 @@ spec:
               value: "true"
             - name: GENERIC_TIMEZONE
               value: "America/Chicago"
+            - name: N8N_SECURE_COOKIE
+              value: "false"
           volumeMounts:
           - mountPath: /home/node/.n8n
             name: data
