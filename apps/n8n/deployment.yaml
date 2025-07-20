@@ -9,7 +9,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: n8n 
+      app: n8n
   template:
     metadata:
       labels:
@@ -44,6 +44,9 @@ apiVersion: v1
 kind: Service
 metadata:
   name: n8n
+  annotations:
+    tailscale.com/expose: "true"
+    tailscale.com/tags: "tag:k8s"
 spec:
   type: ClusterIP
   selector:
