@@ -2,19 +2,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: homeGPT
+  name: home-gpt
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: homeGPT
+      app: home-gpt
   template:
     metadata:
       labels:
-        app: homeGPT
+        app: home-gpt
     spec:
       containers:
-      - name: homeGPT
+      - name: home-gpt
         image: ghcr.io/bensonphillipsiv/homegpt:latest
         imagePullPolicy: Always
         resources:
