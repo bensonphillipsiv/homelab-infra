@@ -17,7 +17,14 @@ spec:
       - name: home-gpt
         image: ghcr.io/bensonphillipsiv/homegpt:latest
         imagePullPolicy: Always
-        resources:
-          limits:
-            squat.ai/audio: "1"
+        securityContext:
+          privileged: true
+        volumeMounts:
+        - name: dev-snd
+          mountPath: /dev/snd
+      volumes:
+      - name: dev-snd
+        hostPath:
+          path: /dev/snd
+          type: Directory
 ---
