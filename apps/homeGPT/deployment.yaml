@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: homeGPT
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: homeGPT
+  template:
+    metadata:
+      labels:
+        app: homeGPT
+    spec:
+      containers:
+      - name: homeGPT
+        image: ghcr.io/bensonphillipsiv/homegpt:latest
+        imagePullPolicy: Always
+        resources:
+          limits:
+            squat.ai/audio: "1"
+---
