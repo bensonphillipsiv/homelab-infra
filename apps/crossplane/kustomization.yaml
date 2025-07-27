@@ -10,4 +10,3 @@ helmCharts:
     repo: https://charts.crossplane.io/stable
     version: 1.9.2
     releaseName: crossplane
-    valuesInline:
