@@ -14,6 +14,11 @@ nodes:
     installDisk: /dev/nvme0n1
     nodeLabels:
       node-role.kubernetes.io/control-plane: ""
+  - hostname: b1
+    controlPlane: false
+    worker: true
+    ipAddress: 192.168.1.101
+    installDisk: /dev/nvme0n1
 
 patches:
   - |-
@@ -35,6 +40,7 @@ controlPlane:
         officialExtensions:
           - siderolabs/iscsi-tools
           - siderolabs/util-linux-tools
+
 worker:
   schematic:
     customization:

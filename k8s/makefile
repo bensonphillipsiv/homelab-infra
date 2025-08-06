@@ -1,7 +1,6 @@
 BOOTSTRAP_DIR=./bootstrap
 TALOS_DIR=./talos
 CLUSTER_NAME=k8s
-NODE_NAME=b0
 
 .PHONY: all genconfig build_talos bootstrap clean
 
@@ -15,12 +14,16 @@ genconfig:
 build_talos:
 	@echo "Building Talos cluster..."
 	cd $(TALOS_DIR)/clusterconfig && \
-	talosctl apply-config -n 192.168.1.100 --insecure --file $(CLUSTER_NAME)-$(NODE_NAME).yaml
-	
+	talosctl apply-config -n 192.168.1.100 --insecure --file $(CLUSTER_NAME)-b0.yaml
 	@sleep 120
+	
 	@echo "Bootstrapping Talos cluster..."
 	talosctl bootstrap --nodes 192.168.1.100 --endpoints 192.168.1.100 --talosconfig=$(TALOS_DIR)/clusterconfig/talosconfig
 	@sleep 240
+
+	cd $(TALOS_DIR)/clusterconfig && \
+	talosctl apply-config -n 192.168.1.101 --insecure --file $(CLUSTER_NAME)-b1.yaml
+	@sleep 120
 
 bootstrap:
 	@echo "Bootstrapping cluster with ArgoCD and base manifests..."
