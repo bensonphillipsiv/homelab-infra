@@ -3,7 +3,8 @@ kind: Kustomization
 
 namespace: awx
 
-# resources:
+resources:
+  - awx.yaml
 
 helmCharts:
   - name: awx-operator
@@ -12,6 +13,3 @@ helmCharts:
     releaseName: awx-operator
     namespace: awx
     includeCRDs: true
-    valuesInline:
-      AWX:
-        enabled: true
