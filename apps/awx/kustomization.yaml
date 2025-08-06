@@ -11,4 +11,5 @@ helmCharts:
     version: 3.2.0
     releaseName: awx-operator
     namespace: awx
+    includeCRDs: true
 
