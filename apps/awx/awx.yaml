@@ -4,7 +4,6 @@ kind: AWX
 metadata:
   name: awx-demo
 spec:
-  service_type: clusterip
-  ingress_type: Route
+  service_type: nodeport
   postgres_data_volume_init: true
 ---
