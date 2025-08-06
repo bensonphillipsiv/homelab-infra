@@ -13,3 +13,5 @@ helmCharts:
     valuesInline:
       AWX:
         enabled: true
+      rbac:
+        create: true
