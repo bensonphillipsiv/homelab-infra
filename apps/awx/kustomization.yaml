@@ -11,7 +11,5 @@ helmCharts:
     version: 3.2.0
     releaseName: awx-operator
     valuesInline:
-      persistence:
-        defaultClassReplicaCount: 3
-      longhornUI:
-        replicas: 1
+      AWX:
+        enabled: true
