@@ -12,4 +12,6 @@ helmCharts:
     releaseName: awx-operator
     namespace: awx
     includeCRDs: true
-
+    valuesInline:
+      AWX:
+        enabled: true
