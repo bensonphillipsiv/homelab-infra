@@ -19,17 +19,9 @@ spec:
         imagePullPolicy: Always
         securityContext:
           privileged: true
-        # volumeMounts:
-        # - name: dev-snd
-        #   mountPath: /dev/snd
-      - name: swiss-army-knife
-        image: leodotcloud/swiss-army-knife:latest
-        command: ["/bin/sleep", "3650d"]
-        securityContext:
-          privileged: true
-      # volumes:
-      # - name: dev-snd
-      #   hostPath:
-      #     path: /dev/snd
-      #     type: Directory
+        envFrom:
+          - configMapRef:
+              name: home-gpt
+          - secretRef:
+              name: home-gpt
 ---

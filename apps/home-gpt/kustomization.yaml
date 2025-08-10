@@ -6,3 +6,5 @@ namespace: home-gpt
 resources:
   - namespace.yaml
   - deployment.yaml
+  - configMap.yaml
+  - externalSecret.yaml
