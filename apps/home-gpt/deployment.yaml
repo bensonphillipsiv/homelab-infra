@@ -24,4 +24,12 @@ spec:
               name: home-gpt
           - secretRef:
               name: home-gpt
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: kubernetes.io/hostname
+                operator: In
+                values: ["b0"]
 ---

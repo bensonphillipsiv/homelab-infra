@@ -17,6 +17,8 @@ nodes:
   - hostname: b1
     controlPlane: false
     worker: true
+    nodeLabels:
+      node-role.kubernetes.io/worker: ""
     ipAddress: 192.168.1.101
     installDisk: /dev/nvme0n1
 
