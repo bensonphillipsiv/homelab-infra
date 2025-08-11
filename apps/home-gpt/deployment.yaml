@@ -31,5 +31,5 @@ spec:
             - matchExpressions:
               - key: kubernetes.io/hostname
                 operator: In
-                values: ["b0"]
+                values: ["b1"]
 ---
