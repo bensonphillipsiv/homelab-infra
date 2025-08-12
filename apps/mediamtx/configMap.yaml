@@ -6,7 +6,14 @@ metadata:
 data:
   mediamtx.yml: |
     rtspAddress: :8554
+    listen: {}
     paths:
-      listen: {}
-      speak: {}
+      silence:
+        runOnInit: >
+          ffmpeg -re -f lavfi -i anullsrc=channel_layout=mono:sample_rate=16000
+                -c:a libopus -b:a 32k -application voip -frame_duration 20
+                -f rtsp rtsp://127.0.0.1:$RTSP_PORT/$RTSP_PATH
+        runOnInitRestart: yes
+      speak:
+        fallback: /silence
 ---
