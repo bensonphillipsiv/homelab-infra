@@ -5,3 +5,4 @@ namespace: mediamtx
 
 resources:
   - deployment.yaml
+  - configMap.yaml
