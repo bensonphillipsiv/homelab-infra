@@ -6,8 +6,8 @@ metadata:
 data:
   mediamtx.yml: |
     rtspAddress: :8554
-    listen: {}
     paths:
+      listen: {}
       silence:
         runOnInit: >
           ffmpeg -re -f lavfi -i anullsrc=channel_layout=mono:sample_rate=16000
