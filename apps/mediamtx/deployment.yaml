@@ -28,49 +28,49 @@ spec:
               mountPath: /mediamtx.yml
               subPath: mediamtx.yml
 
-        # Always-on silence for /listen and /speak paths
-        - name: keepalive-listen
-          image: jrottenberg/ffmpeg:4.1-alpine
-          env:
-            - { name: RTSP_URL, value: "rtsp://127.0.0.1:8554/listen" }
-            - { name: SR,       value: "16000" }
-          command: ["/bin/sh","-lc"]
-          args:
-            - |
-              trap 'exit 0' INT TERM
-              while true; do
-                # If a publisher is already live, don't (re)publish silence
-                if ffprobe -v error -rtsp_transport tcp -rw_timeout 2000000 "$RTSP_URL" >/dev/null 2>&1; then
-                  sleep 1
-                  continue
-                fi
-                # Idle -> publish silence until preempted by a real publisher
-                ffmpeg -hide_banner -loglevel warning -re \
-                  -f lavfi -i "anullsrc=channel_layout=mono:sample_rate=${SR}" \
-                  -c:a libopus -b:a 32k -application voip -frame_duration 20 \
-                  -rtsp_transport tcp -f rtsp "$RTSP_URL" || true
-                sleep 1
-              done
-        - name: keepalive-speak
-          image: jrottenberg/ffmpeg:6-alpine
-          env:
-            - { name: RTSP_URL, value: "rtsp://127.0.0.1:8554/speak" }
-            - { name: SR,       value: "16000" }
-          command: ["/bin/sh","-lc"]
-          args:
-            - |
-              trap 'exit 0' INT TERM
-              while true; do
-                if ffprobe -v error -rtsp_transport tcp -rw_timeout 2000000 "$RTSP_URL" >/dev/null 2>&1; then
-                  sleep 1
-                  continue
-                fi
-                ffmpeg -hide_banner -loglevel warning -re \
-                  -f lavfi -i "anullsrc=channel_layout=mono:sample_rate=${SR}" \
-                  -c:a libopus -b:a 32k -application voip -frame_duration 20 \
-                  -rtsp_transport tcp -f rtsp "$RTSP_URL" || true
-                sleep 1
-              done
+        # # Always-on silence for /listen and /speak paths
+        # - name: keepalive-listen
+        #   image: jrottenberg/ffmpeg:4.1-alpine
+        #   env:
+        #     - { name: RTSP_URL, value: "rtsp://127.0.0.1:8554/listen" }
+        #     - { name: SR,       value: "16000" }
+        #   command: ["/bin/sh","-lc"]
+        #   args:
+        #     - |
+        #       trap 'exit 0' INT TERM
+        #       while true; do
+        #         # If a publisher is already live, don't (re)publish silence
+        #         if ffprobe -v error -rtsp_transport tcp -rw_timeout 2000000 "$RTSP_URL" >/dev/null 2>&1; then
+        #           sleep 1
+        #           continue
+        #         fi
+        #         # Idle -> publish silence until preempted by a real publisher
+        #         ffmpeg -hide_banner -loglevel warning -re \
+        #           -f lavfi -i "anullsrc=channel_layout=mono:sample_rate=${SR}" \
+        #           -c:a libopus -b:a 32k -application voip -frame_duration 20 \
+        #           -rtsp_transport tcp -f rtsp "$RTSP_URL" || true
+        #         sleep 1
+        #       done
+        # - name: keepalive-speak
+        #   image: jrottenberg/ffmpeg:6-alpine
+        #   env:
+        #     - { name: RTSP_URL, value: "rtsp://127.0.0.1:8554/speak" }
+        #     - { name: SR,       value: "16000" }
+        #   command: ["/bin/sh","-lc"]
+        #   args:
+        #     - |
+        #       trap 'exit 0' INT TERM
+        #       while true; do
+        #         if ffprobe -v error -rtsp_transport tcp -rw_timeout 2000000 "$RTSP_URL" >/dev/null 2>&1; then
+        #           sleep 1
+        #           continue
+        #         fi
+        #         ffmpeg -hide_banner -loglevel warning -re \
+        #           -f lavfi -i "anullsrc=channel_layout=mono:sample_rate=${SR}" \
+        #           -c:a libopus -b:a 32k -application voip -frame_duration 20 \
+        #           -rtsp_transport tcp -f rtsp "$RTSP_URL" || true
+        #         sleep 1
+        #       done
       volumes:
         - name: cfg
           configMap:
