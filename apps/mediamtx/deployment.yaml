@@ -23,6 +23,14 @@ spec:
             - name: rtsp
               containerPort: 8554
               protocol: TCP
+          volumeMounts:
+            - name: cfg
+              mountPath: /mediamtx.yml
+              subPath: mediamtx.yml
+      volumes:
+        - name: cfg
+          configMap:
+            name: mediamtx
 ---
 apiVersion: v1
 kind: Service

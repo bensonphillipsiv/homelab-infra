@@ -1,0 +1,12 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mediamtx
+data:
+  mediamtx.yml: |
+    rtspAddress: :8554
+    paths:
+      listen: {}
+      speak: {}
+---
