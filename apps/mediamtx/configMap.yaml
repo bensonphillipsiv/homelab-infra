@@ -7,6 +7,8 @@ data:
   mediamtx.yml: |
     rtspAddress: :8554
     paths:
-      listen: {}
-      speak: {}
+      listen:
+        overridePublisher: yes
+      speak:
+        overridePublisher: yes
 ---
