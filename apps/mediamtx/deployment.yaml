@@ -41,7 +41,7 @@ spec:
               while true; do
                 # If a publisher is already live, don't (re)publish silence
                 if ffprobe -v error -rtsp_transport tcp -rw_timeout 2000000 "$RTSP_URL" >/dev/null 2>&1; then
-                  sleep 1
+                  sleep 5
                   continue
                 fi
                 # Idle -> publish silence until preempted by a real publisher
@@ -49,7 +49,7 @@ spec:
                   -f lavfi -i "anullsrc=channel_layout=mono:sample_rate=${SR}" \
                   -c:a libopus -b:a 32k -application voip -frame_duration 20 \
                   -rtsp_transport tcp -f rtsp "$RTSP_URL" || true
-                sleep 1
+                sleep 5
               done
         - name: keepalive-speak
           image: jrottenberg/ffmpeg:6-alpine
@@ -62,14 +62,14 @@ spec:
               trap 'exit 0' INT TERM
               while true; do
                 if ffprobe -v error -rtsp_transport tcp -rw_timeout 2000000 "$RTSP_URL" >/dev/null 2>&1; then
-                  sleep 1
+                  sleep 5
                   continue
                 fi
                 ffmpeg -hide_banner -loglevel warning -re \
                   -f lavfi -i "anullsrc=channel_layout=mono:sample_rate=${SR}" \
                   -c:a libopus -b:a 32k -application voip -frame_duration 20 \
                   -rtsp_transport tcp -f rtsp "$RTSP_URL" || true
-                sleep 1
+                sleep 5
               done
       volumes:
         - name: cfg
