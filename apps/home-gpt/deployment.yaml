@@ -17,8 +17,6 @@ spec:
       - name: home-gpt
         image: ghcr.io/bensonphillipsiv/homegpt:latest
         imagePullPolicy: Always
-        securityContext:
-          privileged: true
         envFrom:
           - configMapRef:
               name: home-gpt
