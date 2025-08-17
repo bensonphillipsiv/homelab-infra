@@ -2,28 +2,28 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: home-gpt
+  name: homeGPT
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: home-gpt
+      app: homeGPT
   template:
     metadata:
       labels:
-        app: home-gpt
+        app: homeGPT
     spec:
       containers:
-      - name: home-gpt
+      - name: homeGPT
         image: ghcr.io/bensonphillipsiv/homegpt:latest
         imagePullPolicy: Always
         securityContext:
           privileged: true
         envFrom:
           - configMapRef:
-              name: home-gpt
+              name: homeGPT
           - secretRef:
-              name: home-gpt
+              name: homeGPT
       affinity:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
