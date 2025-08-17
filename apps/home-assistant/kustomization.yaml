@@ -4,7 +4,7 @@ kind: Kustomization
 namespace: home-assistant
 
 resources:
-  # - namespace.yaml
+  - namespace.yaml
   - deployment.yaml
   - ingress.yaml
   - pvc.yaml
