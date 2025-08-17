@@ -9,7 +9,9 @@ spec:
   source:
     repoURL: https://github.com/bensonphillipsiv/home-infra
     targetRevision: main
-    path: k8s/bootstrap/appset.yaml
+    path: k8s/bootstrap
+    directory:
+      include: appset.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
@@ -19,7 +21,4 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
-  ignoreApplicationDifferences:
-    - jsonPointers:
-      - /spec/syncPolicy/automated/selfHeal
 ---
