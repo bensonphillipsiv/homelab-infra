@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: homeGPT
+  name: home-gpt
 data:
   HOMEASSISTANT_URL: "http://192.168.1.114:8123"
   AUDIO_DEVICE_IP: "192.168.1.132

@@ -2,16 +2,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: homeGPT
+  name: home-gpt
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: homeGPT
+      app: home-gpt
   template:
     metadata:
       labels:
-        app: homeGPT
+        app: home-gpt
     spec:
       containers:
       - name: homeGPT
@@ -21,9 +21,9 @@ spec:
           privileged: true
         envFrom:
           - configMapRef:
-              name: homeGPT
+              name: home-gpt
           - secretRef:
-              name: homeGPT
+              name: home-gpt
       affinity:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
