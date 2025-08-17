@@ -43,10 +43,14 @@ spec:
   loadBalancerIP: 192.168.1.125
   sessionAffinity: None
   ports:
-    - name: http
-      port: 5004
-      targetPort: http
-      protocol: TCP
+  - name: udp-recv
+    port: 5004
+    targetPort: 5004
+    protocol: UDP
+  - name: udp-send
+    port: 5005
+    targetPort: 5005
+    protocol: UDP
   selector:
     app: home-gpt
 ---
