@@ -1,35 +1,25 @@
 ---
 apiVersion: argoproj.io/v1alpha1
-kind: ApplicationSet
+kind: Application
 metadata:
-  name: common-appset
+  name: root-app
   namespace: argocd
 spec:
-  generators:
-    - git:
-        repoURL: https://github.com/bensonphillipsiv/home-infra
-        revision: main
-        directories:
-          - path: "apps/*"
+  project: default
+  source:
+    repoURL: https://github.com/bensonphillipsiv/home-infra
+    targetRevision: main
+    path: k8s/bootstrap/appset.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
   ignoreApplicationDifferences:
     - jsonPointers:
       - /spec/syncPolicy/automated/selfHeal
-  template:
-    metadata:
-      name: "{{path[1]}}"
-    spec:
-      project: default
-      source:
-        repoURL: https://github.com/bensonphillipsiv/home-infra
-        targetRevision: main
-        path: "{{path}}"
-      destination:
-        server: https://kubernetes.default.svc
-        namespace: "{{path[1]}}"
-      syncPolicy:
-        automated:
-          prune: true
-          selfHeal: true
-        syncOptions:
-          - CreateNamespace=true
 ---
