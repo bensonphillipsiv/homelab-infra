@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: esphome
-        image: ghcr.io/esphome/esphome:2025.7.0
+        image: ghcr.io/esphome/esphome:2025.6.3
         imagePullPolicy: IfNotPresent
         env:
           - name: ESPHOME_DASHBOARD_USE_PING
