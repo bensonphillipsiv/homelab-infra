@@ -41,6 +41,10 @@ data:
             href: http://mqtt.bensonphillips.dev
             ping: http://mqtt-emqx-headless.mqtt.svc.cluster.local
             icon: emqx
+        - Tailscale:
+            href: https://login.tailscale.com/admin/machines
+            ping: https://tailscale.com
+            icon: tailscale-light
     - Mangement:
         - Argo CD:
             href: http://argocd.bensonphillips.dev
@@ -53,6 +57,10 @@ data:
             href: http://longhorn.bensonphillips.dev
             siteMonitor: http://longhorn-frontend.longhorn.svc.cluster.local
             icon: longhorn
+        - Doppler:
+            href: https://dashboard.doppler.com/workplace/3847142df2a22c61e4d4/projects
+            siteMonitor: https://www.doppler.com
+            icon: doppler
     - Monitoring:
         - Grafana:
             href: http://grafana.bensonphillips.dev
