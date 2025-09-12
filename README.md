@@ -1,41 +1,51 @@
-# Home Infra
+# homelab infra
 
 This repository contains the full GitOps-driven IaC setup for my home Kubernetes cluster.  
-It is built to be **fully reproducible**, allowing the entire cluster to be easily redeployed from scratch.
+It is built to be **fully reproducible**, allowing everything to be easily redeployed from scratch.
 
 ---
 
-## Infrastructure
+## Primary Infrastructure
 
-- **Kubernetes**: [Talos Linux](https://www.talos.dev/)  
-- **GitOps**: [Argo CD](https://argo-cd.readthedocs.io/)  
-- **Secrets Management**: [Doppler](https://www.doppler.com/) + [External Secrets](https://external-secrets.io/)  
-- **Automated Dependency Updates**: [Renovate](https://docs.renovatebot.com/)  
+- **Kubernetes**: [Talos Linux](https://www.talos.dev/)
+- **GitOps**: [Argo CD](https://argo-cd.readthedocs.io/)
+- **Secrets Management**: [Doppler](https://www.doppler.com/) + [External Secrets](https://external-secrets.io/)
+- **Automated Dependency Updates**: [Renovate](https://docs.renovatebot.com/)
 - **Volumes + Backups**: [Longhorn](https://longhorn.io/)
+- **Cloud Infra Management**: [Crossplane](https://www.crossplane.io/)
 
 ---
 
 ## Applications
 
-- **Argo CD** – GitOps controller
-- **AWX** – Ansible automation platform
-- **cert-manager** – Automated TLS certificates
-- **Crossplane** – Cloud resource provisioning
-- **ESPHome** – IoT device management
-- **External Secrets** – Kubernetes secrets from Doppler
-- **Grafana** – Metrics visualization
-- **Home Assistant** – Home automation hub
-- **home-gpt** – Custom AI assistant
-- **Homepage** – Dashboard
-- **ingress-nginx** – Ingress controller
-- **Longhorn** – Distributed storage + backups
-- **mediamtx** – Media streaming server
-- **metrics-server** – Resource metrics for Kubernetes
-- **MQTT** – Message broker
-- **n8n** – AI automation workflows
-- **Node-RED** – Event-driven home automation
-- **Postgres** – Database
-- **Tailscale** – Secure networking
-- **the-block** – Custom inertial remote
+### Custom Apps
+
+| Tool | Repo | Description |
+|------|---------------|-------------|
+| home-gpt | *(private repo)* | Custom AI assistant for home use |
+| the-block | *(homelab project)* | Custom inertial remote for triggering home automations and scenes |
+
+### OpenSource Apps
+
+| Application | Repo | Description |
+|-------------|----------------------|-------------|
+| Argo CD | [argoproj/argo-cd](https://github.com/argoproj/argo-cd) | GitOps continuous deployment tool for Kubernetes |
+| AWX | [ansible/awx](https://github.com/ansible/awx) | Server for Ansible automation |
+| cert-manager | [cert-manager/cert-manager](https://github.com/cert-manager/cert-manager) | Automates TLS certificate management in Kubernetes |
+| Crossplane | [crossplane/crossplane](https://github.com/crossplane/crossplane) | Control plane framework for managing cloud infrastructure |
+| ESPHome | [esphome/esphome](https://github.com/esphome/esphome) | Control ESP32 devices through simple config files |
+| External Secrets | [external-secrets/external-secrets](https://github.com/external-secrets/external-secrets) | Kubernetes secret management |
+| Grafana | [grafana/grafana](https://github.com/grafana/grafana) | Monitoring and observability platform |
+| Home Assistant | [home-assistant/core](https://github.com/home-assistant/core) | Open-source home automation platform |
+| Homepage | [gethomepage/homepage](https://github.com/gethomepage/homepage) | Personal dashboard |
+| ingress-nginx | [kubernetes/ingress-nginx](https://github.com/kubernetes/ingress-nginx) | Ingress controller for Kubernetes using NGINX |
+| Longhorn | [longhorn/longhorn](https://github.com/longhorn/longhorn) | Distributed block storage and backups for Kubernetes |
+| mediamtx | [bluenviron/mediamtx](https://github.com/bluenviron/mediamtx) | RTSP/RTMP/HTTP media streaming server |
+| metrics-server | [kubernetes-sigs/metrics-server](https://github.com/kubernetes-sigs/metrics-server) | Resource metrics API for Kubernetes |
+| MQTT | [mqtt/mqtt.github.io](https://github.com/mqtt/mqtt.github.io) | Lightweight, publish-subscribe messaging protocol for small IoT sensors and devices.  |
+| n8n | [n8n-io/n8n](https://github.com/n8n-io/n8n) | Workflow AI automation tool |
+| Node-RED | [node-red/node-red](https://github.com/node-red/node-red) | Flow-based development tool for home automation |
+| Postgres | [postgres/postgres](https://github.com/postgres/postgres) | PostgreSQL Database Management System |
+| Tailscale | [tailscale/tailscale](https://github.com/tailscale/tailscale) | Easy-to-use VPN based on WireGuard |
 
 ---
