@@ -1,6 +1,6 @@
 # homelab infra
 
-This repository contains the full GitOps-driven IaC setup for my home Kubernetes cluster.  
+This repository contains the full GitOps-driven IaC setup for my homelab infrastructure.  
 It is built to be **fully reproducible**, allowing everything to be easily redeployed from scratch.
 
 ---
@@ -11,7 +11,7 @@ It is built to be **fully reproducible**, allowing everything to be easily redep
 - **GitOps**: [Argo CD](https://argo-cd.readthedocs.io/)
 - **Secrets Management**: [Doppler](https://www.doppler.com/) + [External Secrets](https://external-secrets.io/)
 - **Automated Dependency Updates**: [Renovate](https://docs.renovatebot.com/)
-- **Volumes + Backups**: [Longhorn](https://longhorn.io/)
+- **Distrbuted Volumes + Backups**: [Longhorn](https://longhorn.io/)
 - **Cloud Infra Management**: [Crossplane](https://www.crossplane.io/)
 
 ---
@@ -20,20 +20,20 @@ It is built to be **fully reproducible**, allowing everything to be easily redep
 
 ### Custom Apps
 
-| Tool | Repo | Description |
+| App | Repo | Description |
 |------|---------------|-------------|
 | home-gpt | *(private repo)* | Custom AI assistant for home use |
 | the-block | *(homelab project)* | Custom inertial remote for triggering home automations and scenes |
 
 ### OpenSource Apps
 
-| Application | Repo | Description |
+| App | Repo | Description |
 |-------------|----------------------|-------------|
 | Argo CD | [argoproj/argo-cd](https://github.com/argoproj/argo-cd) | GitOps continuous deployment tool for Kubernetes |
 | AWX | [ansible/awx](https://github.com/ansible/awx) | Server for Ansible automation |
 | cert-manager | [cert-manager/cert-manager](https://github.com/cert-manager/cert-manager) | Automates TLS certificate management in Kubernetes |
 | Crossplane | [crossplane/crossplane](https://github.com/crossplane/crossplane) | Control plane framework for managing cloud infrastructure |
-| ESPHome | [esphome/esphome](https://github.com/esphome/esphome) | Control ESP32 devices through simple config files |
+| ESPHome | [esphome/esphome](https://github.com/esphome/esphome) | Simple control of ESP32 devices |
 | External Secrets | [external-secrets/external-secrets](https://github.com/external-secrets/external-secrets) | Kubernetes secret management |
 | Grafana | [grafana/grafana](https://github.com/grafana/grafana) | Monitoring and observability platform |
 | Home Assistant | [home-assistant/core](https://github.com/home-assistant/core) | Open-source home automation platform |
@@ -46,6 +46,6 @@ It is built to be **fully reproducible**, allowing everything to be easily redep
 | n8n | [n8n-io/n8n](https://github.com/n8n-io/n8n) | Workflow AI automation tool |
 | Node-RED | [node-red/node-red](https://github.com/node-red/node-red) | Flow-based development tool for home automation |
 | Postgres | [postgres/postgres](https://github.com/postgres/postgres) | PostgreSQL Database Management System |
-| Tailscale | [tailscale/tailscale](https://github.com/tailscale/tailscale) | Easy-to-use VPN based on WireGuard |
+| Tailscale | [tailscale/tailscale](https://github.com/tailscale/tailscale) | VPN based on WireGuard |
 
 ---
