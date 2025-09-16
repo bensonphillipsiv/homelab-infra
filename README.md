@@ -22,8 +22,8 @@ It is built to be **fully reproducible**, allowing everything to be easily redep
 
 | App | Repo | Description |
 |------|---------------|-------------|
-| home-gpt | *(private repo)* | Custom AI assistant for home use |
-| the-block | *(homelab project)* | Custom inertial remote for triggering home automations and scenes |
+| home-gpt | [bensonphillipsiv/homelab-builds](https://github.com/bensonphillipsiv/homelab-builds/tree/main/homeGPT) | Custom AI assistant for home use |
+| the-block | [bensonphillipsiv/homelab-builds](https://github.com/bensonphillipsiv/homelab-builds/tree/main/the_block) | Custom inertial remote for triggering home automations and scenes |
 
 ### OpenSource Apps
 
