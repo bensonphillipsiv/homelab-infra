@@ -18,9 +18,5 @@ helmCharts:
         auth.anonymous:
           enabled: true
           org_role: Admin
-      admin:
-        existingSecret: null
-        userKey: null
-        passwordKey: null
-      adminUser: null
-      adminPassword: null
+      adminUser: admin
+      adminPassword: dummy_password
