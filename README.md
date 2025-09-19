@@ -1,6 +1,6 @@
 # homelab infra
 
-This repository contains a full GitOps-driven IaC setup for my homelab infrastructure.  
+This repository contains the full GitOps-driven IaC setup for my homelab infrastructure.  
 It is built to be **fully reproducible**, allowing everything to be easily redeployed from scratch.
 
 ---
