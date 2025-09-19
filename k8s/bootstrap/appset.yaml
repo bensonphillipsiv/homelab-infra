@@ -15,6 +15,9 @@ spec:
     - jsonPointers:
       - /spec/syncPolicy/automated/selfHeal
       - /spec/syncPolicy/syncOptions
+      - /spec/syncPolicy/automated/prune
+      - /spec/syncPolicy/automated
+      - /spec/syncPolicy
   template:
     metadata:
       name: "{{path[1]}}"
