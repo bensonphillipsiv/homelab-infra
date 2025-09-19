@@ -19,8 +19,8 @@ helmCharts:
           enabled: true
           org_role: Admin
       admin:
-        existingSecret: ""
-        userKey: ""
-        passwordKey: ""
-      adminUser: ""
-      adminPassword: ""
+        existingSecret: null
+        userKey: null
+        passwordKey: null
+      adminUser: null
+      adminPassword: null
