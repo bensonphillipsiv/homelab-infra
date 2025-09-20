@@ -20,3 +20,7 @@ helmCharts:
           org_role: Admin
       adminUser: admin
       adminPassword: dummy_password
+      service:
+        annotations:
+          tailscale.com/expose: "true"
+          tailscale.com/tags: "tag:k8s"
