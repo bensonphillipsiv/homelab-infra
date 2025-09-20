@@ -35,7 +35,7 @@ data:
             icon: node-red
         - ESP Home:
             href: https://esphome.bensonphillips.dev
-            siteMonitor: http://esphome.esphome.svc.cluster.local
+            siteMonitor: http://esphome.esphome.svc.cluster.local:80
             icon: esphome
         - MQTT:
             href: http://mqtt.bensonphillips.dev
