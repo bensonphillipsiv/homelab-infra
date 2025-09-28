@@ -13,6 +13,9 @@ helmCharts:
     releaseName: grafana
     valuesInline:
       grafana.ini:
+        server:
+          root_url: http://grafana.grafana.svc.cluster.local/
+          serve_from_sub_path: true
         security:
           allow_embedding: true
         auth:
