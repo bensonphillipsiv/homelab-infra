@@ -13,6 +13,8 @@ helmCharts:
     releaseName: grafana
     valuesInline:
       grafana.ini:
+        security:
+          allow_embedding: true
         auth:
           disable_login_form: true
         auth.anonymous:
