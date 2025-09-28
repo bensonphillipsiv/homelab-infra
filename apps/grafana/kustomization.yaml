@@ -14,7 +14,7 @@ helmCharts:
     valuesInline:
       grafana.ini:
         server:
-          root_url: https://grafana.grafana.svc.cluster.local
+          root_url: https://192.168.1.122/
           serve_from_sub_path: true
         security:
           allow_embedding: true
