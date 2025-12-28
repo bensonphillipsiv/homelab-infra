@@ -6,17 +6,25 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
     nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
-    nginx.ingress.kubernetes.io/upstream-keepalive-timeout: "3600"
+    nginx.ingress.kubernetes.io/proxy-http-version: "1.1"
+    nginx.ingress.kubernetes.io/enable-websocket: "true"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    cert-manager.io/cluster-issuer: letsencrypt
 spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+      - home-gpt.bensonphillips.dev
+      secretName: letsencrypt
   rules:
-  - host: home-gpt.local
-    http:
-      paths:
-      - path: /ws
-        pathType: Prefix
-        backend:
-          service:
-            name: home-gpt
-            port:
-              number: 8765
+    - host: home-gpt.bensonphillips.dev
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: home-gpt
+                port:
+                  number: 8765
 ---
