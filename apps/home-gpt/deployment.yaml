@@ -45,12 +45,8 @@ spec:
   loadBalancerIP: 192.168.1.121
   sessionAffinity: None
   ports:
-    - name: mic
-      port: 4712
-      targetPort: 4712
+    - port: 8765
+      targetPort: 8765
       protocol: TCP
-    - name: speaker
-      port: 4713
-      targetPort: 4713
-      protocol: TCP
+      name: websocket
 ---
