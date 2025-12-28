@@ -4,19 +4,14 @@ kind: Ingress
 metadata:
   name: home-gpt
   annotations:
-    nnginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
     nginx.ingress.kubernetes.io/proxy-http-version: "1.1"
     nginx.ingress.kubernetes.io/enable-websocket: "true"
     nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
     nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
-    cert-manager.io/cluster-issuer: letsencrypt
 spec:
   ingressClassName: nginx
-  tls:
-    - hosts:
-      - home-gpt.bensonphillips.dev
-      secretName: letsencrypt
   rules:
     - host: home-gpt.bensonphillips.dev
       http:
