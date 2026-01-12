@@ -5,6 +5,6 @@ namespace: k8sible
 
 helmCharts:
   - name: k8sible
-    repo: oci://ghcr.io/bensonphillipsiv/charts
+    repo: https://github.com/bensonphillipsiv/k8sible/charts
     version: latest
     releaseName: k8sible
