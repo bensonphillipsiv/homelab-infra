@@ -11,6 +11,7 @@ spec:
     reference: main
     secretRef:
       name: k8sible-git-credentials
+      key: GITHUB_PAT_TOKEN
   apply:
     path: rasp5/apply.yaml
     maxRetries: 3
