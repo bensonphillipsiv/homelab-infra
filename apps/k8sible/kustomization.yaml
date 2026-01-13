@@ -8,3 +8,7 @@ helmCharts:
     repo: oci://ghcr.io/bensonphillipsiv/charts
     version: 0.1.0
     releaseName: k8sible
+
+resources:
+  - externalSecret.yaml
+  - homegpt/

@@ -1,0 +1,26 @@
+---
+apiVersion: k8sible.core.k8sible.io/v1alpha1
+kind: K8sibleWorkflow
+metadata:
+  name: home-gpt
+  labels:
+    app.kubernetes.io/name: k8sible
+spec:
+  source:
+    repository: https://github.com/bensonphillipsiv/homegpt
+    reference: main
+    secretRef:
+      name: k8sible-git-credentials
+  apply:
+    path: rasp5/apply.yaml
+    maxRetries: 3
+  reconcile:
+    path: rasp5/reconcile.yaml
+    schedule: "*/5 * * * *"
+    maxRetries: 3
+  failureCycleCooldown: 24h
+  configMapRef:
+    name: home-gpt
+  secretRef:
+    name: home-gpt
+---
