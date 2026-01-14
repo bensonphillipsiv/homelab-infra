@@ -12,7 +12,7 @@ spec:
     secretRef:
       name: k8sible-git-credentials
       key: GITHUB_PAT_TOKEN
-  inventoryPath: rasp5/inventory.ini
+  inventoryPath: rasp5/inventory.yaml
   apply:
     path: rasp5/apply.yaml
     maxRetries: 1
