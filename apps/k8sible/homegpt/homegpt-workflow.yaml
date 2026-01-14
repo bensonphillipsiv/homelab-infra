@@ -14,11 +14,11 @@ spec:
       key: GITHUB_PAT_TOKEN
   apply:
     path: rasp5/apply.yaml
-    maxRetries: 3
+    maxRetries: 1
   reconcile:
     path: rasp5/reconcile.yaml
     schedule: "*/5 * * * *"
-    maxRetries: 3
+    maxRetries: 1
   failureCycleCooldown: 24h
   configMapRef:
     name: home-gpt
