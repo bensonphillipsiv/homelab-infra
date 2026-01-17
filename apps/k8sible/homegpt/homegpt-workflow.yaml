@@ -18,9 +18,10 @@ spec:
     maxRetries: 1
   reconcile:
     path: rasp5/reconcile.yaml
-    schedule: "*/5 * * * *"
-    maxRetries: 1
+    schedule: 0 * * * *
+    maxRetries: 3
   failureCycleCooldown: 24h
+  verbosity: 3
   configMapRef:
     name: home-gpt
   secretRef:
