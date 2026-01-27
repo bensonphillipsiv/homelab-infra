@@ -11,7 +11,7 @@ helmCharts:
     releaseName: argocd
     namespace: argocd
     repo: https://argoproj.github.io/argo-helm
-    version: 8.6.4
+    version: 9.3.7
     includeCRDs: true
     valuesInline:
       server:
