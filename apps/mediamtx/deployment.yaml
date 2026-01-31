@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: mediamtx
-          image: bluenviron/mediamtx:1.15.4
+          image: bluenviron/mediamtx:1.16.0
           env:
             - name: MTX_RTSPTRANSPORTS
               value: "tcp"
