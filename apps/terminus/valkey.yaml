@@ -1,0 +1,79 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: terminus-valkey
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: terminus-valkey
+  template:
+    metadata:
+      labels:
+        app: terminus-valkey
+    spec:
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 999
+        runAsGroup: 1000
+        fsGroup: 1000
+      containers:
+        - name: valkey
+          image: valkey/valkey:9.1-alpine
+          imagePullPolicy: IfNotPresent
+          args:
+            - valkey-server
+            - --save
+            - ""
+            - --appendonly
+            - "no"
+            - --maxmemory
+            - 256mb
+            - --maxmemory-policy
+            - noeviction
+          ports:
+            - name: valkey
+              containerPort: 6379
+              protocol: TCP
+          readinessProbe:
+            exec:
+              command: ["valkey-cli", "ping"]
+            periodSeconds: 10
+          livenessProbe:
+            exec:
+              command: ["valkey-cli", "ping"]
+            initialDelaySeconds: 10
+            periodSeconds: 30
+          resources:
+            requests:
+              cpu: 20m
+              memory: 32Mi
+            limits:
+              cpu: 200m
+              memory: 256Mi
+          volumeMounts:
+            - name: data
+              mountPath: /data
+      volumes:
+        - name: data
+          emptyDir: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: terminus-valkey
+  labels:
+    app: terminus-valkey
+spec:
+  type: ClusterIP
+  selector:
+    app: terminus-valkey
+  ports:
+    - name: valkey
+      port: 6379
+      targetPort: valkey
+      protocol: TCP
+---

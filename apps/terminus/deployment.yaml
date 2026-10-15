@@ -1,0 +1,150 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: terminus
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: terminus
+  template:
+    metadata:
+      labels:
+        app: terminus
+    spec:
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000
+        fsGroupChangePolicy: OnRootMismatch
+      initContainers:
+        # Creates the role + database on the shared cluster Postgres (trust auth,
+        # idempotent) and migrates the schema before web/worker start. A failure
+        # here fails the pod; the image entrypoint would ignore a failed migrate.
+        - name: db-setup
+          image: ghcr.io/usetrmnl/terminus:0.78.0
+          imagePullPolicy: IfNotPresent
+          command: ["/bin/bash", "-c"]
+          args:
+            - |
+              set -euo pipefail
+              ADMIN="postgres://postgres@postgresql.postgres.svc.cluster.local:5432/postgres"
+              until pg_isready -d "$ADMIN" >/dev/null 2>&1; do echo "waiting for postgres"; sleep 2; done
+              psql "$ADMIN" -v ON_ERROR_STOP=1 -tAc "SELECT 1 FROM pg_roles WHERE rolname = 'terminus'" | grep -q 1 \
+                || psql "$ADMIN" -v ON_ERROR_STOP=1 -c "CREATE ROLE terminus LOGIN"
+              psql "$ADMIN" -v ON_ERROR_STOP=1 -tAc "SELECT 1 FROM pg_database WHERE datname = 'terminus'" | grep -q 1 \
+                || psql "$ADMIN" -v ON_ERROR_STOP=1 -c "CREATE DATABASE terminus OWNER terminus"
+              until timeout 2 bash -c 'cat < /dev/null > /dev/tcp/terminus-valkey/6379' 2>/dev/null; do echo "waiting for valkey"; sleep 2; done
+              cd /app && bundle exec hanami db migrate
+          envFrom:
+            - configMapRef:
+                name: terminus
+            - secretRef:
+                name: terminus
+      containers:
+        - name: web
+          image: ghcr.io/usetrmnl/terminus:0.78.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 2300
+              protocol: TCP
+          envFrom:
+            - configMapRef:
+                name: terminus
+            - secretRef:
+                name: terminus
+          startupProbe:
+            httpGet:
+              path: /up
+              port: http
+            periodSeconds: 10
+            failureThreshold: 60
+          readinessProbe:
+            httpGet:
+              path: /up
+              port: http
+            periodSeconds: 15
+            timeoutSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /up
+              port: http
+            periodSeconds: 30
+            timeoutSeconds: 10
+            failureThreshold: 3
+          resources:
+            requests:
+              cpu: 250m
+              memory: 512Mi
+            limits:
+              cpu: "1"
+              memory: 1536Mi
+          volumeMounts:
+            - name: uploads
+              mountPath: /app/public/uploads
+            - name: fonts
+              mountPath: /app/public/fonts
+            - name: fonts
+              mountPath: /usr/share/fonts/terminus
+        - name: worker
+          image: ghcr.io/usetrmnl/terminus:0.78.0
+          imagePullPolicy: IfNotPresent
+          args: ["bundle", "exec", "sidekiq", "-r", "./config/sidekiq.rb"]
+          env:
+            - name: APP_SETUP
+              value: "false"
+          envFrom:
+            - configMapRef:
+                name: terminus
+            - secretRef:
+                name: terminus
+          livenessProbe:
+            exec:
+              command: ["pgrep", "-f", "sidekiq"]
+            initialDelaySeconds: 45
+            periodSeconds: 30
+            timeoutSeconds: 5
+            failureThreshold: 3
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              cpu: 500m
+              memory: 1Gi
+          volumeMounts:
+            - name: uploads
+              mountPath: /app/public/uploads
+            - name: fonts
+              mountPath: /app/public/fonts
+            - name: fonts
+              mountPath: /usr/share/fonts/terminus
+      volumes:
+        - name: uploads
+          persistentVolumeClaim:
+            claimName: terminus-uploads
+        - name: fonts
+          persistentVolumeClaim:
+            claimName: terminus-fonts
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: terminus
+  labels:
+    app: terminus
+spec:
+  type: ClusterIP
+  selector:
+    app: terminus
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+      protocol: TCP
+---

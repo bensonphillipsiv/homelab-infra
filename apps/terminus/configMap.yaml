@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: terminus
+data:
+  HANAMI_PORT: "2300"
+  API_URI: "https://terminus.bensonphillips.dev"
+  APP_SETUP: "true"
+  TZ: "America/Chicago"
+  DATABASE_URL: "postgres://terminus@postgresql.postgres.svc.cluster.local:5432/terminus"
+  KEYVALUE_URL: "redis://terminus-valkey:6379/0"
+  RACK_ATTACK_ALLOWED_SUBNETS: ""
+  FIRMWARE_SYNCHRONIZER: "false"
+---

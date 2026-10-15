@@ -5,7 +5,7 @@ It is built to be **fully reproducible**, allowing everything to be easily redep
 
 ---
 
-## Primary Infrastructure
+## Primary Infra
 
 - **Kubernetes**: [Talos Linux](https://www.talos.dev/)
 - **GitOps**: [Argo CD](https://argo-cd.readthedocs.io/)
@@ -22,7 +22,8 @@ It is built to be **fully reproducible**, allowing everything to be easily redep
 
 | App | Repo | Description |
 |------|---------------|-------------|
-| homeGPT | [bensonphillipsiv/homelab-builds](https://github.com/bensonphillipsiv/homelab-builds/tree/main/homeGPT) | Custom AI assistant |
+| homeGPT | [bensonphillipsiv/homeGPT](https://github.com/bensonphillipsiv/homeGPT) | Custom AI assistant |
+| k8sible | [bensonphillipsiv/k8sible](https://github.com/bensonphillipsiv/k8sible) | Kubernetes Operator for GitOps-driven Ansible playbook execution |
 | the-block | [bensonphillipsiv/homelab-builds](https://github.com/bensonphillipsiv/homelab-builds/tree/main/the_block) | Custom inertial remote for triggering home automations and scenes |
 
 ### OpenSource Apps
@@ -47,5 +48,6 @@ It is built to be **fully reproducible**, allowing everything to be easily redep
 | Node-RED | [node-red/node-red](https://github.com/node-red/node-red) | Flow-based development tool for home automation |
 | Postgres | [postgres/postgres](https://github.com/postgres/postgres) | PostgreSQL Database Management System |
 | Tailscale | [tailscale/tailscale](https://github.com/tailscale/tailscale) | VPN based on WireGuard |
+| Terminus | [usetrmnl/terminus](https://github.com/usetrmnl/terminus) | Self-hosted TRMNL server; dashboard source for the Glyph |
 
 ---

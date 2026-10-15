@@ -1,0 +1,23 @@
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: terminus-uploads
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: terminus-fonts
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 500Mi
+---
