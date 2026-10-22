@@ -9,7 +9,7 @@ resources:
 helmCharts:
   - name: emqx
     repo: https://repos.emqx.io/charts
-    version: 5.8.8
+    version: 5.8.9
     releaseName: mqtt-emqx
     valuesInline:
       replicaCount: 1
